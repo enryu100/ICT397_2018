@@ -1,0 +1,13 @@
+digraph "types::operator*"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="types::operator*",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="types::Matrix4x4::Matrix4x4",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structtypes_1_1_matrix4x4.html#a07ad558be63e1252b5603e19d329113e"];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="types::operator*",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacetypes.html#ac99fc0911ec065e97201c1c76d4cf2ba",tooltip="An overridden multiplication operator for matrix * vector calculations. "];
+  Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="types::Vector4D::Vector4D",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structtypes_1_1_vector4_d.html#a8b7d063aeb822272b6c8ff6828735c2c"];
+}

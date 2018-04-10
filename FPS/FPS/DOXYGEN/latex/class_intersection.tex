@@ -1,0 +1,148 @@
+\hypertarget{class_intersection}{}\section{Intersection Class Reference}
+\label{class_intersection}\index{Intersection@{Intersection}}
+
+
+{\ttfamily \#include $<$Intersection.\+h$>$}
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_intersection_1_1h}{h}
+\begin{DoxyCompactList}\small\item\em stores data about collision, created for use with \hyperlink{class_bound_box}{Bound\+Box} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_intersection_a3cf3b92f8c7d13bd6f8cbc02c766c152}{Intersection} (bool intersect, float dist)
+\begin{DoxyCompactList}\small\item\em default constructor for \hyperlink{class_intersection}{Intersection} \end{DoxyCompactList}\item 
+\hyperlink{class_intersection_a1bd2c788b17c6e3d1099744a119db88d}{$\sim$\+Intersection} (void)
+\begin{DoxyCompactList}\small\item\em default deconstructor for \hyperlink{class_intersection}{Intersection} \end{DoxyCompactList}\item 
+bool \hyperlink{class_intersection_a32553619dfef2d6e7c9e93235cd40a19}{Get\+Does\+Interact} ()
+\begin{DoxyCompactList}\small\item\em Getter for Does\+\_\+interact. \end{DoxyCompactList}\item 
+float \hyperlink{class_intersection_ae13dac4c265f7920c017a06e90335662}{Get\+Distance} ()
+\begin{DoxyCompactList}\small\item\em Getter for distance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 7 of file Intersection.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_intersection_a3cf3b92f8c7d13bd6f8cbc02c766c152}{}\index{Intersection@{Intersection}!Intersection@{Intersection}}
+\index{Intersection@{Intersection}!Intersection@{Intersection}}
+\subsubsection[{Intersection}]{\setlength{\rightskip}{0pt plus 5cm}Intersection\+::\+Intersection (
+\begin{DoxyParamCaption}
+\item[{bool}]{intersect, }
+\item[{float}]{dist}
+\end{DoxyParamCaption}
+)}\label{class_intersection_a3cf3b92f8c7d13bd6f8cbc02c766c152}
+
+
+default constructor for \hyperlink{class_intersection}{Intersection} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em intersect-\/bool,dist-\/float} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 3 of file Intersection.\+cpp.
+
+
+
+Referenced by Bound\+Box\+::\+Intersect\+A\+A\+B\+B().
+
+
+\begin{DoxyCode}
+3                                                     \{
+4     doesIntersect = intersect;
+5     distance = dist;
+6 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+% FIG 0
+
+
+\hypertarget{class_intersection_a1bd2c788b17c6e3d1099744a119db88d}{}\index{Intersection@{Intersection}!````~Intersection@{$\sim$\+Intersection}}
+\index{````~Intersection@{$\sim$\+Intersection}!Intersection@{Intersection}}
+\subsubsection[{$\sim$\+Intersection}]{\setlength{\rightskip}{0pt plus 5cm}Intersection\+::$\sim$\+Intersection (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{class_intersection_a1bd2c788b17c6e3d1099744a119db88d}
+
+
+default deconstructor for \hyperlink{class_intersection}{Intersection} 
+
+
+
+Definition at line 8 of file Intersection.\+cpp.
+
+
+\begin{DoxyCode}
+8                                \{
+9     
+10 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_intersection_ae13dac4c265f7920c017a06e90335662}{}\index{Intersection@{Intersection}!Get\+Distance@{Get\+Distance}}
+\index{Get\+Distance@{Get\+Distance}!Intersection@{Intersection}}
+\subsubsection[{Get\+Distance}]{\setlength{\rightskip}{0pt plus 5cm}float Intersection\+::\+Get\+Distance (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_intersection_ae13dac4c265f7920c017a06e90335662}
+
+
+Getter for distance. 
+
+\begin{DoxyReturn}{Returns}
+float -\/ Does-\/distance 
+\end{DoxyReturn}
+
+
+Definition at line 16 of file Intersection.\+cpp.
+
+
+\begin{DoxyCode}
+16                                \{
+17     \textcolor{keywordflow}{return} distance;
+18 \}
+\end{DoxyCode}
+\hypertarget{class_intersection_a32553619dfef2d6e7c9e93235cd40a19}{}\index{Intersection@{Intersection}!Get\+Does\+Interact@{Get\+Does\+Interact}}
+\index{Get\+Does\+Interact@{Get\+Does\+Interact}!Intersection@{Intersection}}
+\subsubsection[{Get\+Does\+Interact}]{\setlength{\rightskip}{0pt plus 5cm}bool Intersection\+::\+Get\+Does\+Interact (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_intersection_a32553619dfef2d6e7c9e93235cd40a19}
+
+
+Getter for Does\+\_\+interact. 
+
+\begin{DoxyReturn}{Returns}
+bool -\/ Does-\/\+Interact 
+\end{DoxyReturn}
+
+
+Definition at line 12 of file Intersection.\+cpp.
+
+
+\begin{DoxyCode}
+12                                   \{
+13     \textcolor{keywordflow}{return} doesIntersect;
+14 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_intersection_8h}{Intersection.\+h}\item 
+\hyperlink{_intersection_8cpp}{Intersection.\+cpp}\end{DoxyCompactItemize}

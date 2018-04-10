@@ -1,0 +1,151 @@
+\hypertarget{class_main_game}{}\section{Main\+Game Class Reference}
+\label{class_main_game}\index{Main\+Game@{Main\+Game}}
+
+
+A class that holds all of the game components and runs the game loop.  
+
+
+
+
+{\ttfamily \#include $<$Main\+Game.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_main_game_a6269052f9ac8ab60efd1f0d0e4281bb7}{Main\+Game} (void)
+\item 
+\hyperlink{class_main_game_a5123a0f105001ea90a633d799845e705}{$\sim$\+Main\+Game} (void)
+\item 
+void \hyperlink{class_main_game_a77f8c32213cbf718b35e96b5ba74cfd3}{run} (std\+::string init\+File)
+\begin{DoxyCompactList}\small\item\em Initialises and runs the game. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A class that holds all of the game components and runs the game loop. 
+
+The \hyperlink{class_main_game}{Main\+Game} class is responsible for holding the instances of each component of the game, using them (and the input it gathers) to create a functioning game world. At least, that is the theory.
+
+\begin{DoxyAuthor}{Author}
+Alfred Malone 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+01 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+17/4/2017 Alfred Malone, created class
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Alfred Malone 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+02 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+26/4/2017 Alfred Malone, added Doxygen comments (and plenty more previously)
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Alfred Malone 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+03 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+27/4/2017 Alfred Malone, added file loader for init from files
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Ben Porter 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+04 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+27/4/2017 Changed how game recieves input from mouse and how it uses camera functions 
+\end{DoxyDate}
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000003}{Todo}]Get collision detection. We\textquotesingle{}re toast.\end{DoxyRefDesc}
+
+
+\begin{DoxyRefDesc}{Bug}
+\item[\hyperlink{bug__bug000006}{Bug}]My shoddy redo of the \hyperlink{class_camera}{Camera} class. \end{DoxyRefDesc}
+
+
+Definition at line 48 of file Main\+Game.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_main_game_a6269052f9ac8ab60efd1f0d0e4281bb7}{}\index{Main\+Game@{Main\+Game}!Main\+Game@{Main\+Game}}
+\index{Main\+Game@{Main\+Game}!Main\+Game@{Main\+Game}}
+\subsubsection[{Main\+Game}]{\setlength{\rightskip}{0pt plus 5cm}Main\+Game\+::\+Main\+Game (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{class_main_game_a6269052f9ac8ab60efd1f0d0e4281bb7}
+The constructor for a \hyperlink{class_main_game}{Main\+Game} object. Initialises the game state. 
+
+Definition at line 5 of file Main\+Game.\+cpp.
+
+
+
+References P\+L\+A\+Y.
+
+
+\begin{DoxyCode}
+5                       \{
+6     currentState = \hyperlink{_main_game_8h_a7899b65f1ea0f655e4bbf8d2a5714285a6a216efc529825c60a4a4c0bc99ad77f}{GameState::PLAY};
+7     mouseSpeed = 0.004f;
+8 \}
+\end{DoxyCode}
+\hypertarget{class_main_game_a5123a0f105001ea90a633d799845e705}{}\index{Main\+Game@{Main\+Game}!````~Main\+Game@{$\sim$\+Main\+Game}}
+\index{````~Main\+Game@{$\sim$\+Main\+Game}!Main\+Game@{Main\+Game}}
+\subsubsection[{$\sim$\+Main\+Game}]{\setlength{\rightskip}{0pt plus 5cm}Main\+Game\+::$\sim$\+Main\+Game (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{class_main_game_a5123a0f105001ea90a633d799845e705}
+The destructor for a \hyperlink{class_main_game}{Main\+Game} object. 
+
+Definition at line 10 of file Main\+Game.\+cpp.
+
+
+\begin{DoxyCode}
+10                        \{
+11 
+12 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_main_game_a77f8c32213cbf718b35e96b5ba74cfd3}{}\index{Main\+Game@{Main\+Game}!run@{run}}
+\index{run@{run}!Main\+Game@{Main\+Game}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Game\+::run (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{init\+File}
+\end{DoxyParamCaption}
+)}\label{class_main_game_a77f8c32213cbf718b35e96b5ba74cfd3}
+
+
+Initialises and runs the game. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em init\+File} & -\/ The file name of the initialising file\\
+\hline
+\end{DoxyParams}
+run simply initialises and runs the game. 
+
+Definition at line 14 of file Main\+Game.\+cpp.
+
+
+\begin{DoxyCode}
+14                                  \{
+15     initSystems(initFile);
+16     gameLoop();
+17 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_main_game_8h}{Main\+Game.\+h}\item 
+\hyperlink{_main_game_8cpp}{Main\+Game.\+cpp}\end{DoxyCompactItemize}

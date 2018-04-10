@@ -1,0 +1,375 @@
+\hypertarget{classterrain_1_1_terrain}{}\section{terrain\+:\+:Terrain Class Reference}
+\label{classterrain_1_1_terrain}\index{terrain\+::\+Terrain@{terrain\+::\+Terrain}}
+
+
+A class that encapsulates and provides access to heightfield data.  
+
+
+
+
+{\ttfamily \#include $<$Terrain.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classterrain_1_1_terrain_a7160a06ab07a86ed97d23374405e8ef6}{Terrain} ()
+\item 
+\hyperlink{classterrain_1_1_terrain_a2f7f0a2aee54886324ccf48a6f321de0}{$\sim$\+Terrain} ()
+\item 
+bool \hyperlink{classterrain_1_1_terrain_a78fd3ff3280a84237b48bc0758e4e572}{load\+Heightfield} (std\+::string file\+Name)
+\begin{DoxyCompactList}\small\item\em Loads a heightfield from a file. \end{DoxyCompactList}\item 
+void \hyperlink{classterrain_1_1_terrain_ac8b30526c9ecb219966226dfecac60b7}{set\+Scale} (float x, float y, float z)
+\begin{DoxyCompactList}\small\item\em Sets the scale for the terrain. \end{DoxyCompactList}\item 
+const std\+::vector$<$ unsigned char $>$ \hyperlink{classterrain_1_1_terrain_adb4e1c2dd8084464fb8ada79c940bec3}{get\+Terrain\+Data} ()
+\begin{DoxyCompactList}\small\item\em Gets the terrain data. \end{DoxyCompactList}\item 
+int \hyperlink{classterrain_1_1_terrain_aa94bb1fa7864913b23a61fc621b3b3ef}{get\+Terrain\+Size} ()
+\begin{DoxyCompactList}\small\item\em Gets the terrain size. \end{DoxyCompactList}\item 
+float \hyperlink{classterrain_1_1_terrain_a7766261014d1db3e153e34b3edc9234e}{get\+X\+Scale} ()
+\begin{DoxyCompactList}\small\item\em Gets the terrain\textquotesingle{}s scaling factor along the x-\/axis. \end{DoxyCompactList}\item 
+float \hyperlink{classterrain_1_1_terrain_a5179301129da909722e5061bb7843e93}{get\+Y\+Scale} ()
+\begin{DoxyCompactList}\small\item\em Gets the terrain\textquotesingle{}s scaling factor along the y-\/axis. \end{DoxyCompactList}\item 
+float \hyperlink{classterrain_1_1_terrain_aab07a6b03ba8893cc839392987bacbe4}{get\+Z\+Scale} ()
+\begin{DoxyCompactList}\small\item\em Gets the terrain\textquotesingle{}s scaling factor along the z-\/axis. \end{DoxyCompactList}\item 
+float \hyperlink{classterrain_1_1_terrain_a07a8051714942704338182592d9f1ea8}{get\+Height} (int x\+Pos, int z\+Pos)
+\begin{DoxyCompactList}\small\item\em Gets the height of the terrain at a specified co-\/ordinate. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A class that encapsulates and provides access to heightfield data. 
+
+The \hyperlink{classterrain_1_1_terrain}{Terrain} class is responsible for loading heightfield data from a file and storing it, providing scaling as well for its use in a game.
+
+\begin{DoxyAuthor}{Author}
+Alfred Malone 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+01 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+7/4/2017 Alfred Malone, created class
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Brandon Lim 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+02 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+27/4/2017 Brandon Lim, added scaling factors
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Ben Porter 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+03 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+28/5/2017 Ben Porter, made get\+Height public for terrain tracking
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Alfred Malone 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+04 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+31/5/2017 Alfred Malone, added Doxygen comments 
+\end{DoxyDate}
+
+
+Definition at line 36 of file Terrain.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classterrain_1_1_terrain_a7160a06ab07a86ed97d23374405e8ef6}{}\index{terrain\+::\+Terrain@{terrain\+::\+Terrain}!Terrain@{Terrain}}
+\index{Terrain@{Terrain}!terrain\+::\+Terrain@{terrain\+::\+Terrain}}
+\subsubsection[{Terrain}]{\setlength{\rightskip}{0pt plus 5cm}Terrain\+::\+Terrain (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classterrain_1_1_terrain_a7160a06ab07a86ed97d23374405e8ef6}
+The constructor for a \hyperlink{classterrain_1_1_terrain}{Terrain} object. 
+
+Definition at line 13 of file Terrain.\+cpp.
+
+
+\begin{DoxyCode}
+13                 \{
+14 
+15 \}
+\end{DoxyCode}
+\hypertarget{classterrain_1_1_terrain_a2f7f0a2aee54886324ccf48a6f321de0}{}\index{terrain\+::\+Terrain@{terrain\+::\+Terrain}!````~Terrain@{$\sim$\+Terrain}}
+\index{````~Terrain@{$\sim$\+Terrain}!terrain\+::\+Terrain@{terrain\+::\+Terrain}}
+\subsubsection[{$\sim$\+Terrain}]{\setlength{\rightskip}{0pt plus 5cm}Terrain\+::$\sim$\+Terrain (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classterrain_1_1_terrain_a2f7f0a2aee54886324ccf48a6f321de0}
+The destructor for a \hyperlink{classterrain_1_1_terrain}{Terrain} object. 
+
+Definition at line 17 of file Terrain.\+cpp.
+
+
+\begin{DoxyCode}
+17                  \{
+18     
+19 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classterrain_1_1_terrain_a07a8051714942704338182592d9f1ea8}{}\index{terrain\+::\+Terrain@{terrain\+::\+Terrain}!get\+Height@{get\+Height}}
+\index{get\+Height@{get\+Height}!terrain\+::\+Terrain@{terrain\+::\+Terrain}}
+\subsubsection[{get\+Height}]{\setlength{\rightskip}{0pt plus 5cm}float Terrain\+::get\+Height (
+\begin{DoxyParamCaption}
+\item[{int}]{x\+Pos, }
+\item[{int}]{z\+Pos}
+\end{DoxyParamCaption}
+)}\label{classterrain_1_1_terrain_a07a8051714942704338182592d9f1ea8}
+
+
+Gets the height of the terrain at a specified co-\/ordinate. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x\+Pos} & -\/ The x-\/value of the co-\/ordinate \\
+\hline
+{\em z\+Pos} & -\/ The z-\/value of the co-\/ordinate \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+float -\/ The height at the co-\/ordinate
+\end{DoxyReturn}
+get\+Height gets the height value at a specified co-\/ordinate in the heightfield. 
+
+Definition at line 65 of file Terrain.\+cpp.
+
+
+\begin{DoxyCode}
+65                                           \{
+66     \textcolor{keywordflow}{if}(inBounds(xPos/(\textcolor{keywordtype}{int})xScale, zPos/(\textcolor{keywordtype}{int})zScale))
+67         \textcolor{keywordflow}{return}((\textcolor{keywordtype}{float})(getHeightColour(xPos/(\textcolor{keywordtype}{int})xScale, zPos/(\textcolor{keywordtype}{int})zScale)) * yScale);
+68 
+69     \textcolor{keywordflow}{return} 0;
+70 \}
+\end{DoxyCode}
+\hypertarget{classterrain_1_1_terrain_adb4e1c2dd8084464fb8ada79c940bec3}{}\index{terrain\+::\+Terrain@{terrain\+::\+Terrain}!get\+Terrain\+Data@{get\+Terrain\+Data}}
+\index{get\+Terrain\+Data@{get\+Terrain\+Data}!terrain\+::\+Terrain@{terrain\+::\+Terrain}}
+\subsubsection[{get\+Terrain\+Data}]{\setlength{\rightskip}{0pt plus 5cm}const vector$<$ unsigned char $>$ Terrain\+::get\+Terrain\+Data (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classterrain_1_1_terrain_adb4e1c2dd8084464fb8ada79c940bec3}
+
+
+Gets the terrain data. 
+
+\begin{DoxyReturn}{Returns}
+const vector$<$unsigned char$>$ -\/ The terrain data
+\end{DoxyReturn}
+get\+Terrain\+Data simply returns a constant reference to the heightfield data. 
+
+Definition at line 61 of file Terrain.\+cpp.
+
+
+\begin{DoxyCode}
+61                                                    \{
+62     \textcolor{keywordflow}{return} *terrainData;
+63 \}
+\end{DoxyCode}
+\hypertarget{classterrain_1_1_terrain_aa94bb1fa7864913b23a61fc621b3b3ef}{}\index{terrain\+::\+Terrain@{terrain\+::\+Terrain}!get\+Terrain\+Size@{get\+Terrain\+Size}}
+\index{get\+Terrain\+Size@{get\+Terrain\+Size}!terrain\+::\+Terrain@{terrain\+::\+Terrain}}
+\subsubsection[{get\+Terrain\+Size}]{\setlength{\rightskip}{0pt plus 5cm}int Terrain\+::get\+Terrain\+Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classterrain_1_1_terrain_aa94bb1fa7864913b23a61fc621b3b3ef}
+
+
+Gets the terrain size. 
+
+\begin{DoxyReturn}{Returns}
+int -\/ The terrain\textquotesingle{}s size (width or length)
+\end{DoxyReturn}
+get\+Terrain\+Size simply returns the width/length of the heightmap, as the width and length are (or should be) equal. 
+
+Definition at line 79 of file Terrain.\+cpp.
+
+
+\begin{DoxyCode}
+79                            \{
+80     \textcolor{keywordflow}{return} terrainSize;
+81 \}
+\end{DoxyCode}
+\hypertarget{classterrain_1_1_terrain_a7766261014d1db3e153e34b3edc9234e}{}\index{terrain\+::\+Terrain@{terrain\+::\+Terrain}!get\+X\+Scale@{get\+X\+Scale}}
+\index{get\+X\+Scale@{get\+X\+Scale}!terrain\+::\+Terrain@{terrain\+::\+Terrain}}
+\subsubsection[{get\+X\+Scale}]{\setlength{\rightskip}{0pt plus 5cm}float Terrain\+::get\+X\+Scale (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classterrain_1_1_terrain_a7766261014d1db3e153e34b3edc9234e}
+
+
+Gets the terrain\textquotesingle{}s scaling factor along the x-\/axis. 
+
+\begin{DoxyReturn}{Returns}
+float -\/ The scaling factor
+\end{DoxyReturn}
+get\+X\+Scale simply gets the x-\/axis scaling factor for the heightfield. 
+
+Definition at line 83 of file Terrain.\+cpp.
+
+
+\begin{DoxyCode}
+83                         \{
+84     \textcolor{keywordflow}{return} xScale;
+85 \}
+\end{DoxyCode}
+\hypertarget{classterrain_1_1_terrain_a5179301129da909722e5061bb7843e93}{}\index{terrain\+::\+Terrain@{terrain\+::\+Terrain}!get\+Y\+Scale@{get\+Y\+Scale}}
+\index{get\+Y\+Scale@{get\+Y\+Scale}!terrain\+::\+Terrain@{terrain\+::\+Terrain}}
+\subsubsection[{get\+Y\+Scale}]{\setlength{\rightskip}{0pt plus 5cm}float Terrain\+::get\+Y\+Scale (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classterrain_1_1_terrain_a5179301129da909722e5061bb7843e93}
+
+
+Gets the terrain\textquotesingle{}s scaling factor along the y-\/axis. 
+
+\begin{DoxyReturn}{Returns}
+float -\/ The scaling factor
+\end{DoxyReturn}
+get\+Y\+Scale simply gets the y-\/axis scaling factor for the heightfield. 
+
+Definition at line 87 of file Terrain.\+cpp.
+
+
+\begin{DoxyCode}
+87                         \{
+88     \textcolor{keywordflow}{return} yScale;
+89 \}
+\end{DoxyCode}
+\hypertarget{classterrain_1_1_terrain_aab07a6b03ba8893cc839392987bacbe4}{}\index{terrain\+::\+Terrain@{terrain\+::\+Terrain}!get\+Z\+Scale@{get\+Z\+Scale}}
+\index{get\+Z\+Scale@{get\+Z\+Scale}!terrain\+::\+Terrain@{terrain\+::\+Terrain}}
+\subsubsection[{get\+Z\+Scale}]{\setlength{\rightskip}{0pt plus 5cm}float Terrain\+::get\+Z\+Scale (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classterrain_1_1_terrain_aab07a6b03ba8893cc839392987bacbe4}
+
+
+Gets the terrain\textquotesingle{}s scaling factor along the z-\/axis. 
+
+\begin{DoxyReturn}{Returns}
+float -\/ The scaling factor
+\end{DoxyReturn}
+get\+Z\+Scale simply gets the z-\/axis scaling factor for the heightfield. 
+
+Definition at line 91 of file Terrain.\+cpp.
+
+
+\begin{DoxyCode}
+91                         \{
+92     \textcolor{keywordflow}{return} zScale;
+93 \}
+\end{DoxyCode}
+\hypertarget{classterrain_1_1_terrain_a78fd3ff3280a84237b48bc0758e4e572}{}\index{terrain\+::\+Terrain@{terrain\+::\+Terrain}!load\+Heightfield@{load\+Heightfield}}
+\index{load\+Heightfield@{load\+Heightfield}!terrain\+::\+Terrain@{terrain\+::\+Terrain}}
+\subsubsection[{load\+Heightfield}]{\setlength{\rightskip}{0pt plus 5cm}bool Terrain\+::load\+Heightfield (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{file\+Name}
+\end{DoxyParamCaption}
+)}\label{classterrain_1_1_terrain_a78fd3ff3280a84237b48bc0758e4e572}
+
+
+Loads a heightfield from a file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Name} & -\/ The name of the heightfield file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool -\/ true if heightfield was loaded, false if not
+\end{DoxyReturn}
+load\+Height\+Field loads heightfield data from a raw image file. 
+
+Definition at line 21 of file Terrain.\+cpp.
+
+
+\begin{DoxyCode}
+21                                             \{
+22     ifstream inFile(fileName, ios::binary);
+23     \textcolor{keywordtype}{int} fileLength;
+24 
+25     \textcolor{keywordflow}{if}(!inFile)\{
+26         cout << \textcolor{stringliteral}{"Error: could not open "} << fileName << \textcolor{stringliteral}{"!"} << endl;
+27         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+28     \}
+29 
+30     \textcolor{keywordflow}{if}(terrainData != NULL)
+31         \textcolor{keywordflow}{if}(!terrainData->empty())
+32             terrainData->clear();
+33 
+34     inFile.seekg(0, ios::end);  \textcolor{comment}{// Going to end of file...}
+35     fileLength = (int)inFile.tellg();\textcolor{comment}{// ...to find out its length...}
+36 
+37     \textcolor{keywordflow}{if}(fileLength > 0)\{
+38         terrainData = unique\_ptr<vector<unsigned char>>(\textcolor{keyword}{new} vector<unsigned char>(fileLength));
+39     \}
+40     \textcolor{keywordflow}{if}(terrainData == NULL)
+41         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+42 
+43     inFile.seekg(0, ios::beg);  \textcolor{comment}{// ...then going back to the start.}
+44 
+45     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} index = 0; index < fileLength && !inFile.eof(); index++)\{
+46         terrainData->at(index) = inFile.get();
+47     \}
+48 
+49     inFile.close();
+50     terrainSize = (int)sqrt((\textcolor{keywordtype}{double})fileLength);
+51 
+52     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+53 \}
+\end{DoxyCode}
+\hypertarget{classterrain_1_1_terrain_ac8b30526c9ecb219966226dfecac60b7}{}\index{terrain\+::\+Terrain@{terrain\+::\+Terrain}!set\+Scale@{set\+Scale}}
+\index{set\+Scale@{set\+Scale}!terrain\+::\+Terrain@{terrain\+::\+Terrain}}
+\subsubsection[{set\+Scale}]{\setlength{\rightskip}{0pt plus 5cm}void Terrain\+::set\+Scale (
+\begin{DoxyParamCaption}
+\item[{float}]{x, }
+\item[{float}]{y, }
+\item[{float}]{z}
+\end{DoxyParamCaption}
+)}\label{classterrain_1_1_terrain_ac8b30526c9ecb219966226dfecac60b7}
+
+
+Sets the scale for the terrain. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & -\/ The scaling factor along the x-\/axis \\
+\hline
+{\em y} & -\/ The sclaing factor along the y-\/axis \\
+\hline
+{\em z} & -\/ The scaling factor along the z-\/axis\\
+\hline
+\end{DoxyParams}
+set\+Scale sets the terrain scale along the x, y, and z axes with x, y, and z respectively. 
+
+Definition at line 55 of file Terrain.\+cpp.
+
+
+\begin{DoxyCode}
+55                                                \{
+56     xScale = x;
+57     yScale = y;
+58     zScale = z;
+59 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_terrain_8h}{Terrain.\+h}\item 
+\hyperlink{_terrain_8cpp}{Terrain.\+cpp}\end{DoxyCompactItemize}

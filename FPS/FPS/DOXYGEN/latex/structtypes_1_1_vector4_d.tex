@@ -1,0 +1,277 @@
+\hypertarget{structtypes_1_1_vector4_d}{}\section{types\+:\+:Vector4\+D Struct Reference}
+\label{structtypes_1_1_vector4_d}\index{types\+::\+Vector4\+D@{types\+::\+Vector4\+D}}
+
+
+A struct that defines a vector in three-\/dimensional space with an extra value that defines whether it is a point or a proper vector.  
+
+
+
+
+{\ttfamily \#include $<$Types.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structtypes_1_1_vector4_d_a0df265dd69de197b5259c7bb3a5d4fab}{Vector4\+D} ()
+\item 
+\hyperlink{structtypes_1_1_vector4_d_a8b7d063aeb822272b6c8ff6828735c2c}{Vector4\+D} (float xx, float yy, float zz, float ww)
+\item 
+float \hyperlink{structtypes_1_1_vector4_d_a9e935c0af1c2779e6ad6cf64386076ba}{length} ()
+\begin{DoxyCompactList}\small\item\em Gets the length of the vector. \end{DoxyCompactList}\item 
+\hyperlink{structtypes_1_1_vector4_d}{Vector4\+D} \hyperlink{structtypes_1_1_vector4_d_aa5b5db5d0c898a79db9230bc6c8d7c24}{normalise} ()
+\begin{DoxyCompactList}\small\item\em Gets the normalised version of the vector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \hyperlink{structtypes_1_1_vector4_d_a00b1b79bf63dc9b91d3100bbceb8b061}{x}
+\item 
+float \hyperlink{structtypes_1_1_vector4_d_ae3bf75e7f1e4430aecab11f181c53b61}{y}
+\item 
+float \hyperlink{structtypes_1_1_vector4_d_a6384f3ff311fbdd2ed4e88d6ec548130}{z}
+\item 
+float \hyperlink{structtypes_1_1_vector4_d_a701a06571f4bf043defa2d19d086dcc1}{w}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A struct that defines a vector in three-\/dimensional space with an extra value that defines whether it is a point or a proper vector. 
+
+The \hyperlink{structtypes_1_1_vector4_d}{Vector4\+D} struct is a data type that represents a vector or point in three-\/ dimensional space, the two of which can be discerned between with the w-\/value. A few functions are provided to assist with spatial calculations. This type was created so that 3\+D vectors could be used in matrix multiplication.
+
+\begin{DoxyAuthor}{Author}
+Alfred Malone 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+01 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+23/4/2017 Alfred Malone, created basic class
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Alfred Malone 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+02 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+24/4/2017 Alfred Malone, added extra functions for calculations
+\end{DoxyDate}
+\begin{DoxyRefDesc}{Bug}
+\item[\hyperlink{bug__bug000004}{Bug}]This one, while requiring explanation, is also simple. No bugs. \end{DoxyRefDesc}
+
+
+Definition at line 249 of file Types.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{structtypes_1_1_vector4_d_a0df265dd69de197b5259c7bb3a5d4fab}{}\index{types\+::\+Vector4\+D@{types\+::\+Vector4\+D}!Vector4\+D@{Vector4\+D}}
+\index{Vector4\+D@{Vector4\+D}!types\+::\+Vector4\+D@{types\+::\+Vector4\+D}}
+\subsubsection[{Vector4\+D}]{\setlength{\rightskip}{0pt plus 5cm}types\+::\+Vector4\+D\+::\+Vector4\+D (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{structtypes_1_1_vector4_d_a0df265dd69de197b5259c7bb3a5d4fab}
+The constructor for a \hyperlink{structtypes_1_1_vector4_d}{Vector4\+D} variable. Initialises the x, y, z, and w values. 
+
+Definition at line 259 of file Types.\+h.
+
+
+
+References w, x, y, and z.
+
+
+
+Referenced by normalise().
+
+
+\begin{DoxyCode}
+259                   \{
+260             \hyperlink{structtypes_1_1_vector4_d_a00b1b79bf63dc9b91d3100bbceb8b061}{x} = 0.0f;
+261             \hyperlink{structtypes_1_1_vector4_d_ae3bf75e7f1e4430aecab11f181c53b61}{y} = 0.0f;
+262             \hyperlink{structtypes_1_1_vector4_d_a6384f3ff311fbdd2ed4e88d6ec548130}{z} = 0.0f;
+263             \hyperlink{structtypes_1_1_vector4_d_a701a06571f4bf043defa2d19d086dcc1}{w} = 1.0f;
+264         \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+% FIG 0
+
+
+\hypertarget{structtypes_1_1_vector4_d_a8b7d063aeb822272b6c8ff6828735c2c}{}\index{types\+::\+Vector4\+D@{types\+::\+Vector4\+D}!Vector4\+D@{Vector4\+D}}
+\index{Vector4\+D@{Vector4\+D}!types\+::\+Vector4\+D@{types\+::\+Vector4\+D}}
+\subsubsection[{Vector4\+D}]{\setlength{\rightskip}{0pt plus 5cm}types\+::\+Vector4\+D\+::\+Vector4\+D (
+\begin{DoxyParamCaption}
+\item[{float}]{xx, }
+\item[{float}]{yy, }
+\item[{float}]{zz, }
+\item[{float}]{ww}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{structtypes_1_1_vector4_d_a8b7d063aeb822272b6c8ff6828735c2c}
+Another constructor for a \hyperlink{structtypes_1_1_vector4_d}{Vector4\+D} variable. Initialises the x, y, z, and w values with xx, yy, zz, and ww respectively. 
+
+Definition at line 270 of file Types.\+h.
+
+
+
+References w, x, y, and z.
+
+
+
+Referenced by Camera\+::\+Camera(), types\+::\+Matrix4x4\+::\+Matrix4x4(), types\+::operator$\ast$(), and Camera\+::transform\+View().
+
+
+\begin{DoxyCode}
+270                                                         \{
+271             \hyperlink{structtypes_1_1_vector4_d_a00b1b79bf63dc9b91d3100bbceb8b061}{x} = xx;
+272             \hyperlink{structtypes_1_1_vector4_d_ae3bf75e7f1e4430aecab11f181c53b61}{y} = yy;
+273             \hyperlink{structtypes_1_1_vector4_d_a6384f3ff311fbdd2ed4e88d6ec548130}{z} = zz;
+274             \hyperlink{structtypes_1_1_vector4_d_a701a06571f4bf043defa2d19d086dcc1}{w} = ww;
+275         \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+% FIG 1
+
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{structtypes_1_1_vector4_d_a9e935c0af1c2779e6ad6cf64386076ba}{}\index{types\+::\+Vector4\+D@{types\+::\+Vector4\+D}!length@{length}}
+\index{length@{length}!types\+::\+Vector4\+D@{types\+::\+Vector4\+D}}
+\subsubsection[{length}]{\setlength{\rightskip}{0pt plus 5cm}float types\+::\+Vector4\+D\+::length (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{structtypes_1_1_vector4_d_a9e935c0af1c2779e6ad6cf64386076ba}
+
+
+Gets the length of the vector. 
+
+\begin{DoxyReturn}{Returns}
+float -\/ The vector\textquotesingle{}s length as a floating-\/point number
+\end{DoxyReturn}
+length calculates and returns the length of the vector (after determining if it is a vector) using its x, y, and z values. 
+
+Definition at line 284 of file Types.\+h.
+
+
+
+References z.
+
+
+
+Referenced by normalise().
+
+
+\begin{DoxyCode}
+284                       \{
+285             \textcolor{keywordflow}{if}(\hyperlink{structtypes_1_1_vector4_d_a6384f3ff311fbdd2ed4e88d6ec548130}{z} != 0.0f)
+286                 \textcolor{keywordflow}{return} (sqrt(\hyperlink{structtypes_1_1_vector4_d_a00b1b79bf63dc9b91d3100bbceb8b061}{x}*\hyperlink{structtypes_1_1_vector4_d_a00b1b79bf63dc9b91d3100bbceb8b061}{x} + \hyperlink{structtypes_1_1_vector4_d_ae3bf75e7f1e4430aecab11f181c53b61}{y}*\hyperlink{structtypes_1_1_vector4_d_ae3bf75e7f1e4430aecab11f181c53b61}{y} + \hyperlink{structtypes_1_1_vector4_d_a6384f3ff311fbdd2ed4e88d6ec548130}{z}*\hyperlink{structtypes_1_1_vector4_d_a6384f3ff311fbdd2ed4e88d6ec548130}{z}));
+287             \textcolor{keywordflow}{else}
+288                 \textcolor{keywordflow}{return} 0.0f;
+289         \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+% FIG 2
+
+
+\hypertarget{structtypes_1_1_vector4_d_aa5b5db5d0c898a79db9230bc6c8d7c24}{}\index{types\+::\+Vector4\+D@{types\+::\+Vector4\+D}!normalise@{normalise}}
+\index{normalise@{normalise}!types\+::\+Vector4\+D@{types\+::\+Vector4\+D}}
+\subsubsection[{normalise}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vector4\+D} types\+::\+Vector4\+D\+::normalise (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{structtypes_1_1_vector4_d_aa5b5db5d0c898a79db9230bc6c8d7c24}
+
+
+Gets the normalised version of the vector. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{structtypes_1_1_vector4_d}{Vector4\+D} -\/ The normalised vector
+\end{DoxyReturn}
+normalise calculates and returns the normalised version of the vector using its x, y, and z values. 
+
+Definition at line 298 of file Types.\+h.
+
+
+
+References length(), Vector4\+D(), x, y, and z.
+
+
+\begin{DoxyCode}
+298                             \{
+299             \hyperlink{structtypes_1_1_vector4_d_a0df265dd69de197b5259c7bb3a5d4fab}{Vector4D} normalVec = \hyperlink{structtypes_1_1_vector4_d_a0df265dd69de197b5259c7bb3a5d4fab}{Vector4D}();
+300             \textcolor{keywordtype}{float} \hyperlink{structtypes_1_1_vector4_d_a9e935c0af1c2779e6ad6cf64386076ba}{length} = this->\hyperlink{structtypes_1_1_vector4_d_a9e935c0af1c2779e6ad6cf64386076ba}{length}();
+301 
+302             \textcolor{keywordflow}{if}(length != 0)\{
+303                 normalVec.x = \hyperlink{structtypes_1_1_vector4_d_a00b1b79bf63dc9b91d3100bbceb8b061}{x} / \hyperlink{structtypes_1_1_vector4_d_a9e935c0af1c2779e6ad6cf64386076ba}{length};
+304                 normalVec.y = \hyperlink{structtypes_1_1_vector4_d_ae3bf75e7f1e4430aecab11f181c53b61}{y} / \hyperlink{structtypes_1_1_vector4_d_a9e935c0af1c2779e6ad6cf64386076ba}{length};
+305                 normalVec.z = \hyperlink{structtypes_1_1_vector4_d_a6384f3ff311fbdd2ed4e88d6ec548130}{z} / \hyperlink{structtypes_1_1_vector4_d_a9e935c0af1c2779e6ad6cf64386076ba}{length};
+306             \}
+307 
+308             \textcolor{keywordflow}{return} normalVec;
+309         \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+% FIG 3
+
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{structtypes_1_1_vector4_d_a701a06571f4bf043defa2d19d086dcc1}{}\index{types\+::\+Vector4\+D@{types\+::\+Vector4\+D}!w@{w}}
+\index{w@{w}!types\+::\+Vector4\+D@{types\+::\+Vector4\+D}}
+\subsubsection[{w}]{\setlength{\rightskip}{0pt plus 5cm}float types\+::\+Vector4\+D\+::w}\label{structtypes_1_1_vector4_d_a701a06571f4bf043defa2d19d086dcc1}
+
+
+Definition at line 253 of file Types.\+h.
+
+
+
+Referenced by types\+::operator$\ast$(), and Vector4\+D().
+
+\hypertarget{structtypes_1_1_vector4_d_a00b1b79bf63dc9b91d3100bbceb8b061}{}\index{types\+::\+Vector4\+D@{types\+::\+Vector4\+D}!x@{x}}
+\index{x@{x}!types\+::\+Vector4\+D@{types\+::\+Vector4\+D}}
+\subsubsection[{x}]{\setlength{\rightskip}{0pt plus 5cm}float types\+::\+Vector4\+D\+::x}\label{structtypes_1_1_vector4_d_a00b1b79bf63dc9b91d3100bbceb8b061}
+
+
+Definition at line 250 of file Types.\+h.
+
+
+
+Referenced by normalise(), types\+::operator$\ast$(), and Vector4\+D().
+
+\hypertarget{structtypes_1_1_vector4_d_ae3bf75e7f1e4430aecab11f181c53b61}{}\index{types\+::\+Vector4\+D@{types\+::\+Vector4\+D}!y@{y}}
+\index{y@{y}!types\+::\+Vector4\+D@{types\+::\+Vector4\+D}}
+\subsubsection[{y}]{\setlength{\rightskip}{0pt plus 5cm}float types\+::\+Vector4\+D\+::y}\label{structtypes_1_1_vector4_d_ae3bf75e7f1e4430aecab11f181c53b61}
+
+
+Definition at line 251 of file Types.\+h.
+
+
+
+Referenced by normalise(), types\+::operator$\ast$(), and Vector4\+D().
+
+\hypertarget{structtypes_1_1_vector4_d_a6384f3ff311fbdd2ed4e88d6ec548130}{}\index{types\+::\+Vector4\+D@{types\+::\+Vector4\+D}!z@{z}}
+\index{z@{z}!types\+::\+Vector4\+D@{types\+::\+Vector4\+D}}
+\subsubsection[{z}]{\setlength{\rightskip}{0pt plus 5cm}float types\+::\+Vector4\+D\+::z}\label{structtypes_1_1_vector4_d_a6384f3ff311fbdd2ed4e88d6ec548130}
+
+
+Definition at line 252 of file Types.\+h.
+
+
+
+Referenced by length(), normalise(), types\+::operator$\ast$(), and Vector4\+D().
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_types_8h}{Types.\+h}\end{DoxyCompactItemize}

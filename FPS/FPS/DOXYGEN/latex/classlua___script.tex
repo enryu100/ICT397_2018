@@ -1,0 +1,206 @@
+\hypertarget{classlua___script}{}\section{lua\+\_\+\+Script Class Reference}
+\label{classlua___script}\index{lua\+\_\+\+Script@{lua\+\_\+\+Script}}
+
+
+{\ttfamily \#include $<$lua\+\_\+\+Script.\+h$>$}
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classlua___script_1_1h}{h}
+\begin{DoxyCompactList}\small\item\em A class that deals with all lua files. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classlua___script_abf302c385f1093b877c8a1ac9b080ecf}{lua\+\_\+\+Script} (void)
+\begin{DoxyCompactList}\small\item\em default constructer for Lua, assigns a newstate/libs \end{DoxyCompactList}\item 
+\hyperlink{classlua___script_a464a1ff7c13d51c248ce839c3b97f126}{$\sim$lua\+\_\+\+Script} (void)
+\begin{DoxyCompactList}\small\item\em default deconstructer for Date \end{DoxyCompactList}\item 
+void \hyperlink{classlua___script_a36a514765461a25d3b744eb2e5acff9d}{Load} (const char $\ast$file\+Name)
+\begin{DoxyCompactList}\small\item\em Loads in a lua file. \end{DoxyCompactList}\item 
+void \hyperlink{classlua___script_a798ee3f69134941da3938bfa2124e49f}{Close} ()
+\begin{DoxyCompactList}\small\item\em closes the lua file \end{DoxyCompactList}\item 
+int \hyperlink{classlua___script_a783ddef367f1029961f1686579eaa2d4}{Read\+\_\+\+Variable\+\_\+\+Int} (const char $\ast$var\+Name)
+\begin{DoxyCompactList}\small\item\em Reads in an int from a lua file. \end{DoxyCompactList}\item 
+string \hyperlink{classlua___script_a612e9ec89ff4f7f132d3ee1b2a2884ec}{Read\+\_\+\+Variable\+\_\+\+String} (const char $\ast$var\+Name)
+\begin{DoxyCompactList}\small\item\em Reads in a string from a lua file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 28 of file lua\+\_\+\+Script.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classlua___script_abf302c385f1093b877c8a1ac9b080ecf}{}\index{lua\+\_\+\+Script@{lua\+\_\+\+Script}!lua\+\_\+\+Script@{lua\+\_\+\+Script}}
+\index{lua\+\_\+\+Script@{lua\+\_\+\+Script}!lua\+\_\+\+Script@{lua\+\_\+\+Script}}
+\subsubsection[{lua\+\_\+\+Script}]{\setlength{\rightskip}{0pt plus 5cm}lua\+\_\+\+Script\+::lua\+\_\+\+Script (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{classlua___script_abf302c385f1093b877c8a1ac9b080ecf}
+
+
+default constructer for Lua, assigns a newstate/libs 
+
+
+
+Definition at line 4 of file lua\+\_\+\+Script.\+cpp.
+
+
+\begin{DoxyCode}
+5 \{
+6     L=luaL\_newstate();
+7     luaL\_openlibs(L);
+8 \}
+\end{DoxyCode}
+\hypertarget{classlua___script_a464a1ff7c13d51c248ce839c3b97f126}{}\index{lua\+\_\+\+Script@{lua\+\_\+\+Script}!````~lua\+\_\+\+Script@{$\sim$lua\+\_\+\+Script}}
+\index{````~lua\+\_\+\+Script@{$\sim$lua\+\_\+\+Script}!lua\+\_\+\+Script@{lua\+\_\+\+Script}}
+\subsubsection[{$\sim$lua\+\_\+\+Script}]{\setlength{\rightskip}{0pt plus 5cm}lua\+\_\+\+Script\+::$\sim$lua\+\_\+\+Script (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{classlua___script_a464a1ff7c13d51c248ce839c3b97f126}
+
+
+default deconstructer for Date 
+
+
+
+Definition at line 11 of file lua\+\_\+\+Script.\+cpp.
+
+
+\begin{DoxyCode}
+12 \{
+13 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classlua___script_a798ee3f69134941da3938bfa2124e49f}{}\index{lua\+\_\+\+Script@{lua\+\_\+\+Script}!Close@{Close}}
+\index{Close@{Close}!lua\+\_\+\+Script@{lua\+\_\+\+Script}}
+\subsubsection[{Close}]{\setlength{\rightskip}{0pt plus 5cm}void lua\+\_\+\+Script\+::\+Close (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classlua___script_a798ee3f69134941da3938bfa2124e49f}
+
+
+closes the lua file 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line 19 of file lua\+\_\+\+Script.\+cpp.
+
+
+\begin{DoxyCode}
+19                       \{
+20     lua\_close(L);
+21 \}
+\end{DoxyCode}
+\hypertarget{classlua___script_a36a514765461a25d3b744eb2e5acff9d}{}\index{lua\+\_\+\+Script@{lua\+\_\+\+Script}!Load@{Load}}
+\index{Load@{Load}!lua\+\_\+\+Script@{lua\+\_\+\+Script}}
+\subsubsection[{Load}]{\setlength{\rightskip}{0pt plus 5cm}void lua\+\_\+\+Script\+::\+Load (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{file\+Name}
+\end{DoxyParamCaption}
+)}\label{classlua___script_a36a514765461a25d3b744eb2e5acff9d}
+
+
+Loads in a lua file. 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & -\/ const char$\ast$ \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 15 of file lua\+\_\+\+Script.\+cpp.
+
+
+\begin{DoxyCode}
+15                                          \{
+16     luaL\_dofile(L, fileName);
+17 \}
+\end{DoxyCode}
+\hypertarget{classlua___script_a783ddef367f1029961f1686579eaa2d4}{}\index{lua\+\_\+\+Script@{lua\+\_\+\+Script}!Read\+\_\+\+Variable\+\_\+\+Int@{Read\+\_\+\+Variable\+\_\+\+Int}}
+\index{Read\+\_\+\+Variable\+\_\+\+Int@{Read\+\_\+\+Variable\+\_\+\+Int}!lua\+\_\+\+Script@{lua\+\_\+\+Script}}
+\subsubsection[{Read\+\_\+\+Variable\+\_\+\+Int}]{\setlength{\rightskip}{0pt plus 5cm}int lua\+\_\+\+Script\+::\+Read\+\_\+\+Variable\+\_\+\+Int (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{var\+Name}
+\end{DoxyParamCaption}
+)}\label{classlua___script_a783ddef367f1029961f1686579eaa2d4}
+
+
+Reads in an int from a lua file. 
+
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em var\+Name} & -\/ const char$\ast$ \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 24 of file lua\+\_\+\+Script.\+cpp.
+
+
+\begin{DoxyCode}
+24                                                     \{
+25     lua\_settop(L,0);
+26     lua\_getglobal(L, varName);
+27     \textcolor{keywordtype}{int} intVar = (int)lua\_tonumber(L, 1);
+28     lua\_pop(L, 1);
+29     \textcolor{keywordflow}{return}(intVar);
+30 \}
+\end{DoxyCode}
+\hypertarget{classlua___script_a612e9ec89ff4f7f132d3ee1b2a2884ec}{}\index{lua\+\_\+\+Script@{lua\+\_\+\+Script}!Read\+\_\+\+Variable\+\_\+\+String@{Read\+\_\+\+Variable\+\_\+\+String}}
+\index{Read\+\_\+\+Variable\+\_\+\+String@{Read\+\_\+\+Variable\+\_\+\+String}!lua\+\_\+\+Script@{lua\+\_\+\+Script}}
+\subsubsection[{Read\+\_\+\+Variable\+\_\+\+String}]{\setlength{\rightskip}{0pt plus 5cm}string lua\+\_\+\+Script\+::\+Read\+\_\+\+Variable\+\_\+\+String (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{var\+Name}
+\end{DoxyParamCaption}
+)}\label{classlua___script_a612e9ec89ff4f7f132d3ee1b2a2884ec}
+
+
+Reads in a string from a lua file. 
+
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em var\+Name} & -\/ const char$\ast$ \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 32 of file lua\+\_\+\+Script.\+cpp.
+
+
+\begin{DoxyCode}
+32                                                           \{
+33     lua\_settop(L,0);
+34     lua\_getglobal(L, varName);
+35     \textcolor{keywordtype}{string} stringVar = (string)lua\_tostring(L, 1);
+36     lua\_pop(L, 1);
+37     \textcolor{keywordflow}{return}(stringVar);
+38 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{lua___script_8h}{lua\+\_\+\+Script.\+h}\item 
+\hyperlink{lua___script_8cpp}{lua\+\_\+\+Script.\+cpp}\end{DoxyCompactItemize}

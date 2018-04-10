@@ -1,0 +1,374 @@
+\hypertarget{classgraphics_1_1_graphics_engine}{}\section{graphics\+:\+:Graphics\+Engine Class Reference}
+\label{classgraphics_1_1_graphics_engine}\index{graphics\+::\+Graphics\+Engine@{graphics\+::\+Graphics\+Engine}}
+
+
+A class that renders objects in a game to the screen.  
+
+
+
+
+{\ttfamily \#include $<$graphics.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classgraphics_1_1_graphics_engine_aeeb84a8028c8301bc4702430447024ed}{Graphics\+Engine} ()
+\item 
+\hyperlink{classgraphics_1_1_graphics_engine_ab67afeefbc9f1c284f6ce310c31ae8f6}{$\sim$\+Graphics\+Engine} ()
+\item 
+void \hyperlink{classgraphics_1_1_graphics_engine_a021c411d51dc4dbf05c9abdfdb0468e1}{init} (std\+::vector$<$ std\+::string $>$ model\+Files, std\+::vector$<$ std\+::string $>$ texture\+Files)
+\begin{DoxyCompactList}\small\item\em Initialises the engine and view. \end{DoxyCompactList}\item 
+void \hyperlink{classgraphics_1_1_graphics_engine_ae4590b93ed39773136edb4b27b141815}{display} (double cam\+X, double cam\+Y, double cam\+Z, double look\+X, double look\+Y, double look\+Z, double up\+X, double up\+Y, double up\+Z)
+\begin{DoxyCompactList}\small\item\em Displays the game world and its contents from a camera view. \end{DoxyCompactList}\item 
+\hyperlink{structevents_1_1game_event}{events\+::game\+Event} \hyperlink{classgraphics_1_1_graphics_engine_a724a408b67faaedf35c16468240ba8b8}{poll\+Events} ()
+\begin{DoxyCompactList}\small\item\em Polls for input from the user. \end{DoxyCompactList}\item 
+void \hyperlink{classgraphics_1_1_graphics_engine_a9a8161aa35dac0cbd41bc196dbd2955c}{set\+Scales} (float scal, float xzscal)
+\begin{DoxyCompactList}\small\item\em sets scale variables for heightmap \end{DoxyCompactList}\item 
+void \hyperlink{classgraphics_1_1_graphics_engine_a85e16ef5c33aa542e36cc977632fe91d}{get\+Heightfield\+Data} (const std\+::vector$<$ unsigned char $>$ data)
+\begin{DoxyCompactList}\small\item\em Retrives data for a heightfield. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A class that renders objects in a game to the screen. 
+
+The \hyperlink{classgraphics_1_1_graphics_engine}{Graphics\+Engine} class is responsible for displaying the terrain and all of the in-\/ game objects with a heightfield and a set of models associated with said objects. Presently, it is also responsible for polling events due to the nature of S\+D\+L, though this is something that should be changed if possible.
+
+\begin{DoxyAuthor}{Author}
+Alfred Malone 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+01 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+17/4/2017 Alfred Malone, created class, wrapping free\+G\+L\+U\+T
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Alfred Malone 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+02 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+19/4/2017 Alfred Malone, switched from free\+G\+L\+U\+T to S\+D\+L dependency (though free\+G\+L\+U\+T is still used for Open\+G\+L calls)
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Alfred Malone 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+03 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+21/4/2017 Alfred Malone, added Models
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Alfred Malone 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+04 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+26/4/2017 Alfred Malone, added Doxygen comments
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Alfred Malone 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+05 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+31/5/2017 Alfred Malone, added texture loading through S\+D\+L (currently only for heightmap)
+\end{DoxyDate}
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000001}{Todo}]Implement the models to allow for player and enemies to appear. \end{DoxyRefDesc}
+
+
+Definition at line 55 of file graphics.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classgraphics_1_1_graphics_engine_aeeb84a8028c8301bc4702430447024ed}{}\index{graphics\+::\+Graphics\+Engine@{graphics\+::\+Graphics\+Engine}!Graphics\+Engine@{Graphics\+Engine}}
+\index{Graphics\+Engine@{Graphics\+Engine}!graphics\+::\+Graphics\+Engine@{graphics\+::\+Graphics\+Engine}}
+\subsubsection[{Graphics\+Engine}]{\setlength{\rightskip}{0pt plus 5cm}Graphics\+Engine\+::\+Graphics\+Engine (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classgraphics_1_1_graphics_engine_aeeb84a8028c8301bc4702430447024ed}
+The constructor for a \hyperlink{classgraphics_1_1_graphics_engine}{Graphics\+Engine} object. Initialises the window size. 
+
+Definition at line 10 of file graphics.\+cpp.
+
+
+\begin{DoxyCode}
+10                               \{
+11     window = \textcolor{keyword}{nullptr};
+12     screenWidth = 1024;
+13     screenHeight = 720;
+14     textureMap = \textcolor{keyword}{false};
+15 \}
+\end{DoxyCode}
+\hypertarget{classgraphics_1_1_graphics_engine_ab67afeefbc9f1c284f6ce310c31ae8f6}{}\index{graphics\+::\+Graphics\+Engine@{graphics\+::\+Graphics\+Engine}!````~Graphics\+Engine@{$\sim$\+Graphics\+Engine}}
+\index{````~Graphics\+Engine@{$\sim$\+Graphics\+Engine}!graphics\+::\+Graphics\+Engine@{graphics\+::\+Graphics\+Engine}}
+\subsubsection[{$\sim$\+Graphics\+Engine}]{\setlength{\rightskip}{0pt plus 5cm}Graphics\+Engine\+::$\sim$\+Graphics\+Engine (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classgraphics_1_1_graphics_engine_ab67afeefbc9f1c284f6ce310c31ae8f6}
+The destructor for a \hyperlink{classgraphics_1_1_graphics_engine}{Graphics\+Engine} object. 
+
+Definition at line 17 of file graphics.\+cpp.
+
+
+\begin{DoxyCode}
+17                                \{
+18 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classgraphics_1_1_graphics_engine_ae4590b93ed39773136edb4b27b141815}{}\index{graphics\+::\+Graphics\+Engine@{graphics\+::\+Graphics\+Engine}!display@{display}}
+\index{display@{display}!graphics\+::\+Graphics\+Engine@{graphics\+::\+Graphics\+Engine}}
+\subsubsection[{display}]{\setlength{\rightskip}{0pt plus 5cm}void Graphics\+Engine\+::display (
+\begin{DoxyParamCaption}
+\item[{double}]{cam\+X, }
+\item[{double}]{cam\+Y, }
+\item[{double}]{cam\+Z, }
+\item[{double}]{look\+X, }
+\item[{double}]{look\+Y, }
+\item[{double}]{look\+Z, }
+\item[{double}]{up\+X, }
+\item[{double}]{up\+Y, }
+\item[{double}]{up\+Z}
+\end{DoxyParamCaption}
+)}\label{classgraphics_1_1_graphics_engine_ae4590b93ed39773136edb4b27b141815}
+
+
+Displays the game world and its contents from a camera view. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cam\+X} & -\/ The x-\/co-\/ordinate of the camera\textquotesingle{}s position in the game space. \\
+\hline
+{\em cam\+Y} & -\/ The y-\/co-\/ordinate of the camera\textquotesingle{}s position in the game space. \\
+\hline
+{\em cam\+Z} & -\/ The z-\/co-\/ordinate of the camera\textquotesingle{}s position in the game space. \\
+\hline
+{\em look\+X} & -\/ The x-\/co-\/ordinate of the point in the game space the camera is looking at. \\
+\hline
+{\em look\+Y} & -\/ The y-\/co-\/ordinate of the point in the game space the camera is looking at. \\
+\hline
+{\em look\+Z} & -\/ The z-\/co-\/ordinate of the point in the game space the camera is looking at. \\
+\hline
+{\em up\+X} & -\/ The x value of the vector that defines \char`\"{}up\char`\"{} for the camera. \\
+\hline
+{\em up\+Y} & -\/ The y value of the vector that defines \char`\"{}up\char`\"{} for the camera. \\
+\hline
+{\em up\+Z} & -\/ The z value of the vector that defines \char`\"{}up\char`\"{} for the camera.\\
+\hline
+\end{DoxyParams}
+display uses camera co-\/ordinates to create a view of the game world and draws the world\textquotesingle{}s objects to the view. 
+
+Definition at line 67 of file graphics.\+cpp.
+
+
+\begin{DoxyCode}
+67                                                                                                            
+                                          \{
+68     glClear(GL\_COLOR\_BUFFER\_BIT | GL\_DEPTH\_BUFFER\_BIT);
+69 
+70     glLoadIdentity();
+71 
+72     gluLookAt(camX, camY, camZ, lookX, lookY, lookZ, upX, upY, upZ);
+73 
+74     drawTerrain();
+75     drawModels();
+76 
+77     SDL\_GL\_SwapWindow(window);
+78 \}
+\end{DoxyCode}
+\hypertarget{classgraphics_1_1_graphics_engine_a85e16ef5c33aa542e36cc977632fe91d}{}\index{graphics\+::\+Graphics\+Engine@{graphics\+::\+Graphics\+Engine}!get\+Heightfield\+Data@{get\+Heightfield\+Data}}
+\index{get\+Heightfield\+Data@{get\+Heightfield\+Data}!graphics\+::\+Graphics\+Engine@{graphics\+::\+Graphics\+Engine}}
+\subsubsection[{get\+Heightfield\+Data}]{\setlength{\rightskip}{0pt plus 5cm}void Graphics\+Engine\+::get\+Heightfield\+Data (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ unsigned char $>$}]{data}
+\end{DoxyParamCaption}
+)}\label{classgraphics_1_1_graphics_engine_a85e16ef5c33aa542e36cc977632fe91d}
+
+
+Retrives data for a heightfield. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & -\/ The heightfield data.\\
+\hline
+\end{DoxyParams}
+get\+Heightfield\+Data gets the data for a heightfield so that it can be drawn in the display function. This should only be called when loading the heightfield for the first time, or when a new heightfield needs to be displayed. 
+
+Definition at line 116 of file graphics.\+cpp.
+
+
+\begin{DoxyCode}
+116                                                                        \{
+117     heightfieldData = data;
+118 \}
+\end{DoxyCode}
+\hypertarget{classgraphics_1_1_graphics_engine_a021c411d51dc4dbf05c9abdfdb0468e1}{}\index{graphics\+::\+Graphics\+Engine@{graphics\+::\+Graphics\+Engine}!init@{init}}
+\index{init@{init}!graphics\+::\+Graphics\+Engine@{graphics\+::\+Graphics\+Engine}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}void Graphics\+Engine\+::init (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ std\+::string $>$}]{model\+Files, }
+\item[{std\+::vector$<$ std\+::string $>$}]{texture\+Files}
+\end{DoxyParamCaption}
+)}\label{classgraphics_1_1_graphics_engine_a021c411d51dc4dbf05c9abdfdb0468e1}
+
+
+Initialises the engine and view. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em model\+Files} & -\/ a list of file names for the models \\
+\hline
+{\em texture\+Files} & -\/ a list of file names for the textures\\
+\hline
+\end{DoxyParams}
+init initialises the engine\textquotesingle{}s components -\/ the window, Open\+G\+L context, models, and textures. \hyperlink{classgraphics_1_1_model}{Model} and texture data are loaded in with the file names provided as arguments. 
+
+Definition at line 20 of file graphics.\+cpp.
+
+
+\begin{DoxyCode}
+20                                                                                \{
+21     SDL\_GLContext context;
+22 
+23     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} index = 0; index < modelFiles.size(); index++)\{
+24         \hyperlink{classgraphics_1_1_model}{Model} newModel;
+25         \textcolor{keywordflow}{if}(newModel.\hyperlink{classgraphics_1_1_model_a64ac4fc8a029a5bdda2a5e8744aa2093}{loadData}(modelFiles[index]))\{
+26             models.push\_back(newModel);
+27             cout << modelFiles[index] << \textcolor{stringliteral}{" has been loaded!"} << endl;
+28         \}
+29     \}
+30 
+31     \textcolor{comment}{// Initialise SDL}
+32     SDL\_Init(SDL\_INIT\_EVERYTHING);
+33 
+34     \textcolor{comment}{//Create window. Hard-coded values will be changed when everything works.}
+35     window = SDL\_CreateWindow(\textcolor{stringliteral}{"Test"}, SDL\_WINDOWPOS\_CENTERED, SDL\_WINDOWPOS\_CENTERED, screenWidth, 
+      screenHeight, SDL\_WINDOW\_OPENGL);
+36     \textcolor{comment}{//SDL\_SetRelativeMouseMode(SDL\_TRUE);}
+37     SDL\_ShowCursor(0);
+38 
+39     \textcolor{keywordflow}{if}(window == \textcolor{keyword}{nullptr})
+40         exit(1); \textcolor{comment}{// A bit brash, but gets the job done}
+41 
+42     context = SDL\_GL\_CreateContext(window);
+43 
+44     \textcolor{keywordflow}{if}(context == \textcolor{keyword}{nullptr})
+45         exit(1);
+46 
+47     glewExperimental = \textcolor{keyword}{true};
+48     \textcolor{keywordflow}{if}(glewInit() != GLEW\_OK)
+49         \textcolor{keywordflow}{return};
+50 
+51     glEnable(GL\_TEXTURE\_2D);
+52 
+53     cout << terrainTexID << endl;
+54     terrainTexID = getTexture(textureFiles[0].c\_str());
+55     cout << terrainTexID << endl;
+56 
+57     SDL\_GL\_SetAttribute(SDL\_GL\_DOUBLEBUFFER, 1);
+58     glClearColor(0.0f, 0.0f, 1.0f, 1.0f);
+59 
+60     glMatrixMode(GL\_PROJECTION);
+61     glLoadIdentity();
+62     glViewport(0, 0, screenWidth, screenHeight);
+63     gluPerspective(45.0, 1.0, 0.0, 100.0);
+64     glMatrixMode(GL\_MODELVIEW);
+65 \}
+\end{DoxyCode}
+\hypertarget{classgraphics_1_1_graphics_engine_a724a408b67faaedf35c16468240ba8b8}{}\index{graphics\+::\+Graphics\+Engine@{graphics\+::\+Graphics\+Engine}!poll\+Events@{poll\+Events}}
+\index{poll\+Events@{poll\+Events}!graphics\+::\+Graphics\+Engine@{graphics\+::\+Graphics\+Engine}}
+\subsubsection[{poll\+Events}]{\setlength{\rightskip}{0pt plus 5cm}{\bf game\+Event} Graphics\+Engine\+::poll\+Events (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classgraphics_1_1_graphics_engine_a724a408b67faaedf35c16468240ba8b8}
+
+
+Polls for input from the user. 
+
+\begin{DoxyReturn}{Returns}
+game\+Event -\/ All of the new input
+\end{DoxyReturn}
+poll\+Events polls for any user input, adds any new input to an event object, then returns it to the calling function. This should not be the responsibility of a graphics engine, but it\textquotesingle{}s unavoidable for now. 
+
+Definition at line 80 of file graphics.\+cpp.
+
+
+\begin{DoxyCode}
+80                                     \{
+81     SDL\_Event eventSDL;
+82     \hyperlink{structevents_1_1game_event}{gameEvent} eventGame;
+83 
+84     \textcolor{keywordflow}{while}(SDL\_PollEvent(&eventSDL))\{
+85         eventGame.\hyperlink{structevents_1_1game_event_a96b2729eb6d01e42431da7ac1a4d28a2}{hasEvents} = \textcolor{keyword}{true};
+86 
+87         \textcolor{keywordflow}{switch}(eventSDL.type)\{
+88         \textcolor{keywordflow}{case} SDL\_QUIT:
+89             eventGame.\hyperlink{structevents_1_1game_event_a201a773c16c73b1c8e5101274cc4de97}{hasQuit} = \textcolor{keyword}{true};
+90             \textcolor{keywordflow}{break};
+91         \textcolor{keywordflow}{case} SDL\_MOUSEMOTION:
+92             eventGame.\hyperlink{structevents_1_1game_event_a0d128e01aa0f7a2d1dec15b3753872e2}{mouseX} = eventSDL.motion.x;
+93             eventGame.\hyperlink{structevents_1_1game_event_adbeaaa754e8cd4d5895ac37162d0bd6d}{mouseY} = eventSDL.motion.y;
+94             \textcolor{keywordflow}{break};
+95         \textcolor{keywordflow}{case} SDL\_KEYDOWN:
+96             eventGame.\hyperlink{structevents_1_1game_event_ac32c30a19cd0332094317a2f42e25b4b}{keysPressed}.push\_back((\textcolor{keywordtype}{char})eventSDL.key.keysym.sym);
+97             eventGame.\hyperlink{structevents_1_1game_event_a81ecfd12bec9ce82b20462df4442c6c0}{keyDown} = \textcolor{keyword}{true};
+98             \textcolor{keywordflow}{break};
+99         \textcolor{keywordflow}{default}:
+100             \textcolor{keywordflow}{break};
+101         \}
+102     \}
+103 
+104     SDL\_EventState(SDL\_MOUSEMOTION, SDL\_IGNORE);
+105         SDL\_WarpMouseInWindow(window, screenWidth/2, screenHeight/2);
+106     SDL\_EventState(SDL\_MOUSEMOTION, SDL\_ENABLE);
+107 
+108     \textcolor{keywordflow}{return} eventGame;
+109 \}
+\end{DoxyCode}
+\hypertarget{classgraphics_1_1_graphics_engine_a9a8161aa35dac0cbd41bc196dbd2955c}{}\index{graphics\+::\+Graphics\+Engine@{graphics\+::\+Graphics\+Engine}!set\+Scales@{set\+Scales}}
+\index{set\+Scales@{set\+Scales}!graphics\+::\+Graphics\+Engine@{graphics\+::\+Graphics\+Engine}}
+\subsubsection[{set\+Scales}]{\setlength{\rightskip}{0pt plus 5cm}graphics\+::\+Graphics\+Engine\+::set\+Scales (
+\begin{DoxyParamCaption}
+\item[{float}]{scal, }
+\item[{float}]{xzscal}
+\end{DoxyParamCaption}
+)}\label{classgraphics_1_1_graphics_engine_a9a8161aa35dac0cbd41bc196dbd2955c}
+
+
+sets scale variables for heightmap 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scal} & the y-\/axis scale \\
+\hline
+{\em xzscal} & the z-\/ and x-\/axis scale \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 111 of file graphics.\+cpp.
+
+
+\begin{DoxyCode}
+111                                                       \{
+112     scale = scal;
+113     xzscale = xzscal;
+114 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{graphics_8h}{graphics.\+h}\item 
+\hyperlink{graphics_8cpp}{graphics.\+cpp}\end{DoxyCompactItemize}

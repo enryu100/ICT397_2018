@@ -1,0 +1,11 @@
+digraph "types::Vector2D::normalise"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="types::Vector2D::normalise",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="types::Vector2D::length",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structtypes_1_1_vector2_d.html#ac46977660e97a02defb9410870b287b7",tooltip="Gets the length of the vector. "];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="types::Vector2D::Vector2D",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structtypes_1_1_vector2_d.html#adda77a848bdd16a1a5ef040f6b2eb22a"];
+}

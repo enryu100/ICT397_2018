@@ -1,0 +1,209 @@
+\hypertarget{class_camera}{}\section{Camera Class Reference}
+\label{class_camera}\index{Camera@{Camera}}
+
+
+{\ttfamily \#include $<$Camera.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_camera_a01f94c3543f56ede7af49dc778f19331}{Camera} ()
+\item 
+void \hyperlink{class_camera_a32fb83395d75711d7b50ce022439c929}{set\+Rotate\+Speed} (const double \&tmp\+Speed)
+\item 
+void \hyperlink{class_camera_a419891b41cdf19be447cc8bc5f9b385a}{set\+Move\+Speed} (const double \&tmp\+Speed)
+\item 
+void \hyperlink{class_camera_a07a02bc4c1c98952f55320133f3021f9}{transform\+View} (float delta\+X, float delta\+Y, float delta\+Z, float delta\+X\+Angle, float delta\+Y\+Angle, float delta\+Z\+Angle)
+\item 
+\hyperlink{structtypes_1_1_matrix4x4}{types\+::\+Matrix4x4} \hyperlink{class_camera_a1a50c82cd914b5a216039742338dc9d6}{get\+View\+Matrix} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A class that manages the camera/view parts of the program. Initially was based off the \hyperlink{class_camera}{Camera} class in Shay\textquotesingle{}s World, but was later changed due to plans to use matrix transformations. Later was changed yet again, due to issues. \begin{DoxyAuthor}{Author}
+Brandon Lim 
+
+Alfred Malone 
+
+Ben Porter 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+28/04/2017 changed how camera class recieves it\textquotesingle{}s lookat values, rotate x, y no longer gets used 
+
+
+\end{DoxyDate}
+
+
+Definition at line 19 of file Camera.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_camera_a01f94c3543f56ede7af49dc778f19331}{}\index{Camera@{Camera}!Camera@{Camera}}
+\index{Camera@{Camera}!Camera@{Camera}}
+\subsubsection[{Camera}]{\setlength{\rightskip}{0pt plus 5cm}Camera\+::\+Camera (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_camera_a01f94c3543f56ede7af49dc778f19331}
+A constructor for a camera. A basic constructor for a camera. Should be a singleton. 
+
+Definition at line 7 of file Camera.\+cpp.
+
+
+
+References types\+::\+Matrix4x4\+::\+Matrix4x4(), types\+::\+Vector3\+D\+::\+Vector3\+D(), and types\+::\+Vector4\+D\+::\+Vector4\+D().
+
+
+\begin{DoxyCode}
+7               \{
+8     m\_rotateSpeed = 0.0f;
+9     m\_moveSpeed = 0.0f;
+10     position = \hyperlink{structtypes_1_1_vector3_d}{Vector3D}(250.0f, 0.0f, 250.0f);
+11     right = \hyperlink{structtypes_1_1_vector3_d}{Vector3D}(1.0f, 0.0f, 0.0f);
+12     up = \hyperlink{structtypes_1_1_vector3_d}{Vector3D}(0.0f, 1.0f, 0.0f);
+13     forward = \hyperlink{structtypes_1_1_vector3_d}{Vector3D}(0.0f, 0.0f, 1.0f);
+14     viewMatrix = \hyperlink{structtypes_1_1_matrix4x4}{Matrix4x4}(\hyperlink{structtypes_1_1_vector4_d}{Vector4D}(1.0f, 0.0f, 0.0f, 0.0f),
+15                            \hyperlink{structtypes_1_1_vector4_d}{Vector4D}(0.0f, 1.0f, 0.0f, 0.0f),
+16                            \hyperlink{structtypes_1_1_vector4_d}{Vector4D}(0.0f, 0.0f, 1.0f, 0.0f),
+17                            \hyperlink{structtypes_1_1_vector4_d}{Vector4D}(0.0f, 0.0f, 0.0f, 1.0f));
+18     \textcolor{keywordtype}{float} horizontalAngle=0;
+19     \textcolor{keywordtype}{float} verticalAngle=0;
+20 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+% FIG 0
+
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_camera_a1a50c82cd914b5a216039742338dc9d6}{}\index{Camera@{Camera}!get\+View\+Matrix@{get\+View\+Matrix}}
+\index{get\+View\+Matrix@{get\+View\+Matrix}!Camera@{Camera}}
+\subsubsection[{get\+View\+Matrix}]{\setlength{\rightskip}{0pt plus 5cm}Camera\+::get\+View\+Matrix (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_camera_a1a50c82cd914b5a216039742338dc9d6}
+A get method that returns the view Matrix. 
+
+Definition at line 62 of file Camera.\+h.
+
+
+\begin{DoxyCode}
+62 \{\textcolor{keywordflow}{return} viewMatrix;\};
+\end{DoxyCode}
+\hypertarget{class_camera_a419891b41cdf19be447cc8bc5f9b385a}{}\index{Camera@{Camera}!set\+Move\+Speed@{set\+Move\+Speed}}
+\index{set\+Move\+Speed@{set\+Move\+Speed}!Camera@{Camera}}
+\subsubsection[{set\+Move\+Speed}]{\setlength{\rightskip}{0pt plus 5cm}Camera\+::set\+Move\+Speed (
+\begin{DoxyParamCaption}
+\item[{const double \&}]{tmp\+Speed}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_camera_a419891b41cdf19be447cc8bc5f9b385a}
+A function that sets the camera Move speed. A simple function to set the camera move speed at runtime. 
+\begin{DoxyParams}{Parameters}
+{\em tmp\+Speed} & the desired move speed \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 42 of file Camera.\+h.
+
+
+\begin{DoxyCode}
+42 \{m\_moveSpeed = tmpSpeed;\}
+\end{DoxyCode}
+\hypertarget{class_camera_a32fb83395d75711d7b50ce022439c929}{}\index{Camera@{Camera}!set\+Rotate\+Speed@{set\+Rotate\+Speed}}
+\index{set\+Rotate\+Speed@{set\+Rotate\+Speed}!Camera@{Camera}}
+\subsubsection[{set\+Rotate\+Speed}]{\setlength{\rightskip}{0pt plus 5cm}Camera\+::set\+Rotate\+Speed (
+\begin{DoxyParamCaption}
+\item[{const double \&}]{tmp\+Speed}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_camera_a32fb83395d75711d7b50ce022439c929}
+A function that sets the camera rotate speed. A simple function to set the camera rotate speed at runtime. 
+\begin{DoxyParams}{Parameters}
+{\em tmp\+Speed} & the desired rotate speed \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 35 of file Camera.\+h.
+
+
+\begin{DoxyCode}
+35 \{m\_rotateSpeed = tmpSpeed;\}
+\end{DoxyCode}
+\hypertarget{class_camera_a07a02bc4c1c98952f55320133f3021f9}{}\index{Camera@{Camera}!transform\+View@{transform\+View}}
+\index{transform\+View@{transform\+View}!Camera@{Camera}}
+\subsubsection[{transform\+View}]{\setlength{\rightskip}{0pt plus 5cm}Camera\+::transform\+View (
+\begin{DoxyParamCaption}
+\item[{float}]{delta\+X, }
+\item[{float}]{delta\+Y, }
+\item[{float}]{delta\+Z, }
+\item[{float}]{delta\+X\+Angle, }
+\item[{float}]{delta\+Y\+Angle, }
+\item[{float}]{delta\+Z\+Angle}
+\end{DoxyParamCaption}
+)}\label{class_camera_a07a02bc4c1c98952f55320133f3021f9}
+Changes the view matrix to move the camera. A function that receives a number of variables and transforms the matrix storing camera details to move the camera 
+\begin{DoxyParams}{Parameters}
+{\em delta\+X} & the distance to move along the X-\/axis \\
+\hline
+{\em delta\+Y} & the distance to move along the Y-\/axis \\
+\hline
+{\em delta\+Z} & the distance to move along the Z-\/axis \\
+\hline
+{\em delta\+X\+Angle} & Horizontal angle, Used to set Look\+At \\
+\hline
+{\em delta\+Y\+Angle} & Vertical angle, used to set Look\+At \\
+\hline
+{\em delta\+Z\+Angle} & the amount to rotate around the Z-\/axis \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 22 of file Camera.\+cpp.
+
+
+
+References types\+::\+Matrix4x4\+::columns, types\+::\+Vector4\+D\+::\+Vector4\+D(), types\+::\+Vector3\+D\+::x, types\+::\+Vector3\+D\+::y, and types\+::\+Vector3\+D\+::z.
+
+
+\begin{DoxyCode}
+22                                                                                                            
+       \{
+23     \textcolor{comment}{//2 and 3 are your x and z change}
+24     moveLeftRight(deltaX, deltaZ);
+25     moveUpDown(deltaY);
+26     moveForwardBack(deltaX, deltaZ);
+27     horizontalAngle = MouseX;
+28     verticalAngle = MouseY;
+29     \textcolor{keywordtype}{float} movex=LRMove;\textcolor{comment}{//, movez=LRMove;}
+30     moveLeftRight(movex, 0);
+31     viewMatrix.\hyperlink{structtypes_1_1_matrix4x4_a71eff2a403350446b93f8f11dda7b73e}{columns}[0] = \hyperlink{structtypes_1_1_vector4_d}{Vector4D}(right.\hyperlink{structtypes_1_1_vector3_d_a67f804e2d8b267b8196415f12a44b517}{x}, right.\hyperlink{structtypes_1_1_vector3_d_a02f330a5f3139f9cc3c5aead1728147c}{y}, right.\hyperlink{structtypes_1_1_vector3_d_a4266d5bca7826efcfb1fb6454affb51d}{z}, 0);
+32     \textcolor{comment}{//viewMatrix.columns[1] = Vector4D(up.x, up.y, up.z, 0);}
+33     \textcolor{comment}{//viewMatrix.columns[2] = Vector4D(forward.x, forward.y, forward.z, 0);}
+34     viewMatrix.\hyperlink{structtypes_1_1_matrix4x4_a71eff2a403350446b93f8f11dda7b73e}{columns}[2] = \hyperlink{structtypes_1_1_vector4_d}{Vector4D} (
+35     cos(verticalAngle) * sin(horizontalAngle),
+36     sin(verticalAngle),
+37     cos(verticalAngle) * cos(horizontalAngle), 0.0f
+38 );
+39     viewMatrix.\hyperlink{structtypes_1_1_matrix4x4_a71eff2a403350446b93f8f11dda7b73e}{columns}[3] = \hyperlink{structtypes_1_1_vector4_d}{Vector4D}(position.\hyperlink{structtypes_1_1_vector3_d_a67f804e2d8b267b8196415f12a44b517}{x}, position.\hyperlink{structtypes_1_1_vector3_d_a02f330a5f3139f9cc3c5aead1728147c}{y}, position.
+      \hyperlink{structtypes_1_1_vector3_d_a4266d5bca7826efcfb1fb6454affb51d}{z}, 1);
+40     \textcolor{comment}{//std::cout << m\_moveSpeed << std::endl;}
+41 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+% FIG 1
+
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_camera_8h}{Camera.\+h}\item 
+\hyperlink{_camera_8cpp}{Camera.\+cpp}\end{DoxyCompactItemize}

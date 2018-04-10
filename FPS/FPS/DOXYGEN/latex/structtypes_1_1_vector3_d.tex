@@ -1,0 +1,426 @@
+\hypertarget{structtypes_1_1_vector3_d}{}\section{types\+:\+:Vector3\+D Struct Reference}
+\label{structtypes_1_1_vector3_d}\index{types\+::\+Vector3\+D@{types\+::\+Vector3\+D}}
+
+
+A struct that defines a vector in three-\/dimensional space.  
+
+
+
+
+{\ttfamily \#include $<$Types.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structtypes_1_1_vector3_d_a72a49411a6d9096033e8cfca88849ffe}{Vector3\+D} ()
+\item 
+\hyperlink{structtypes_1_1_vector3_d_acd44a5a9d994d2b1b6afcb4a5cbf0564}{Vector3\+D} (float xx, float yy, float zz)
+\item 
+float \hyperlink{structtypes_1_1_vector3_d_a65bef5482d7d9c99a6e5b0f4bde68b08}{length} ()
+\begin{DoxyCompactList}\small\item\em Gets the length of the vector. \end{DoxyCompactList}\item 
+\hyperlink{structtypes_1_1_vector3_d}{Vector3\+D} \hyperlink{structtypes_1_1_vector3_d_a2b569562e292dc7adf46098eab172a5a}{max} (\hyperlink{structtypes_1_1_vector3_d}{Vector3\+D} \&r)
+\begin{DoxyCompactList}\small\item\em Finds and returns the greatest value of each x, y, z for 2 vector3\+D. \end{DoxyCompactList}\item 
+float \hyperlink{structtypes_1_1_vector3_d_a900618219749e0f2a50a860db6295132}{max} ()
+\begin{DoxyCompactList}\small\item\em Finds and returns the greatest value in the vector. \end{DoxyCompactList}\item 
+\hyperlink{structtypes_1_1_vector3_d}{Vector3\+D} \hyperlink{structtypes_1_1_vector3_d_a07a09dd9e0a5700b376b15d7f9f6e89c}{normalise} ()
+\begin{DoxyCompactList}\small\item\em Gets the normalised version of the vector. \end{DoxyCompactList}\item 
+\hyperlink{structtypes_1_1_vector3_d}{Vector3\+D} \hyperlink{structtypes_1_1_vector3_d_ada2f1a89cf1f5eddc1c6a8ff05d7d98f}{cross\+Product} (\hyperlink{structtypes_1_1_vector3_d}{Vector3\+D} other\+Vec)
+\begin{DoxyCompactList}\small\item\em Gets the cross product of this and another vector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \hyperlink{structtypes_1_1_vector3_d_a67f804e2d8b267b8196415f12a44b517}{x}
+\begin{DoxyCompactList}\small\item\em The x-\/axis value of the vector. \end{DoxyCompactList}\item 
+float \hyperlink{structtypes_1_1_vector3_d_a02f330a5f3139f9cc3c5aead1728147c}{y}
+\begin{DoxyCompactList}\small\item\em The y-\/axis value of the vector. \end{DoxyCompactList}\item 
+float \hyperlink{structtypes_1_1_vector3_d_a4266d5bca7826efcfb1fb6454affb51d}{z}
+\begin{DoxyCompactList}\small\item\em The z-\/axis value of the vector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A struct that defines a vector in three-\/dimensional space. 
+
+The \hyperlink{structtypes_1_1_vector3_d}{Vector3\+D} struct is merely a data type that represents a vector in three-\/ dimensional space, providing a few functions to assist with spatial calculations.
+
+\begin{DoxyAuthor}{Author}
+Alfred Malone 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+01 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+23/4/2017 Alfred Malone, created basic class
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Alfred Malone 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+02 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+24/4/2017 Alfred Malone, added extra functions for calculations
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Ben Porter 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+03 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+1/06/2017 Ben Porter, added \hyperlink{structtypes_1_1_vector3_d_a900618219749e0f2a50a860db6295132}{max()} and max(\+Vector3\+D) 
+\end{DoxyDate}
+\begin{DoxyRefDesc}{Bug}
+\item[\hyperlink{bug__bug000002}{Bug}]max doesn\textquotesingle{}t seem to work as intended\end{DoxyRefDesc}
+
+
+\begin{DoxyRefDesc}{Bug}
+\item[\hyperlink{bug__bug000003}{Bug}]This one is also quite simple, so no bugs. \end{DoxyRefDesc}
+
+
+Definition at line 110 of file Types.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{structtypes_1_1_vector3_d_a72a49411a6d9096033e8cfca88849ffe}{}\index{types\+::\+Vector3\+D@{types\+::\+Vector3\+D}!Vector3\+D@{Vector3\+D}}
+\index{Vector3\+D@{Vector3\+D}!types\+::\+Vector3\+D@{types\+::\+Vector3\+D}}
+\subsubsection[{Vector3\+D}]{\setlength{\rightskip}{0pt plus 5cm}types\+::\+Vector3\+D\+::\+Vector3\+D (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{structtypes_1_1_vector3_d_a72a49411a6d9096033e8cfca88849ffe}
+The constructor for a \hyperlink{structtypes_1_1_vector3_d}{Vector3\+D} variable. Initialises the x, y, and z values. 
+
+Definition at line 122 of file Types.\+h.
+
+
+
+References x, y, and z.
+
+
+
+Referenced by normalise().
+
+
+\begin{DoxyCode}
+122                   \{
+123             \hyperlink{structtypes_1_1_vector3_d_a67f804e2d8b267b8196415f12a44b517}{x} = 0.0f;
+124             \hyperlink{structtypes_1_1_vector3_d_a02f330a5f3139f9cc3c5aead1728147c}{y} = 0.0f;
+125             \hyperlink{structtypes_1_1_vector3_d_a4266d5bca7826efcfb1fb6454affb51d}{z} = 0.0f;
+126         \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+% FIG 0
+
+
+\hypertarget{structtypes_1_1_vector3_d_acd44a5a9d994d2b1b6afcb4a5cbf0564}{}\index{types\+::\+Vector3\+D@{types\+::\+Vector3\+D}!Vector3\+D@{Vector3\+D}}
+\index{Vector3\+D@{Vector3\+D}!types\+::\+Vector3\+D@{types\+::\+Vector3\+D}}
+\subsubsection[{Vector3\+D}]{\setlength{\rightskip}{0pt plus 5cm}types\+::\+Vector3\+D\+::\+Vector3\+D (
+\begin{DoxyParamCaption}
+\item[{float}]{xx, }
+\item[{float}]{yy, }
+\item[{float}]{zz}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{structtypes_1_1_vector3_d_acd44a5a9d994d2b1b6afcb4a5cbf0564}
+Another constructor for a \hyperlink{structtypes_1_1_vector3_d}{Vector3\+D} variable. Initialises the x, y, and z values with xx, yy, and zz respectively. 
+
+Definition at line 132 of file Types.\+h.
+
+
+
+References x, y, and z.
+
+
+
+Referenced by Camera\+::\+Camera().
+
+
+\begin{DoxyCode}
+132                                               \{
+133             \hyperlink{structtypes_1_1_vector3_d_a67f804e2d8b267b8196415f12a44b517}{x} = xx;
+134             \hyperlink{structtypes_1_1_vector3_d_a02f330a5f3139f9cc3c5aead1728147c}{y} = yy;
+135             \hyperlink{structtypes_1_1_vector3_d_a4266d5bca7826efcfb1fb6454affb51d}{z} = zz;
+136         \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+% FIG 1
+
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{structtypes_1_1_vector3_d_ada2f1a89cf1f5eddc1c6a8ff05d7d98f}{}\index{types\+::\+Vector3\+D@{types\+::\+Vector3\+D}!cross\+Product@{cross\+Product}}
+\index{cross\+Product@{cross\+Product}!types\+::\+Vector3\+D@{types\+::\+Vector3\+D}}
+\subsubsection[{cross\+Product}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vector3\+D} types\+::\+Vector3\+D\+::cross\+Product (
+\begin{DoxyParamCaption}
+\item[{{\bf Vector3\+D}}]{other\+Vec}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{structtypes_1_1_vector3_d_ada2f1a89cf1f5eddc1c6a8ff05d7d98f}
+
+
+Gets the cross product of this and another vector. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{structtypes_1_1_vector3_d}{Vector3\+D} -\/ The vector at right angles to this and the other vector
+\end{DoxyReturn}
+cross\+Product calculates and returns the vector at right angles to this vector and another passed as a parameter using their x, y, and z values. 
+
+Definition at line 218 of file Types.\+h.
+
+
+
+References x, y, and z.
+
+
+\begin{DoxyCode}
+218                                                 \{
+219             \hyperlink{structtypes_1_1_vector3_d_a72a49411a6d9096033e8cfca88849ffe}{Vector3D} crossVec;
+220 
+221             crossVec.x = (this->\hyperlink{structtypes_1_1_vector3_d_a02f330a5f3139f9cc3c5aead1728147c}{y} * otherVec.z) + (this->\hyperlink{structtypes_1_1_vector3_d_a4266d5bca7826efcfb1fb6454affb51d}{z} * otherVec.y);
+222             crossVec.y = (this->\hyperlink{structtypes_1_1_vector3_d_a4266d5bca7826efcfb1fb6454affb51d}{z} * otherVec.x) + (this->\hyperlink{structtypes_1_1_vector3_d_a67f804e2d8b267b8196415f12a44b517}{x} * otherVec.z);
+223             crossVec.z = (this->\hyperlink{structtypes_1_1_vector3_d_a67f804e2d8b267b8196415f12a44b517}{x} * otherVec.y) + (this->\hyperlink{structtypes_1_1_vector3_d_a02f330a5f3139f9cc3c5aead1728147c}{y} * otherVec.x);
+224 
+225             \textcolor{keywordflow}{return} crossVec;
+226         \}
+\end{DoxyCode}
+\hypertarget{structtypes_1_1_vector3_d_a65bef5482d7d9c99a6e5b0f4bde68b08}{}\index{types\+::\+Vector3\+D@{types\+::\+Vector3\+D}!length@{length}}
+\index{length@{length}!types\+::\+Vector3\+D@{types\+::\+Vector3\+D}}
+\subsubsection[{length}]{\setlength{\rightskip}{0pt plus 5cm}float types\+::\+Vector3\+D\+::length (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{structtypes_1_1_vector3_d_a65bef5482d7d9c99a6e5b0f4bde68b08}
+
+
+Gets the length of the vector. 
+
+\begin{DoxyReturn}{Returns}
+float -\/ The vector\textquotesingle{}s length as a floating-\/point number
+\end{DoxyReturn}
+length calculates and returns the length of the vector using its x, y, and z values. 
+
+Definition at line 145 of file Types.\+h.
+
+
+
+Referenced by normalise().
+
+
+\begin{DoxyCode}
+145                       \{
+146             \textcolor{keywordflow}{return} (sqrt(\hyperlink{structtypes_1_1_vector3_d_a67f804e2d8b267b8196415f12a44b517}{x}*\hyperlink{structtypes_1_1_vector3_d_a67f804e2d8b267b8196415f12a44b517}{x} + \hyperlink{structtypes_1_1_vector3_d_a02f330a5f3139f9cc3c5aead1728147c}{y}*\hyperlink{structtypes_1_1_vector3_d_a02f330a5f3139f9cc3c5aead1728147c}{y} + \hyperlink{structtypes_1_1_vector3_d_a4266d5bca7826efcfb1fb6454affb51d}{z}*\hyperlink{structtypes_1_1_vector3_d_a4266d5bca7826efcfb1fb6454affb51d}{z}));
+147         \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+% FIG 2
+
+
+\hypertarget{structtypes_1_1_vector3_d_a2b569562e292dc7adf46098eab172a5a}{}\index{types\+::\+Vector3\+D@{types\+::\+Vector3\+D}!max@{max}}
+\index{max@{max}!types\+::\+Vector3\+D@{types\+::\+Vector3\+D}}
+\subsubsection[{max}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vector3\+D} types\+::\+Vector3\+D\+::max (
+\begin{DoxyParamCaption}
+\item[{{\bf Vector3\+D} \&}]{r}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{structtypes_1_1_vector3_d_a2b569562e292dc7adf46098eab172a5a}
+
+
+Finds and returns the greatest value of each x, y, z for 2 vector3\+D. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{structtypes_1_1_vector3_d}{Vector3\+D} -\/ contains greatest values of each point in the vector 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em r} & -\/ \&\hyperlink{structtypes_1_1_vector3_d}{Vector3\+D} \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 154 of file Types.\+h.
+
+
+
+References x, y, and z.
+
+
+
+Referenced by Bound\+Box\+::\+Intersect\+A\+A\+B\+B().
+
+
+\begin{DoxyCode}
+154                                    \{
+155           \hyperlink{structtypes_1_1_vector3_d_a72a49411a6d9096033e8cfca88849ffe}{Vector3D} result;
+156           \textcolor{keywordflow}{if}(r.x > this->x)\{
+157               result.x = r.x;
+158           \}\textcolor{keywordflow}{else}\{
+159               result.x = this->\hyperlink{structtypes_1_1_vector3_d_a67f804e2d8b267b8196415f12a44b517}{x};
+160           \}
+161           
+162           \textcolor{keywordflow}{if}(r.y > this->y)\{
+163               
+164               result.y = r.y; 
+165           \}\textcolor{keywordflow}{else}\{
+166               result.y = this->\hyperlink{structtypes_1_1_vector3_d_a02f330a5f3139f9cc3c5aead1728147c}{y};
+167           \}
+168 
+169           \textcolor{keywordflow}{if}(r.z > this->z)\{
+170               result.z = r.z;
+171           \}\textcolor{keywordflow}{else}\{
+172               result.z = this->\hyperlink{structtypes_1_1_vector3_d_a4266d5bca7826efcfb1fb6454affb51d}{z};
+173           \}
+174           \textcolor{keywordflow}{return} result;
+175          \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+% FIG 3
+
+
+\hypertarget{structtypes_1_1_vector3_d_a900618219749e0f2a50a860db6295132}{}\index{types\+::\+Vector3\+D@{types\+::\+Vector3\+D}!max@{max}}
+\index{max@{max}!types\+::\+Vector3\+D@{types\+::\+Vector3\+D}}
+\subsubsection[{max}]{\setlength{\rightskip}{0pt plus 5cm}float types\+::\+Vector3\+D\+::max (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{structtypes_1_1_vector3_d_a900618219749e0f2a50a860db6295132}
+
+
+Finds and returns the greatest value in the vector. 
+
+\begin{DoxyReturn}{Returns}
+float -\/ biggest value in the vector 
+\end{DoxyReturn}
+
+
+Definition at line 181 of file Types.\+h.
+
+
+
+References x, y, and z.
+
+
+
+Referenced by Bound\+Box\+::\+Intersect\+A\+A\+B\+B().
+
+
+\begin{DoxyCode}
+181                     \{
+182              \textcolor{keywordflow}{if}(this->\hyperlink{structtypes_1_1_vector3_d_a67f804e2d8b267b8196415f12a44b517}{x}>this->\hyperlink{structtypes_1_1_vector3_d_a02f330a5f3139f9cc3c5aead1728147c}{y} && this->\hyperlink{structtypes_1_1_vector3_d_a67f804e2d8b267b8196415f12a44b517}{x} > this->\hyperlink{structtypes_1_1_vector3_d_a4266d5bca7826efcfb1fb6454affb51d}{z})\{
+183                  \textcolor{keywordflow}{return} this->\hyperlink{structtypes_1_1_vector3_d_a67f804e2d8b267b8196415f12a44b517}{x};
+184              \}\textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(this->\hyperlink{structtypes_1_1_vector3_d_a02f330a5f3139f9cc3c5aead1728147c}{y}>this->\hyperlink{structtypes_1_1_vector3_d_a67f804e2d8b267b8196415f12a44b517}{x} && this->\hyperlink{structtypes_1_1_vector3_d_a02f330a5f3139f9cc3c5aead1728147c}{y} > this->\hyperlink{structtypes_1_1_vector3_d_a4266d5bca7826efcfb1fb6454affb51d}{z})\{
+185                  \textcolor{keywordflow}{return} this->\hyperlink{structtypes_1_1_vector3_d_a02f330a5f3139f9cc3c5aead1728147c}{y};
+186              \}\textcolor{keywordflow}{else} \{
+187                  \textcolor{keywordflow}{return} this->\hyperlink{structtypes_1_1_vector3_d_a4266d5bca7826efcfb1fb6454affb51d}{z};
+188              \}
+189 
+190          \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+% FIG 4
+
+
+\hypertarget{structtypes_1_1_vector3_d_a07a09dd9e0a5700b376b15d7f9f6e89c}{}\index{types\+::\+Vector3\+D@{types\+::\+Vector3\+D}!normalise@{normalise}}
+\index{normalise@{normalise}!types\+::\+Vector3\+D@{types\+::\+Vector3\+D}}
+\subsubsection[{normalise}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vector3\+D} types\+::\+Vector3\+D\+::normalise (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{structtypes_1_1_vector3_d_a07a09dd9e0a5700b376b15d7f9f6e89c}
+
+
+Gets the normalised version of the vector. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{structtypes_1_1_vector3_d}{Vector3\+D} -\/ The normalised vector
+\end{DoxyReturn}
+normalise calculates and returns the normalised version of the vector using its x, y, and z values. 
+
+Definition at line 198 of file Types.\+h.
+
+
+
+References length(), Vector3\+D(), x, y, and z.
+
+
+\begin{DoxyCode}
+198                             \{
+199             \hyperlink{structtypes_1_1_vector3_d_a72a49411a6d9096033e8cfca88849ffe}{Vector3D} normalVec = \hyperlink{structtypes_1_1_vector3_d_a72a49411a6d9096033e8cfca88849ffe}{Vector3D}();
+200             \textcolor{keywordtype}{float} \hyperlink{structtypes_1_1_vector3_d_a65bef5482d7d9c99a6e5b0f4bde68b08}{length} = this->\hyperlink{structtypes_1_1_vector3_d_a65bef5482d7d9c99a6e5b0f4bde68b08}{length}();
+201 
+202             \textcolor{keywordflow}{if}(length != 0)\{
+203                 normalVec.x = \hyperlink{structtypes_1_1_vector3_d_a67f804e2d8b267b8196415f12a44b517}{x} / \hyperlink{structtypes_1_1_vector3_d_a65bef5482d7d9c99a6e5b0f4bde68b08}{length};
+204                 normalVec.y = \hyperlink{structtypes_1_1_vector3_d_a02f330a5f3139f9cc3c5aead1728147c}{y} / \hyperlink{structtypes_1_1_vector3_d_a65bef5482d7d9c99a6e5b0f4bde68b08}{length};
+205                 normalVec.z = \hyperlink{structtypes_1_1_vector3_d_a4266d5bca7826efcfb1fb6454affb51d}{z} / \hyperlink{structtypes_1_1_vector3_d_a65bef5482d7d9c99a6e5b0f4bde68b08}{length};
+206             \}
+207 
+208             \textcolor{keywordflow}{return} normalVec;
+209         \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+% FIG 5
+
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{structtypes_1_1_vector3_d_a67f804e2d8b267b8196415f12a44b517}{}\index{types\+::\+Vector3\+D@{types\+::\+Vector3\+D}!x@{x}}
+\index{x@{x}!types\+::\+Vector3\+D@{types\+::\+Vector3\+D}}
+\subsubsection[{x}]{\setlength{\rightskip}{0pt plus 5cm}float types\+::\+Vector3\+D\+::x}\label{structtypes_1_1_vector3_d_a67f804e2d8b267b8196415f12a44b517}
+
+
+The x-\/axis value of the vector. 
+
+
+
+Definition at line 112 of file Types.\+h.
+
+
+
+Referenced by cross\+Product(), Bound\+Box\+::\+Intersect\+A\+A\+B\+B(), max(), normalise(), Camera\+::transform\+View(), and Vector3\+D().
+
+\hypertarget{structtypes_1_1_vector3_d_a02f330a5f3139f9cc3c5aead1728147c}{}\index{types\+::\+Vector3\+D@{types\+::\+Vector3\+D}!y@{y}}
+\index{y@{y}!types\+::\+Vector3\+D@{types\+::\+Vector3\+D}}
+\subsubsection[{y}]{\setlength{\rightskip}{0pt plus 5cm}float types\+::\+Vector3\+D\+::y}\label{structtypes_1_1_vector3_d_a02f330a5f3139f9cc3c5aead1728147c}
+
+
+The y-\/axis value of the vector. 
+
+
+
+Definition at line 114 of file Types.\+h.
+
+
+
+Referenced by cross\+Product(), Bound\+Box\+::\+Intersect\+A\+A\+B\+B(), max(), normalise(), Camera\+::transform\+View(), and Vector3\+D().
+
+\hypertarget{structtypes_1_1_vector3_d_a4266d5bca7826efcfb1fb6454affb51d}{}\index{types\+::\+Vector3\+D@{types\+::\+Vector3\+D}!z@{z}}
+\index{z@{z}!types\+::\+Vector3\+D@{types\+::\+Vector3\+D}}
+\subsubsection[{z}]{\setlength{\rightskip}{0pt plus 5cm}float types\+::\+Vector3\+D\+::z}\label{structtypes_1_1_vector3_d_a4266d5bca7826efcfb1fb6454affb51d}
+
+
+The z-\/axis value of the vector. 
+
+
+
+Definition at line 116 of file Types.\+h.
+
+
+
+Referenced by cross\+Product(), Bound\+Box\+::\+Intersect\+A\+A\+B\+B(), max(), normalise(), Camera\+::transform\+View(), and Vector3\+D().
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_types_8h}{Types.\+h}\end{DoxyCompactItemize}

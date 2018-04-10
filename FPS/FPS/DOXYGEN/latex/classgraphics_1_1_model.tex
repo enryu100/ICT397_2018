@@ -1,0 +1,185 @@
+\hypertarget{classgraphics_1_1_model}{}\section{graphics\+:\+:Model Class Reference}
+\label{classgraphics_1_1_model}\index{graphics\+::\+Model@{graphics\+::\+Model}}
+
+
+A class that stores model data and all data relating to it.  
+
+
+
+
+{\ttfamily \#include $<$graphics.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classgraphics_1_1_model_ad1de45d8f268f85a9f343d5d766d79fb}{Model} ()
+\item 
+\hyperlink{classgraphics_1_1_model_a8e0ae4b91895af2be67a040f76b210f2}{$\sim$\+Model} ()
+\item 
+bool \hyperlink{classgraphics_1_1_model_a64ac4fc8a029a5bdda2a5e8744aa2093}{load\+Data} (std\+::string model\+File)
+\begin{DoxyCompactList}\small\item\em Loads all data for the model. \end{DoxyCompactList}\item 
+const \hyperlink{structgraphics_1_1_model_data}{Model\+Data} \& \hyperlink{classgraphics_1_1_model_a29c0c0ac00b5ad67c42234eca20a7fa3}{get\+Data} ()
+\begin{DoxyCompactList}\small\item\em Gets the model data. \end{DoxyCompactList}\item 
+const \hyperlink{structtypes_1_1_vector3_d}{types\+::\+Vector3\+D} \& \hyperlink{classgraphics_1_1_model_a23d6b9aae51566bf56389e5f3f3024ac}{get\+Model\+Pos} ()
+\begin{DoxyCompactList}\small\item\em Gets the current position of the model. \end{DoxyCompactList}\item 
+void \hyperlink{classgraphics_1_1_model_a37d9bae70b24d66c720966910b2632fa}{set\+Model\+Pos} (const \hyperlink{structtypes_1_1_vector3_d}{types\+::\+Vector3\+D} \&new\+Pos)
+\begin{DoxyCompactList}\small\item\em Sets a new position for the model. param new\+Pos -\/ The new position. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A class that stores model data and all data relating to it. 
+
+The \hyperlink{classgraphics_1_1_model}{Model} class is responsible for holding all of the data required to display a model in a virtual 3\+D space.
+
+\begin{DoxyAuthor}{Author}
+Alfred Malone 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+01 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+21/4/2017 Alfred Malone, created class
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Alfred Malone 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+02 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+27/4/2017 Alfred Malone, added functionality to load from file 
+\end{DoxyDate}
+
+
+Definition at line 192 of file graphics.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classgraphics_1_1_model_ad1de45d8f268f85a9f343d5d766d79fb}{}\index{graphics\+::\+Model@{graphics\+::\+Model}!Model@{Model}}
+\index{Model@{Model}!graphics\+::\+Model@{graphics\+::\+Model}}
+\subsubsection[{Model}]{\setlength{\rightskip}{0pt plus 5cm}graphics\+::\+Model\+::\+Model (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classgraphics_1_1_model_ad1de45d8f268f85a9f343d5d766d79fb}
+The constructor for a \hyperlink{classgraphics_1_1_model}{Model} object. 
+
+Definition at line 197 of file graphics.\+h.
+
+
+\begin{DoxyCode}
+197 \{\};
+\end{DoxyCode}
+\hypertarget{classgraphics_1_1_model_a8e0ae4b91895af2be67a040f76b210f2}{}\index{graphics\+::\+Model@{graphics\+::\+Model}!````~Model@{$\sim$\+Model}}
+\index{````~Model@{$\sim$\+Model}!graphics\+::\+Model@{graphics\+::\+Model}}
+\subsubsection[{$\sim$\+Model}]{\setlength{\rightskip}{0pt plus 5cm}graphics\+::\+Model\+::$\sim$\+Model (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classgraphics_1_1_model_a8e0ae4b91895af2be67a040f76b210f2}
+The destructor for a model object. 
+
+Definition at line 201 of file graphics.\+h.
+
+
+\begin{DoxyCode}
+201 \{\};
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classgraphics_1_1_model_a29c0c0ac00b5ad67c42234eca20a7fa3}{}\index{graphics\+::\+Model@{graphics\+::\+Model}!get\+Data@{get\+Data}}
+\index{get\+Data@{get\+Data}!graphics\+::\+Model@{graphics\+::\+Model}}
+\subsubsection[{get\+Data}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Model\+Data}\& graphics\+::\+Model\+::get\+Data (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classgraphics_1_1_model_a29c0c0ac00b5ad67c42234eca20a7fa3}
+
+
+Gets the model data. 
+
+\begin{DoxyReturn}{Returns}
+const \hyperlink{structgraphics_1_1_model_data}{Model\+Data}\& -\/ A structure containing the model data
+\end{DoxyReturn}
+get\+Data simply returns the model\textquotesingle{}s vertex, U\+V, and normal data to the calling function. 
+
+Definition at line 218 of file graphics.\+h.
+
+
+\begin{DoxyCode}
+218 \{\textcolor{keywordflow}{return} data;\};
+\end{DoxyCode}
+\hypertarget{classgraphics_1_1_model_a23d6b9aae51566bf56389e5f3f3024ac}{}\index{graphics\+::\+Model@{graphics\+::\+Model}!get\+Model\+Pos@{get\+Model\+Pos}}
+\index{get\+Model\+Pos@{get\+Model\+Pos}!graphics\+::\+Model@{graphics\+::\+Model}}
+\subsubsection[{get\+Model\+Pos}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf types\+::\+Vector3\+D}\& graphics\+::\+Model\+::get\+Model\+Pos (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classgraphics_1_1_model_a23d6b9aae51566bf56389e5f3f3024ac}
+
+
+Gets the current position of the model. 
+
+\begin{DoxyReturn}{Returns}
+const Vector3\+D\& -\/ A vector containing the model\textquotesingle{}s position
+\end{DoxyReturn}
+get\+Model\+Pos simply returns the model\textquotesingle{}s current position to the calling function. 
+
+Definition at line 225 of file graphics.\+h.
+
+
+\begin{DoxyCode}
+225 \{\textcolor{keywordflow}{return} modelPos;\};
+\end{DoxyCode}
+\hypertarget{classgraphics_1_1_model_a64ac4fc8a029a5bdda2a5e8744aa2093}{}\index{graphics\+::\+Model@{graphics\+::\+Model}!load\+Data@{load\+Data}}
+\index{load\+Data@{load\+Data}!graphics\+::\+Model@{graphics\+::\+Model}}
+\subsubsection[{load\+Data}]{\setlength{\rightskip}{0pt plus 5cm}bool Model\+::load\+Data (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{model\+File}
+\end{DoxyParamCaption}
+)}\label{classgraphics_1_1_model_a64ac4fc8a029a5bdda2a5e8744aa2093}
+
+
+Loads all data for the model. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em model\+File} & -\/ The file name for the model data\\
+\hline
+\end{DoxyParams}
+load\+Data loads the model\textquotesingle{}s data from a file using the object file loader. This gives it limitations, but it should suffice currently. 
+
+Definition at line 194 of file graphics.\+cpp.
+
+
+\begin{DoxyCode}
+194                                     \{
+195     \textcolor{keywordflow}{return} \hyperlink{namespaceloader_a4514019189ec8cc9cfa5438ec6d1fbe6}{loader::loadObj}(modelFile.c\_str(), data.\hyperlink{structgraphics_1_1_model_data_a6aee645ba74e36a81efc32d094bc9df9}{vertices});
+196 \}\end{DoxyCode}
+\hypertarget{classgraphics_1_1_model_a37d9bae70b24d66c720966910b2632fa}{}\index{graphics\+::\+Model@{graphics\+::\+Model}!set\+Model\+Pos@{set\+Model\+Pos}}
+\index{set\+Model\+Pos@{set\+Model\+Pos}!graphics\+::\+Model@{graphics\+::\+Model}}
+\subsubsection[{set\+Model\+Pos}]{\setlength{\rightskip}{0pt plus 5cm}void graphics\+::\+Model\+::set\+Model\+Pos (
+\begin{DoxyParamCaption}
+\item[{const {\bf types\+::\+Vector3\+D} \&}]{new\+Pos}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classgraphics_1_1_model_a37d9bae70b24d66c720966910b2632fa}
+
+
+Sets a new position for the model. param new\+Pos -\/ The new position. 
+
+set\+Model\+Pos sets the model\textquotesingle{}s position to the position supplied. 
+
+Definition at line 232 of file graphics.\+h.
+
+
+\begin{DoxyCode}
+232 \{modelPos = newPos;\};
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{graphics_8h}{graphics.\+h}\item 
+\hyperlink{graphics_8cpp}{graphics.\+cpp}\end{DoxyCompactItemize}

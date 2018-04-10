@@ -1,0 +1,427 @@
+\hypertarget{class_physics___wrapper}{}\section{Physics\+\_\+\+Wrapper Class Reference}
+\label{class_physics___wrapper}\index{Physics\+\_\+\+Wrapper@{Physics\+\_\+\+Wrapper}}
+
+
+{\ttfamily \#include $<$Physics\+\_\+\+Wrapper.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_physics___wrapper_aa0b708aeb83526134e5b5436526a77f9}{Physics\+\_\+\+Wrapper} (void)
+\begin{DoxyCompactList}\small\item\em default constructer for physiscs, sets up the physics settings \end{DoxyCompactList}\item 
+void \hyperlink{class_physics___wrapper_a49e1a8c4ddd805f10954e441f10eb2e8}{Set\+Gravity} (double y\+Gravity)
+\begin{DoxyCompactList}\small\item\em Sets the gravity for the world. \end{DoxyCompactList}\item 
+void \hyperlink{class_physics___wrapper_aee5a6c0ae42b1e1aca70f60a06c7ccce}{Create\+Rigid\+Body\+Rectangle} (int \hyperlink{test_8cpp_ad12fc34ce789bce6c8a05d8a17138534}{height}, int \hyperlink{test_8cpp_a2474a5474cbff19523a51eb1de01cda4}{width}, int length, int massi, int xpos, int ypos, int zpos, int x\+Inertia, int y\+Inertia, int z\+Inertia)
+\begin{DoxyCompactList}\small\item\em Creates a Rigid\+Body\+Rectangle and adds it to the physics world. \end{DoxyCompactList}\item 
+void \hyperlink{class_physics___wrapper_a2621954caaa8b88e3ed3dde2032dcb5a}{Create\+Rigid\+Body\+Sphere} (int radius, int massi, int xpos, int ypos, int zpos, int x\+Inertia, int y\+Intertia, int z\+Inertia)
+\begin{DoxyCompactList}\small\item\em Creates a Rigid\+Body\+Sphere and adds it to the physics world. \end{DoxyCompactList}\item 
+void \hyperlink{class_physics___wrapper_a44206cbcb107fd318b4d5733749347da}{Run} ()
+\begin{DoxyCompactList}\small\item\em runs the physics and does collisions \end{DoxyCompactList}\item 
+float \hyperlink{class_physics___wrapper_af09f12720b0c1cfccf863a0da5a67256}{Get\+Xorigen} (int i)
+\begin{DoxyCompactList}\small\item\em Gets the xorigen of object i. \end{DoxyCompactList}\item 
+float \hyperlink{class_physics___wrapper_aa29e033ac2a859a5266d838c664a7d8f}{Get\+Yorigen} (int i)
+\begin{DoxyCompactList}\small\item\em Gets the yorigen of object i. \end{DoxyCompactList}\item 
+float \hyperlink{class_physics___wrapper_ae820a269c9cd59c5989cf76914e9b2d0}{Get\+Zorigen} (int i)
+\begin{DoxyCompactList}\small\item\em Gets the zorigen of object i. \end{DoxyCompactList}\item 
+\hyperlink{class_physics___wrapper_ae7ba13b97d91686f6392900bb80a6c7f}{$\sim$\+Physics\+\_\+\+Wrapper} (void)
+\begin{DoxyCompactList}\small\item\em Deconstructor for the physics, removes the objects. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 23 of file Physics\+\_\+\+Wrapper.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_physics___wrapper_aa0b708aeb83526134e5b5436526a77f9}{}\index{Physics\+\_\+\+Wrapper@{Physics\+\_\+\+Wrapper}!Physics\+\_\+\+Wrapper@{Physics\+\_\+\+Wrapper}}
+\index{Physics\+\_\+\+Wrapper@{Physics\+\_\+\+Wrapper}!Physics\+\_\+\+Wrapper@{Physics\+\_\+\+Wrapper}}
+\subsubsection[{Physics\+\_\+\+Wrapper}]{\setlength{\rightskip}{0pt plus 5cm}Physics\+\_\+\+Wrapper\+::\+Physics\+\_\+\+Wrapper (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{class_physics___wrapper_aa0b708aeb83526134e5b5436526a77f9}
+
+
+default constructer for physiscs, sets up the physics settings 
+
+
+
+Definition at line 4 of file Physics\+\_\+\+Wrapper.\+cpp.
+
+
+\begin{DoxyCode}
+5 \{
+6     collisionConfiguration = \textcolor{keyword}{new} btDefaultCollisionConfiguration();
+7     dispatcher = \textcolor{keyword}{new}    btCollisionDispatcher(collisionConfiguration);
+8     overlappingPairCache = \textcolor{keyword}{new} btDbvtBroadphase();
+9     solver = \textcolor{keyword}{new} btSequentialImpulseConstraintSolver;
+10     dynamicsWorld = \textcolor{keyword}{new} btDiscreteDynamicsWorld(dispatcher,overlappingPairCache,solver,
+      collisionConfiguration);
+11 \}
+\end{DoxyCode}
+\hypertarget{class_physics___wrapper_ae7ba13b97d91686f6392900bb80a6c7f}{}\index{Physics\+\_\+\+Wrapper@{Physics\+\_\+\+Wrapper}!````~Physics\+\_\+\+Wrapper@{$\sim$\+Physics\+\_\+\+Wrapper}}
+\index{````~Physics\+\_\+\+Wrapper@{$\sim$\+Physics\+\_\+\+Wrapper}!Physics\+\_\+\+Wrapper@{Physics\+\_\+\+Wrapper}}
+\subsubsection[{$\sim$\+Physics\+\_\+\+Wrapper}]{\setlength{\rightskip}{0pt plus 5cm}Physics\+\_\+\+Wrapper\+::$\sim$\+Physics\+\_\+\+Wrapper (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{class_physics___wrapper_ae7ba13b97d91686f6392900bb80a6c7f}
+
+
+Deconstructor for the physics, removes the objects. 
+
+
+
+Definition at line 145 of file Physics\+\_\+\+Wrapper.\+cpp.
+
+
+\begin{DoxyCode}
+146 \{
+147     \textcolor{keyword}{delete} dynamicsWorld;
+148 
+149     \textcolor{comment}{//delete solver}
+150     \textcolor{keyword}{delete} solver;
+151 
+152     \textcolor{comment}{//delete broadphase}
+153     \textcolor{keyword}{delete} overlappingPairCache;
+154 
+155     \textcolor{comment}{//delete dispatcher}
+156     \textcolor{keyword}{delete} dispatcher;
+157 
+158     \textcolor{keyword}{delete} collisionConfiguration;
+159 
+160     \textcolor{comment}{//next line is optional: it will be cleared by the destructor when the array goes out of scope}
+161     collisionShapes.clear();
+162 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_physics___wrapper_aee5a6c0ae42b1e1aca70f60a06c7ccce}{}\index{Physics\+\_\+\+Wrapper@{Physics\+\_\+\+Wrapper}!Create\+Rigid\+Body\+Rectangle@{Create\+Rigid\+Body\+Rectangle}}
+\index{Create\+Rigid\+Body\+Rectangle@{Create\+Rigid\+Body\+Rectangle}!Physics\+\_\+\+Wrapper@{Physics\+\_\+\+Wrapper}}
+\subsubsection[{Create\+Rigid\+Body\+Rectangle}]{\setlength{\rightskip}{0pt plus 5cm}void Physics\+\_\+\+Wrapper\+::\+Create\+Rigid\+Body\+Rectangle (
+\begin{DoxyParamCaption}
+\item[{int}]{height, }
+\item[{int}]{width, }
+\item[{int}]{length, }
+\item[{int}]{massi, }
+\item[{int}]{xpos, }
+\item[{int}]{ypos, }
+\item[{int}]{zpos, }
+\item[{int}]{x\+Inertia, }
+\item[{int}]{y\+Inertia, }
+\item[{int}]{z\+Inertia}
+\end{DoxyParamCaption}
+)}\label{class_physics___wrapper_aee5a6c0ae42b1e1aca70f60a06c7ccce}
+
+
+Creates a Rigid\+Body\+Rectangle and adds it to the physics world. 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em height} & -\/int, width -\/int, length -\/int, massi -\/int, xpos -\/ int, ypos -\/ int, zpos -\/ int, x\+Inertia -\/int, y\+Inertia -\/int, z\+Inertia -\/int \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 18 of file Physics\+\_\+\+Wrapper.\+cpp.
+
+
+\begin{DoxyCode}
+18                                                                                                            
+                                                             \{
+19     \textcolor{comment}{//btScalar origen, btScalar mass, btVector3 dimension, btVector3 localInertia}
+20     \textcolor{comment}{//box shape, dimensions are 50 by 50 by 50? might get doubled since hello world says 100}
+21     \textcolor{comment}{//height = 50, width =50, length =50;}
+22     \textcolor{comment}{//massi = 0}
+23     \textcolor{comment}{//xpos =0, ypos = -56, zpos = 0}
+24     \textcolor{comment}{//all inertia =0}
+25     btCollisionShape* groundShape = \textcolor{keyword}{new} btBoxShape(btVector3(btScalar(\hyperlink{test_8cpp_a2474a5474cbff19523a51eb1de01cda4}{width}),btScalar(
+      \hyperlink{test_8cpp_ad12fc34ce789bce6c8a05d8a17138534}{height}),btScalar(length)));
+26     collisionShapes.push\_back(groundShape);
+27     btTransform groundTransform;
+28     groundTransform.setIdentity();
+29 
+30     \textcolor{comment}{//put this as a thingy that goes into the method}
+31     \textcolor{comment}{//sets the origon of the cube at 0, -56, 0}
+32     groundTransform.setOrigin(btVector3(xpos,ypos,zpos));
+33     \textcolor{comment}{//mass of the cube, also have this be passed in}
+34     btScalar mass(massi);
+35 
+36     \textcolor{keywordtype}{bool} isDynamic = (mass !=0.f);
+37     \textcolor{comment}{//inertia  towards an x, y, z direction?}
+38     \textcolor{comment}{//needs a mass to have inertia}
+39     btVector3 localInertia (xInertia, yInertia, zInertia);
+40 
+41     \textcolor{keywordflow}{if} (isDynamic)
+42             groundShape->calculateLocalInertia(mass,localInertia);
+43 
+44     btDefaultMotionState* myMotionState = \textcolor{keyword}{new} btDefaultMotionState(groundTransform);
+45     btRigidBody::btRigidBodyConstructionInfo rbInfo(mass,myMotionState,groundShape,localInertia);
+46     btRigidBody* body = \textcolor{keyword}{new} btRigidBody(rbInfo);
+47 
+48     dynamicsWorld->addRigidBody(body);
+49 
+50 \}
+\end{DoxyCode}
+\hypertarget{class_physics___wrapper_a2621954caaa8b88e3ed3dde2032dcb5a}{}\index{Physics\+\_\+\+Wrapper@{Physics\+\_\+\+Wrapper}!Create\+Rigid\+Body\+Sphere@{Create\+Rigid\+Body\+Sphere}}
+\index{Create\+Rigid\+Body\+Sphere@{Create\+Rigid\+Body\+Sphere}!Physics\+\_\+\+Wrapper@{Physics\+\_\+\+Wrapper}}
+\subsubsection[{Create\+Rigid\+Body\+Sphere}]{\setlength{\rightskip}{0pt plus 5cm}void Physics\+\_\+\+Wrapper\+::\+Create\+Rigid\+Body\+Sphere (
+\begin{DoxyParamCaption}
+\item[{int}]{radius, }
+\item[{int}]{massi, }
+\item[{int}]{xpos, }
+\item[{int}]{ypos, }
+\item[{int}]{zpos, }
+\item[{int}]{x\+Inertia, }
+\item[{int}]{y\+Intertia, }
+\item[{int}]{z\+Inertia}
+\end{DoxyParamCaption}
+)}\label{class_physics___wrapper_a2621954caaa8b88e3ed3dde2032dcb5a}
+
+
+Creates a Rigid\+Body\+Sphere and adds it to the physics world. 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em radius} & -\/int, massi -\/int, xpos -\/ int, ypos -\/ int, zpos -\/ int, x\+Inertia -\/int, y\+Inertia -\/int, z\+Inertia -\/int \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 52 of file Physics\+\_\+\+Wrapper.\+cpp.
+
+
+\begin{DoxyCode}
+52                                                                                                            
+                                   \{
+53     \textcolor{comment}{//int mass, int radius}
+54     \textcolor{comment}{//sphere 1 by 1}
+55     \textcolor{comment}{/*}
+56 \textcolor{comment}{    int radius = 1;}
+57 \textcolor{comment}{    int masss =1.f;}
+58 \textcolor{comment}{    int xpos = 2, ypos = 16, zpos =0;}
+59 \textcolor{comment}{    int xInertia=0, yInertia=0, zInertia=0;}
+60 \textcolor{comment}{    */}
+61     btCollisionShape* sphereShape = \textcolor{keyword}{new} btSphereShape(btScalar(radius));
+62     collisionShapes.push\_back(sphereShape);
+63     
+64     btTransform groundTransform;
+65     groundTransform.setIdentity();
+66 
+67     \textcolor{comment}{//put this as a thingy that goes into the method}
+68     \textcolor{comment}{//sets the origon of the sphere at 0, -56, 0}
+69     groundTransform.setOrigin(btVector3(xpos,ypos,zpos));
+70     \textcolor{comment}{//mass of the cube, also have this be passed in}
+71     
+72     btScalar mass(massi);
+73 
+74     \textcolor{keywordtype}{bool} isDynamic = (mass !=0.f);
+75     \textcolor{comment}{//inertia  towards an x, y, z direction?}
+76     \textcolor{comment}{//needs a mass to have inertia}
+77     btVector3 localInertia (xInertia, yInertia, zInertia);
+78 
+79     \textcolor{keywordflow}{if} (isDynamic)
+80             sphereShape->calculateLocalInertia(mass,localInertia);
+81 
+82     btDefaultMotionState* myMotionState = \textcolor{keyword}{new} btDefaultMotionState(groundTransform);
+83     btRigidBody::btRigidBodyConstructionInfo rbInfo(mass,myMotionState,sphereShape,localInertia);
+84     btRigidBody* body = \textcolor{keyword}{new} btRigidBody(rbInfo);
+85     
+86     dynamicsWorld->addRigidBody(body);
+87 
+88 \}
+\end{DoxyCode}
+\hypertarget{class_physics___wrapper_af09f12720b0c1cfccf863a0da5a67256}{}\index{Physics\+\_\+\+Wrapper@{Physics\+\_\+\+Wrapper}!Get\+Xorigen@{Get\+Xorigen}}
+\index{Get\+Xorigen@{Get\+Xorigen}!Physics\+\_\+\+Wrapper@{Physics\+\_\+\+Wrapper}}
+\subsubsection[{Get\+Xorigen}]{\setlength{\rightskip}{0pt plus 5cm}float Physics\+\_\+\+Wrapper\+::\+Get\+Xorigen (
+\begin{DoxyParamCaption}
+\item[{int}]{i}
+\end{DoxyParamCaption}
+)}\label{class_physics___wrapper_af09f12720b0c1cfccf863a0da5a67256}
+
+
+Gets the xorigen of object i. 
+
+\begin{DoxyReturn}{Returns}
+float 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em i} & -\/int \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 115 of file Physics\+\_\+\+Wrapper.\+cpp.
+
+
+\begin{DoxyCode}
+115                                       \{
+116     \textcolor{keywordflow}{if}(i<dynamicsWorld->getNumCollisionObjects())\{
+117             btCollisionObject* obj = dynamicsWorld->getCollisionObjectArray()[i];
+118             btRigidBody* body = btRigidBody::upcast(obj);
+119             btTransform trans;
+120             trans = obj ->getWorldTransform();
+121             \textcolor{keywordflow}{return}(trans.getOrigin().getX());
+122     \}
+123 \}
+\end{DoxyCode}
+\hypertarget{class_physics___wrapper_aa29e033ac2a859a5266d838c664a7d8f}{}\index{Physics\+\_\+\+Wrapper@{Physics\+\_\+\+Wrapper}!Get\+Yorigen@{Get\+Yorigen}}
+\index{Get\+Yorigen@{Get\+Yorigen}!Physics\+\_\+\+Wrapper@{Physics\+\_\+\+Wrapper}}
+\subsubsection[{Get\+Yorigen}]{\setlength{\rightskip}{0pt plus 5cm}float Physics\+\_\+\+Wrapper\+::\+Get\+Yorigen (
+\begin{DoxyParamCaption}
+\item[{int}]{i}
+\end{DoxyParamCaption}
+)}\label{class_physics___wrapper_aa29e033ac2a859a5266d838c664a7d8f}
+
+
+Gets the yorigen of object i. 
+
+\begin{DoxyReturn}{Returns}
+float 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em i} & -\/int \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 125 of file Physics\+\_\+\+Wrapper.\+cpp.
+
+
+\begin{DoxyCode}
+125                                       \{
+126     \textcolor{keywordflow}{if}(i<dynamicsWorld->getNumCollisionObjects())\{
+127             btCollisionObject* obj = dynamicsWorld->getCollisionObjectArray()[i];
+128             btRigidBody* body = btRigidBody::upcast(obj);
+129             btTransform trans;
+130             trans = obj ->getWorldTransform();
+131             \textcolor{keywordflow}{return}(trans.getOrigin().getY());
+132     \}
+133 \}
+\end{DoxyCode}
+\hypertarget{class_physics___wrapper_ae820a269c9cd59c5989cf76914e9b2d0}{}\index{Physics\+\_\+\+Wrapper@{Physics\+\_\+\+Wrapper}!Get\+Zorigen@{Get\+Zorigen}}
+\index{Get\+Zorigen@{Get\+Zorigen}!Physics\+\_\+\+Wrapper@{Physics\+\_\+\+Wrapper}}
+\subsubsection[{Get\+Zorigen}]{\setlength{\rightskip}{0pt plus 5cm}float Physics\+\_\+\+Wrapper\+::\+Get\+Zorigen (
+\begin{DoxyParamCaption}
+\item[{int}]{i}
+\end{DoxyParamCaption}
+)}\label{class_physics___wrapper_ae820a269c9cd59c5989cf76914e9b2d0}
+
+
+Gets the zorigen of object i. 
+
+\begin{DoxyReturn}{Returns}
+float 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em i} & -\/int \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 135 of file Physics\+\_\+\+Wrapper.\+cpp.
+
+
+\begin{DoxyCode}
+135                                       \{
+136     \textcolor{keywordflow}{if}(i<dynamicsWorld->getNumCollisionObjects())\{
+137             btCollisionObject* obj = dynamicsWorld->getCollisionObjectArray()[i];
+138             btRigidBody* body = btRigidBody::upcast(obj);
+139             btTransform trans;
+140             trans = obj ->getWorldTransform();
+141             \textcolor{keywordflow}{return}(trans.getOrigin().getZ());
+142     \}
+143 \}
+\end{DoxyCode}
+\hypertarget{class_physics___wrapper_a44206cbcb107fd318b4d5733749347da}{}\index{Physics\+\_\+\+Wrapper@{Physics\+\_\+\+Wrapper}!Run@{Run}}
+\index{Run@{Run}!Physics\+\_\+\+Wrapper@{Physics\+\_\+\+Wrapper}}
+\subsubsection[{Run}]{\setlength{\rightskip}{0pt plus 5cm}void Physics\+\_\+\+Wrapper\+::\+Run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_physics___wrapper_a44206cbcb107fd318b4d5733749347da}
+
+
+runs the physics and does collisions 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line 91 of file Physics\+\_\+\+Wrapper.\+cpp.
+
+
+\begin{DoxyCode}
+91                          \{
+92         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0;i<150;i++)
+93     \{
+94         dynamicsWorld->stepSimulation(1.f/60.f,10);
+95         
+96         \textcolor{comment}{//print positions of all objects}
+97         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j=dynamicsWorld->getNumCollisionObjects()-1; j>=0 ;j--)
+98         \{
+99             btCollisionObject* obj = dynamicsWorld->getCollisionObjectArray()[j];
+100             btRigidBody* body = btRigidBody::upcast(obj);
+101             btTransform trans;
+102             \textcolor{keywordflow}{if} (body && body->getMotionState())
+103             \{
+104                 body->getMotionState()->getWorldTransform(trans);
+105 
+106             \} \textcolor{keywordflow}{else}
+107             \{
+108                 trans = obj->getWorldTransform();
+109             \}
+110             printf(\textcolor{stringliteral}{"world pos object %d = %f,%f,%f\(\backslash\)n"},j,\textcolor{keywordtype}{float}(trans.getOrigin().getX()),\textcolor{keywordtype}{float}(trans.
+      getOrigin().getY()),\textcolor{keywordtype}{float}(trans.getOrigin().getZ()));
+111         \}
+112     \}
+113 \}
+\end{DoxyCode}
+\hypertarget{class_physics___wrapper_a49e1a8c4ddd805f10954e441f10eb2e8}{}\index{Physics\+\_\+\+Wrapper@{Physics\+\_\+\+Wrapper}!Set\+Gravity@{Set\+Gravity}}
+\index{Set\+Gravity@{Set\+Gravity}!Physics\+\_\+\+Wrapper@{Physics\+\_\+\+Wrapper}}
+\subsubsection[{Set\+Gravity}]{\setlength{\rightskip}{0pt plus 5cm}void Physics\+\_\+\+Wrapper\+::\+Set\+Gravity (
+\begin{DoxyParamCaption}
+\item[{double}]{y\+Gravity}
+\end{DoxyParamCaption}
+)}\label{class_physics___wrapper_a49e1a8c4ddd805f10954e441f10eb2e8}
+
+
+Sets the gravity for the world. 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em ygravity} & -\/ double \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 14 of file Physics\+\_\+\+Wrapper.\+cpp.
+
+
+\begin{DoxyCode}
+14                                                \{
+15     dynamicsWorld->setGravity(btVector3(0, ygravity, 0));
+16 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_physics___wrapper_8h}{Physics\+\_\+\+Wrapper.\+h}\item 
+\hyperlink{_physics___wrapper_8cpp}{Physics\+\_\+\+Wrapper.\+cpp}\end{DoxyCompactItemize}

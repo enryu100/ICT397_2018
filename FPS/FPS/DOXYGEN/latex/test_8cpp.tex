@@ -1,0 +1,393 @@
+\hypertarget{test_8cpp}{}\section{test.\+cpp File Reference}
+\label{test_8cpp}\index{test.\+cpp@{test.\+cpp}}
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$math.\+h$>$}\\*
+{\ttfamily \#include $<$gl/glut.\+h$>$}\\*
+{\ttfamily \#include $<$gl/glfw.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}my\+Math.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}vector2\+D.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}movement.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}waypoint.\+h\char`\"{}}\\*
+Include dependency graph for test.\+cpp\+:
+% FIG 0
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{test_8cpp_acaaeb59c827bcce5feadee7db40525b0}{G\+L\+F\+W\+\_\+\+D\+L\+L}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+vector2\+D \hyperlink{test_8cpp_a952b87bd256677a2bbbe54601b33a2e1}{target\+Pos} (500, 500)
+\item 
+vector2\+D \hyperlink{test_8cpp_a4da80cd4368e8e0450fe5f1af903e5f8}{target\+X\+Z} (10, 10)
+\item 
+vector2\+D \hyperlink{test_8cpp_a520cbd94dcedb67eeb1e7e1eaaad00b8}{target\+Vel} (0, 62)
+\item 
+vector2\+D \hyperlink{test_8cpp_a4772a73217a3236be079dd4ab2aecca9}{pursuer\+X\+Z} (590, 590)
+\item 
+vector2\+D \hyperlink{test_8cpp_a653ba80c2d1245fd7711bce29cfc2515}{pursuer\+Vel} (1, 1)
+\item 
+void \hyperlink{test_8cpp_a707aa0fde27ca3fd7ff7bd21cce6463b}{myinit} (void)
+\item 
+void \hyperlink{test_8cpp_a953b3bbdc655e13875ba4a5e6098958f}{display} (double delta\+T)
+\item 
+void G\+L\+F\+W\+C\+A\+L\+L \hyperlink{test_8cpp_ab298fd8280e4b69f424f8e6fcf52160c}{mouse\+Action} (int button, int action)
+\item 
+void G\+L\+F\+W\+C\+A\+L\+L \hyperlink{test_8cpp_a59ffe4a5e5330578701a032ee8995f70}{mouse} (int x, int y)
+\item 
+void G\+L\+F\+W\+C\+A\+L\+L \hyperlink{test_8cpp_a8304c741874a2d47cc6179f286e15619}{kb} (int kbq, int action)
+\item 
+int \hyperlink{test_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main} ()
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{test_8cpp_a36f7b6be7108281af77939ceaec42fd6}{running}
+\item 
+int \hyperlink{test_8cpp_a85ea1b63086b31a15d3ed2579c5715a6}{mouse\+X} =0
+\item 
+int \hyperlink{test_8cpp_a3637abebcaa9d04aa18b1610d0921e16}{mouse\+Y} =0
+\item 
+int \hyperlink{test_8cpp_a2474a5474cbff19523a51eb1de01cda4}{width} =800
+\item 
+int \hyperlink{test_8cpp_ad12fc34ce789bce6c8a05d8a17138534}{height} =600
+\item 
+waypoint$<$ vector2\+D $>$ \hyperlink{test_8cpp_ac7084c971b1af03c7e876b451a869d7e}{waypoints}
+\item 
+vector2\+D \hyperlink{test_8cpp_ac41ff3a7c65dbb45643c83a3c74385a3}{cur\+Waypoint}
+\item 
+int \hyperlink{test_8cpp_a066056eab0a8793b3b9044f61639d6be}{curway\+Point\+No}
+\item 
+bool \hyperlink{test_8cpp_a4805fcfd9c11970cc8f7e0162ed2fbe7}{chase}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{test_8cpp_acaaeb59c827bcce5feadee7db40525b0}{}\index{test.\+cpp@{test.\+cpp}!G\+L\+F\+W\+\_\+\+D\+L\+L@{G\+L\+F\+W\+\_\+\+D\+L\+L}}
+\index{G\+L\+F\+W\+\_\+\+D\+L\+L@{G\+L\+F\+W\+\_\+\+D\+L\+L}!test.\+cpp@{test.\+cpp}}
+\subsubsection[{G\+L\+F\+W\+\_\+\+D\+L\+L}]{\setlength{\rightskip}{0pt plus 5cm}\#define G\+L\+F\+W\+\_\+\+D\+L\+L}\label{test_8cpp_acaaeb59c827bcce5feadee7db40525b0}
+
+
+Definition at line 1 of file test.\+cpp.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{test_8cpp_a953b3bbdc655e13875ba4a5e6098958f}{}\index{test.\+cpp@{test.\+cpp}!display@{display}}
+\index{display@{display}!test.\+cpp@{test.\+cpp}}
+\subsubsection[{display}]{\setlength{\rightskip}{0pt plus 5cm}void display (
+\begin{DoxyParamCaption}
+\item[{double}]{delta\+T}
+\end{DoxyParamCaption}
+)}\label{test_8cpp_a953b3bbdc655e13875ba4a5e6098958f}
+
+
+Definition at line 43 of file test.\+cpp.
+
+
+\begin{DoxyCode}
+44 \{
+45  glClear(GL\_COLOR\_BUFFER\_BIT ); \textcolor{comment}{// Clear The Screen And The Depth Buffer}
+46  glColor3ub(255, 255, 255);
+47  glRecti(\hyperlink{test_8cpp_a4da80cd4368e8e0450fe5f1af903e5f8}{targetXZ}[0], \hyperlink{test_8cpp_a4da80cd4368e8e0450fe5f1af903e5f8}{targetXZ}[1], \hyperlink{test_8cpp_a4da80cd4368e8e0450fe5f1af903e5f8}{targetXZ}[0]+20, 
+      \hyperlink{test_8cpp_a4da80cd4368e8e0450fe5f1af903e5f8}{targetXZ}[1]+20);     \textcolor{comment}{//render target as a rectangle}
+48  glColor3ub(255, 0, 0);
+49  glRecti(\hyperlink{test_8cpp_a4772a73217a3236be079dd4ab2aecca9}{pursuerXZ}[0], \hyperlink{test_8cpp_a4772a73217a3236be079dd4ab2aecca9}{pursuerXZ}[1], \hyperlink{test_8cpp_a4772a73217a3236be079dd4ab2aecca9}{pursuerXZ}[0]+20, 
+      \hyperlink{test_8cpp_a4772a73217a3236be079dd4ab2aecca9}{pursuerXZ}[1]+20); \textcolor{comment}{//render pursuer as a rect}
+50  glFlush();
+51 \}
+\end{DoxyCode}
+\hypertarget{test_8cpp_a8304c741874a2d47cc6179f286e15619}{}\index{test.\+cpp@{test.\+cpp}!kb@{kb}}
+\index{kb@{kb}!test.\+cpp@{test.\+cpp}}
+\subsubsection[{kb}]{\setlength{\rightskip}{0pt plus 5cm}void G\+L\+F\+W\+C\+A\+L\+L kb (
+\begin{DoxyParamCaption}
+\item[{int}]{kbq, }
+\item[{int}]{action}
+\end{DoxyParamCaption}
+)}\label{test_8cpp_a8304c741874a2d47cc6179f286e15619}
+
+
+Definition at line 68 of file test.\+cpp.
+
+
+\begin{DoxyCode}
+69 \{
+70 
+71     \textcolor{keywordflow}{switch}(kbq)
+72     \{
+73         \textcolor{keywordflow}{case} GLFW\_KEY\_ESC:
+74             \hyperlink{test_8cpp_a36f7b6be7108281af77939ceaec42fd6}{running}=\textcolor{keyword}{false};
+75             \textcolor{keywordflow}{break};
+76     \}
+77 \}
+\end{DoxyCode}
+\hypertarget{test_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{}\index{test.\+cpp@{test.\+cpp}!main@{main}}
+\index{main@{main}!test.\+cpp@{test.\+cpp}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{test_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}
+
+
+Definition at line 79 of file test.\+cpp.
+
+
+\begin{DoxyCode}
+80 \{
+81 
+82  \textcolor{keywordtype}{bool} done=\textcolor{keyword}{false};
+83  \textcolor{keywordtype}{double} time0,time1;
+84  \textcolor{keywordtype}{double} frequency=0.05;  \textcolor{comment}{//frequency of logic update - every 20ms}
+85    glfwInit();
+86      \textcolor{keywordflow}{if}( !glfwOpenWindow( \hyperlink{test_8cpp_a2474a5474cbff19523a51eb1de01cda4}{width},\hyperlink{test_8cpp_ad12fc34ce789bce6c8a05d8a17138534}{height}, 0,0,0,0, 0,0, GLFW\_WINDOW) )
+87      \{
+88         glfwTerminate();
+89         \textcolor{keywordflow}{return} 0;
+90      \}
+91  \hyperlink{test_8cpp_a707aa0fde27ca3fd7ff7bd21cce6463b}{myinit}();    
+92 \textcolor{comment}{// glfwSetWindowSizeCallback( myReshape );}
+93  glfwEnable( GLFW\_KEY\_REPEAT );
+94  \textcolor{comment}{// Set key callback function}
+95  glfwSetKeyCallback( \hyperlink{test_8cpp_a8304c741874a2d47cc6179f286e15619}{kb} );
+96  glfwSetMousePosCallback( \hyperlink{test_8cpp_a59ffe4a5e5330578701a032ee8995f70}{mouse} );
+97  glfwSetMouseButtonCallback(\hyperlink{test_8cpp_ab298fd8280e4b69f424f8e6fcf52160c}{mouseAction});
+98  \textcolor{comment}{// Set tile}
+99  glfwSetWindowTitle( \textcolor{stringliteral}{"patrollong chase example 2D"} );
+100  \hyperlink{test_8cpp_a36f7b6be7108281af77939ceaec42fd6}{running} = GL\_TRUE;
+101  time0=glfwGetTime();
+102  \textcolor{comment}{/*****************  game loop ****************************************/}  
+103    \textcolor{keywordflow}{do}
+104    \{ 
+105     time1=glfwGetTime();
+106       \textcolor{keywordflow}{while}(((\textcolor{keywordtype}{float})time1 - time0) > frequency)
+107       \{  \textcolor{comment}{//update player ai}
+108           \textcolor{keywordflow}{if}(!\hyperlink{test_8cpp_a4805fcfd9c11970cc8f7e0162ed2fbe7}{chase})
+109           \{
+110              \textcolor{keywordflow}{if}(moveTo(\hyperlink{test_8cpp_a4da80cd4368e8e0450fe5f1af903e5f8}{targetXZ},\hyperlink{test_8cpp_ac41ff3a7c65dbb45643c83a3c74385a3}{curWaypoint},\hyperlink{test_8cpp_a520cbd94dcedb67eeb1e7e1eaaad00b8}{targetVel},time1-time0))
+111              \{ 
+112                \textcolor{keywordflow}{if}(\hyperlink{test_8cpp_a066056eab0a8793b3b9044f61639d6be}{curwayPointNo}==\hyperlink{test_8cpp_ac7084c971b1af03c7e876b451a869d7e}{waypoints}.getNumWaypoints()-1)
+113                  \hyperlink{test_8cpp_a066056eab0a8793b3b9044f61639d6be}{curwayPointNo}=0;
+114                \textcolor{keywordflow}{else}
+115                  \hyperlink{test_8cpp_a066056eab0a8793b3b9044f61639d6be}{curwayPointNo}++;
+116               \hyperlink{test_8cpp_ac41ff3a7c65dbb45643c83a3c74385a3}{curWaypoint}=\hyperlink{test_8cpp_ac7084c971b1af03c7e876b451a869d7e}{waypoints}.getWaypoint(
+      \hyperlink{test_8cpp_a066056eab0a8793b3b9044f61639d6be}{curwayPointNo});
+117              \}
+118           \}
+119        \textcolor{keywordflow}{if}(seeTarget(\hyperlink{test_8cpp_a4da80cd4368e8e0450fe5f1af903e5f8}{targetXZ},\hyperlink{test_8cpp_a4772a73217a3236be079dd4ab2aecca9}{pursuerXZ},\hyperlink{test_8cpp_a520cbd94dcedb67eeb1e7e1eaaad00b8}{targetVel},100,180))
+120        \{
+121            \hyperlink{test_8cpp_a4805fcfd9c11970cc8f7e0162ed2fbe7}{chase}=\textcolor{keyword}{true};
+122        \}
+123        \textcolor{keywordflow}{if}(\hyperlink{test_8cpp_a4805fcfd9c11970cc8f7e0162ed2fbe7}{chase}==\textcolor{keyword}{true})
+124        \{
+125          moveTo(\hyperlink{test_8cpp_a4da80cd4368e8e0450fe5f1af903e5f8}{targetXZ},\hyperlink{test_8cpp_a4772a73217a3236be079dd4ab2aecca9}{pursuerXZ},\hyperlink{test_8cpp_a520cbd94dcedb67eeb1e7e1eaaad00b8}{targetVel},time1-time0,5);
+126        \}
+127 
+128        time0+=frequency;
+129       \}
+130       \textcolor{keywordflow}{if}(((\textcolor{keywordtype}{float})time1 - time0) > frequency)
+131          time0 = time1 - frequency;
+132     \hyperlink{test_8cpp_a953b3bbdc655e13875ba4a5e6098958f}{display}(time1-time0);  \textcolor{comment}{//render}
+133     glfwSwapBuffers();
+134     \textcolor{comment}{// Check if the window was closed}
+135     \hyperlink{test_8cpp_a36f7b6be7108281af77939ceaec42fd6}{running} = \hyperlink{test_8cpp_a36f7b6be7108281af77939ceaec42fd6}{running} && glfwGetWindowParam( GLFW\_OPENED );   
+136    \}\textcolor{keywordflow}{while}(\hyperlink{test_8cpp_a36f7b6be7108281af77939ceaec42fd6}{running});
+137 
+138   glfwTerminate();
+139 \textcolor{comment}{/**************** end game loop  *************************************/}
+140 getchar();
+141 
+142 
+143 
+144 
+145 
+146 
+147 \}\end{DoxyCode}
+\hypertarget{test_8cpp_a59ffe4a5e5330578701a032ee8995f70}{}\index{test.\+cpp@{test.\+cpp}!mouse@{mouse}}
+\index{mouse@{mouse}!test.\+cpp@{test.\+cpp}}
+\subsubsection[{mouse}]{\setlength{\rightskip}{0pt plus 5cm}void G\+L\+F\+W\+C\+A\+L\+L mouse (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)}\label{test_8cpp_a59ffe4a5e5330578701a032ee8995f70}
+
+
+Definition at line 62 of file test.\+cpp.
+
+
+\begin{DoxyCode}
+63 \{
+64  \hyperlink{test_8cpp_a85ea1b63086b31a15d3ed2579c5715a6}{mouseX}=x;
+65  \hyperlink{test_8cpp_a3637abebcaa9d04aa18b1610d0921e16}{mouseY}=y;
+66 \}
+\end{DoxyCode}
+\hypertarget{test_8cpp_ab298fd8280e4b69f424f8e6fcf52160c}{}\index{test.\+cpp@{test.\+cpp}!mouse\+Action@{mouse\+Action}}
+\index{mouse\+Action@{mouse\+Action}!test.\+cpp@{test.\+cpp}}
+\subsubsection[{mouse\+Action}]{\setlength{\rightskip}{0pt plus 5cm}void G\+L\+F\+W\+C\+A\+L\+L mouse\+Action (
+\begin{DoxyParamCaption}
+\item[{int}]{button, }
+\item[{int}]{action}
+\end{DoxyParamCaption}
+)}\label{test_8cpp_ab298fd8280e4b69f424f8e6fcf52160c}
+
+
+Definition at line 53 of file test.\+cpp.
+
+
+\begin{DoxyCode}
+54 \{
+55     \textcolor{keywordflow}{if}(button==GLFW\_MOUSE\_BUTTON\_LEFT && action ==GLFW\_PRESS)
+56     \{
+57         \hyperlink{test_8cpp_a4772a73217a3236be079dd4ab2aecca9}{pursuerXZ}.set(\hyperlink{test_8cpp_a85ea1b63086b31a15d3ed2579c5715a6}{mouseX},\hyperlink{test_8cpp_a3637abebcaa9d04aa18b1610d0921e16}{mouseY});   \textcolor{comment}{//changes targets position to where the mouse
+       is clicked}
+58         \hyperlink{test_8cpp_a4805fcfd9c11970cc8f7e0162ed2fbe7}{chase}=\textcolor{keyword}{false};
+59     \}
+60 \}
+\end{DoxyCode}
+\hypertarget{test_8cpp_a707aa0fde27ca3fd7ff7bd21cce6463b}{}\index{test.\+cpp@{test.\+cpp}!myinit@{myinit}}
+\index{myinit@{myinit}!test.\+cpp@{test.\+cpp}}
+\subsubsection[{myinit}]{\setlength{\rightskip}{0pt plus 5cm}void myinit (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{test_8cpp_a707aa0fde27ca3fd7ff7bd21cce6463b}
+
+
+Definition at line 28 of file test.\+cpp.
+
+
+
+References chase, and curway\+Point\+No.
+
+
+\begin{DoxyCode}
+29 \{
+30  glClearColor (0.0, 0.0, 0.0, 0.0);
+31  glMatrixMode(GL\_MODELVIEW);
+32  glLoadIdentity();
+33  glOrtho(0,\hyperlink{test_8cpp_a2474a5474cbff19523a51eb1de01cda4}{width},\hyperlink{test_8cpp_ad12fc34ce789bce6c8a05d8a17138534}{height},0,-1.0,1.0);
+34  \hyperlink{test_8cpp_a066056eab0a8793b3b9044f61639d6be}{curwayPointNo}=0;
+35  \hyperlink{test_8cpp_ac7084c971b1af03c7e876b451a869d7e}{waypoints}.addWaypoint(vector2D(10,10));
+36  \hyperlink{test_8cpp_ac7084c971b1af03c7e876b451a869d7e}{waypoints}.addWaypoint(vector2D(250,10));
+37  \hyperlink{test_8cpp_ac7084c971b1af03c7e876b451a869d7e}{waypoints}.addWaypoint(vector2D(250,250));
+38  \hyperlink{test_8cpp_ac7084c971b1af03c7e876b451a869d7e}{waypoints}.addWaypoint(vector2D(10,250));
+39  \hyperlink{test_8cpp_ac41ff3a7c65dbb45643c83a3c74385a3}{curWaypoint}=\hyperlink{test_8cpp_ac7084c971b1af03c7e876b451a869d7e}{waypoints}.getWaypoint(0);
+40  \hyperlink{test_8cpp_a4805fcfd9c11970cc8f7e0162ed2fbe7}{chase}=\textcolor{keyword}{false};
+41 \}
+\end{DoxyCode}
+\hypertarget{test_8cpp_a653ba80c2d1245fd7711bce29cfc2515}{}\index{test.\+cpp@{test.\+cpp}!pursuer\+Vel@{pursuer\+Vel}}
+\index{pursuer\+Vel@{pursuer\+Vel}!test.\+cpp@{test.\+cpp}}
+\subsubsection[{pursuer\+Vel}]{\setlength{\rightskip}{0pt plus 5cm}vector2\+D pursuer\+Vel (
+\begin{DoxyParamCaption}
+\item[{1}]{, }
+\item[{1}]{}
+\end{DoxyParamCaption}
+)}\label{test_8cpp_a653ba80c2d1245fd7711bce29cfc2515}
+\hypertarget{test_8cpp_a4772a73217a3236be079dd4ab2aecca9}{}\index{test.\+cpp@{test.\+cpp}!pursuer\+X\+Z@{pursuer\+X\+Z}}
+\index{pursuer\+X\+Z@{pursuer\+X\+Z}!test.\+cpp@{test.\+cpp}}
+\subsubsection[{pursuer\+X\+Z}]{\setlength{\rightskip}{0pt plus 5cm}vector2\+D pursuer\+X\+Z (
+\begin{DoxyParamCaption}
+\item[{590}]{, }
+\item[{590}]{}
+\end{DoxyParamCaption}
+)}\label{test_8cpp_a4772a73217a3236be079dd4ab2aecca9}
+\hypertarget{test_8cpp_a952b87bd256677a2bbbe54601b33a2e1}{}\index{test.\+cpp@{test.\+cpp}!target\+Pos@{target\+Pos}}
+\index{target\+Pos@{target\+Pos}!test.\+cpp@{test.\+cpp}}
+\subsubsection[{target\+Pos}]{\setlength{\rightskip}{0pt plus 5cm}vector2\+D target\+Pos (
+\begin{DoxyParamCaption}
+\item[{500}]{, }
+\item[{500}]{}
+\end{DoxyParamCaption}
+)}\label{test_8cpp_a952b87bd256677a2bbbe54601b33a2e1}
+\hypertarget{test_8cpp_a520cbd94dcedb67eeb1e7e1eaaad00b8}{}\index{test.\+cpp@{test.\+cpp}!target\+Vel@{target\+Vel}}
+\index{target\+Vel@{target\+Vel}!test.\+cpp@{test.\+cpp}}
+\subsubsection[{target\+Vel}]{\setlength{\rightskip}{0pt plus 5cm}vector2\+D target\+Vel (
+\begin{DoxyParamCaption}
+\item[{0}]{, }
+\item[{62}]{}
+\end{DoxyParamCaption}
+)}\label{test_8cpp_a520cbd94dcedb67eeb1e7e1eaaad00b8}
+\hypertarget{test_8cpp_a4da80cd4368e8e0450fe5f1af903e5f8}{}\index{test.\+cpp@{test.\+cpp}!target\+X\+Z@{target\+X\+Z}}
+\index{target\+X\+Z@{target\+X\+Z}!test.\+cpp@{test.\+cpp}}
+\subsubsection[{target\+X\+Z}]{\setlength{\rightskip}{0pt plus 5cm}vector2\+D target\+X\+Z (
+\begin{DoxyParamCaption}
+\item[{10}]{, }
+\item[{10}]{}
+\end{DoxyParamCaption}
+)}\label{test_8cpp_a4da80cd4368e8e0450fe5f1af903e5f8}
+
+
+\subsection{Variable Documentation}
+\hypertarget{test_8cpp_a4805fcfd9c11970cc8f7e0162ed2fbe7}{}\index{test.\+cpp@{test.\+cpp}!chase@{chase}}
+\index{chase@{chase}!test.\+cpp@{test.\+cpp}}
+\subsubsection[{chase}]{\setlength{\rightskip}{0pt plus 5cm}bool chase}\label{test_8cpp_a4805fcfd9c11970cc8f7e0162ed2fbe7}
+
+
+Definition at line 26 of file test.\+cpp.
+
+
+
+Referenced by myinit().
+
+\hypertarget{test_8cpp_ac41ff3a7c65dbb45643c83a3c74385a3}{}\index{test.\+cpp@{test.\+cpp}!cur\+Waypoint@{cur\+Waypoint}}
+\index{cur\+Waypoint@{cur\+Waypoint}!test.\+cpp@{test.\+cpp}}
+\subsubsection[{cur\+Waypoint}]{\setlength{\rightskip}{0pt plus 5cm}vector2\+D cur\+Waypoint}\label{test_8cpp_ac41ff3a7c65dbb45643c83a3c74385a3}
+
+
+Definition at line 24 of file test.\+cpp.
+
+\hypertarget{test_8cpp_a066056eab0a8793b3b9044f61639d6be}{}\index{test.\+cpp@{test.\+cpp}!curway\+Point\+No@{curway\+Point\+No}}
+\index{curway\+Point\+No@{curway\+Point\+No}!test.\+cpp@{test.\+cpp}}
+\subsubsection[{curway\+Point\+No}]{\setlength{\rightskip}{0pt plus 5cm}int curway\+Point\+No}\label{test_8cpp_a066056eab0a8793b3b9044f61639d6be}
+
+
+Definition at line 25 of file test.\+cpp.
+
+
+
+Referenced by myinit().
+
+\hypertarget{test_8cpp_ad12fc34ce789bce6c8a05d8a17138534}{}\index{test.\+cpp@{test.\+cpp}!height@{height}}
+\index{height@{height}!test.\+cpp@{test.\+cpp}}
+\subsubsection[{height}]{\setlength{\rightskip}{0pt plus 5cm}int height =600}\label{test_8cpp_ad12fc34ce789bce6c8a05d8a17138534}
+
+
+Definition at line 17 of file test.\+cpp.
+
+\hypertarget{test_8cpp_a85ea1b63086b31a15d3ed2579c5715a6}{}\index{test.\+cpp@{test.\+cpp}!mouse\+X@{mouse\+X}}
+\index{mouse\+X@{mouse\+X}!test.\+cpp@{test.\+cpp}}
+\subsubsection[{mouse\+X}]{\setlength{\rightskip}{0pt plus 5cm}int mouse\+X =0}\label{test_8cpp_a85ea1b63086b31a15d3ed2579c5715a6}
+
+
+Definition at line 15 of file test.\+cpp.
+
+\hypertarget{test_8cpp_a3637abebcaa9d04aa18b1610d0921e16}{}\index{test.\+cpp@{test.\+cpp}!mouse\+Y@{mouse\+Y}}
+\index{mouse\+Y@{mouse\+Y}!test.\+cpp@{test.\+cpp}}
+\subsubsection[{mouse\+Y}]{\setlength{\rightskip}{0pt plus 5cm}int mouse\+Y =0}\label{test_8cpp_a3637abebcaa9d04aa18b1610d0921e16}
+
+
+Definition at line 16 of file test.\+cpp.
+
+\hypertarget{test_8cpp_a36f7b6be7108281af77939ceaec42fd6}{}\index{test.\+cpp@{test.\+cpp}!running@{running}}
+\index{running@{running}!test.\+cpp@{test.\+cpp}}
+\subsubsection[{running}]{\setlength{\rightskip}{0pt plus 5cm}bool running}\label{test_8cpp_a36f7b6be7108281af77939ceaec42fd6}
+
+
+Definition at line 14 of file test.\+cpp.
+
+\hypertarget{test_8cpp_ac7084c971b1af03c7e876b451a869d7e}{}\index{test.\+cpp@{test.\+cpp}!waypoints@{waypoints}}
+\index{waypoints@{waypoints}!test.\+cpp@{test.\+cpp}}
+\subsubsection[{waypoints}]{\setlength{\rightskip}{0pt plus 5cm}waypoint$<$vector2\+D$>$ waypoints}\label{test_8cpp_ac7084c971b1af03c7e876b451a869d7e}
+
+
+Definition at line 23 of file test.\+cpp.
+
+\hypertarget{test_8cpp_a2474a5474cbff19523a51eb1de01cda4}{}\index{test.\+cpp@{test.\+cpp}!width@{width}}
+\index{width@{width}!test.\+cpp@{test.\+cpp}}
+\subsubsection[{width}]{\setlength{\rightskip}{0pt plus 5cm}int width =800}\label{test_8cpp_a2474a5474cbff19523a51eb1de01cda4}
+
+
+Definition at line 17 of file test.\+cpp.
+
