@@ -1,9 +1,0 @@
-digraph "types::Vector4D::Vector4D"
-{
-  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
-  node [fontname="Helvetica",fontsize="10",shape=record];
-  rankdir="LR";
-  Node1 [label="types::Vector4D::Vector4D",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
-  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
-  Node2 [label="types::Vector4D::normalise",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structtypes_1_1_vector4_d.html#aa5b5db5d0c898a79db9230bc6c8d7c24",tooltip="Gets the normalised version of the vector. "];
-}
