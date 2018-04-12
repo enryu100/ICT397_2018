@@ -9,5 +9,5 @@ class RigidBody
 public:
 	
 private:
-	rp3d::CollisionBody world;
+	rp3d::CollisionBody world; //Create collision world
 };

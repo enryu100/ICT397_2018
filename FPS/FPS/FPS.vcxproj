@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
@@ -20,13 +20,13 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v110</PlatformToolset>
+    <PlatformToolset>v120</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v110</PlatformToolset>
+    <PlatformToolset>v120</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -59,7 +59,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>../dependencies/lib;</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>../dependencies/lib;../dependencies/lib/react3d</AdditionalLibraryDirectories>
       <AdditionalDependencies>gl/opengl32.lib;gl/freeglut.lib;lua/lua5.3.lib;SDL/SDL2.lib;SDL/SDL2main.lib;Assimp/assimp-vc110-mt.lib;gl/glew32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
@@ -97,6 +97,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainGame.cpp" />
     <ClCompile Include="ModelLoader.cpp" />
+    <ClCompile Include="Physics.cpp" />
     <ClCompile Include="Terrain.cpp" />
     <ClCompile Include="Types.cpp" />
   </ItemGroup>
@@ -107,6 +108,7 @@
     <ClInclude Include="lua_Script.h" />
     <ClInclude Include="MainGame.h" />
     <ClInclude Include="ModelLoader.h" />
+    <ClInclude Include="Physics.h" />
     <ClInclude Include="Terrain.h" />
     <ClInclude Include="Types.h" />
   </ItemGroup>
