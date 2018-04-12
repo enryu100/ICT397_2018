@@ -305,3 +305,7 @@ $RECYCLE.BIN/
 
 !/BiteClub/resources/**
 !/BiteClub/dependencies/**
+*.vcxproj
+*.vcxproj
+*.vcxproj
+*.vcxproj
