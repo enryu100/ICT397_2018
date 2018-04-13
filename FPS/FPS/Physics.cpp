@@ -1,5 +1,6 @@
 #include "Physics.h"
 #include <iostream>
+#include <Windows.h>
 
 using namespace std;
 
@@ -44,4 +45,19 @@ void Physics::disableSleepMode()
 {
 	//Disable the sleeping technique (this means more computation power will be used)
 	dworld.enableSleeping(false);
+}
+
+void Physics::updateWorld()
+{
+	//Constant physics time step
+	const float timeStep = 1.0 / 60.0;
+
+	//Get the current system time
+	long double currentFrameTime;
+}
+
+SYSTEMTIME Physics::getCurrentSystemTime()
+{
+	
+	return(systime);
 }

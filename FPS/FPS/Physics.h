@@ -14,7 +14,10 @@ public:
 	void deleteCollisionBody(CollisionBody* body);
 	void initDynamicsWorld();
 	void disableSleepMode();
+	void updateWorld();
+	SYSTEMTIME getCurrentSystemTime();
 private:
 	rp3d::CollisionWorld world; //Create collision world
 	rp3d::DynamicsWorld dworld;
+	SYSTEMTIME systime;
 };
