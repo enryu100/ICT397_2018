@@ -5,7 +5,7 @@ class AABB
 public:
 	AABB();
 	AABB(gameVector minValue, gameVector maxValue);
-	void createAABB(gameVector vertices[], int numVerticies);
+	void createAABB(gameVector vertices[], int numVertices);
 	bool checkCollisionWithPoint(gameVector &point, gameVector world);
 	bool checkCollision(gameVector world, AABB &aabb, gameVector world_2);
 	const AABB &operator=(const AABB &aabb_2);

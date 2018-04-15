@@ -16,12 +16,12 @@ AABB::AABB(gameVector minValues, gameVector maxValues)
 }
 
 //Creates the axis aligned bounding box vertices along XYZ planes
-void AABB::createAABB(gameVector vertices[], int numVerticies)
+void AABB::createAABB(gameVector vertices[], int numVertices)
 {
-	for (int i = 0; i < numVerticies; i++)
+	for (int i = 0; i < numVertices; i++)
 	{
 		//Checks are done to see if XYZ is between min/max values
-		//If they aren't then the minimum XYZ value is set by that verticie which is being checked
+		//If they aren't then the minimum XYZ value is set by that vertice which is being checked
 		if (vertices[i].getX() < min.getX())
 		{
 			min.setX(vertices[i].getX());

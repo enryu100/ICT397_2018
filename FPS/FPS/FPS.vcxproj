@@ -91,24 +91,31 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AABB.cpp" />
     <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="gameCollision.cpp" />
+    <ClCompile Include="gameMath.cpp" />
+    <ClCompile Include="gameVector.cpp" />
     <ClCompile Include="graphics.cpp" />
     <ClCompile Include="lua_Script.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainGame.cpp" />
     <ClCompile Include="ModelLoader.cpp" />
-    <ClCompile Include="Physics.cpp" />
     <ClCompile Include="Terrain.cpp" />
     <ClCompile Include="Types.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AABB.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="events.h" />
+    <ClInclude Include="gameCollision.h" />
+    <ClInclude Include="gameMath.h" />
+    <ClInclude Include="gameVector.h" />
+    <ClInclude Include="gameVector2D.h" />
     <ClInclude Include="graphics.h" />
     <ClInclude Include="lua_Script.h" />
     <ClInclude Include="MainGame.h" />
     <ClInclude Include="ModelLoader.h" />
-    <ClInclude Include="Physics.h" />
     <ClInclude Include="Terrain.h" />
     <ClInclude Include="Types.h" />
   </ItemGroup>
