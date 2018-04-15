@@ -98,6 +98,14 @@ namespace graphics{
 		* first time, or when a new heightfield needs to be displayed.
 		*/
 		void getHeightfieldData(const std::vector<unsigned char> data);
+		/**
+		* @brief Toggles wireframe mode on all objects
+		*
+		* Toggle Wireframe is called when the 'toggle wireframe' key (default 'K') is pressed.
+		* Toggling wireframe mode sets all polygons to line-based, allowing the user to see
+		* where each polygon is placed.
+		*/
+		void toggleWireframe();
 
 	private:
 		/// The window context.
@@ -108,14 +116,23 @@ namespace graphics{
 		int screenHeight;
 		/// The heightfield data.
 		std::vector<unsigned char> heightfieldData;
-		/// The texture ID used for texturing the heightfield.
-		GLuint terrainTexID;
+		///File Paths for the BMPs being loaded into the engine for terrain
+		std::vector<std::string> texturePaths;
+		/// The texture IDs used for texturing the heightfield.
+		GLuint terrainTexID[3];
+		/*/// The second texture ID used for texturing the heightfield.
+		GLuint terratinTextID[1];
+		/// The third texture ID used for texturing the heightfield.
+		GLuint terrainTexID[2];*/
 		/// Scale data for heightfield
 		float scale, xzscale;
 		/// Boolean for whether a texture is being applied
 		bool textureMap;
 		/// The models of the game's objects.
 		std::vector<Model> models;
+
+		/// Variable for toggling Wireframe mode
+		bool wireframe;
 
 		/**
 		* @brief Draws the terrain on to the screen.
@@ -139,6 +156,29 @@ namespace graphics{
 		* ID for use in the engine.
 		*/
 		GLuint getTexture(const char* fileName);
+
+		/**
+		* @brief third party code which gets color
+		* @param surface - A pointer to the SDL_Surface object the color is being retrieved from
+		* @param x - The x-coordinate of the pixel being retrieved
+		* @param y - The y-coordinate of the pixel being retrieved
+		* @note code taken from https://www.gamedev.net/forums/topic/530253-sdl-getting-rgb-values-of-a-surfaces-pixel/
+		*
+		* getPixel retrieves the color at a specific coordinate on a texture and returns the color
+		* as an SDL_Color object.
+		*/
+		SDL_Color getpixel(SDL_Surface *surface, int x, int y);
+		
+		/**
+		* @brief Sets color of vertex for drawing terrain
+		* @param xpos - The x-coordinate of the terrain vertex
+		* @param zpos - The z-coordinate of the terrain vertex
+		* @param height - The height in units at that specific x/z coordinate for multitexturing
+		*
+		* setColor is called during the drawing of the terrain to set
+		* the appropriate color, based on height
+		*/
+		void setColor(int xpos, int zpos, float height);
 	};
 
 	/**

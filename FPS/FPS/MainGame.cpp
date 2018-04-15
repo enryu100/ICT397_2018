@@ -18,31 +18,33 @@ void MainGame::run(string initFile){
 
 void MainGame::initSystems(string initFile){
 
-
+	//Initialise Variables
 	string terrainFile, texFileString = "texFile", modelFileString = "modelFile";
 	int numModels = 0, numTextures = 0;
 	std::vector<string> modelFiles, texFiles;
 	
+	//Load data from Init file
 	fileLoader.Load(initFile.c_str());
 	cout << "init" << endl;
-
+	//get terrain file from Init File
 	terrainFile = fileLoader.Read_Variable_String("terrainFile");
 	cout << "terrain" << endl;
-
+	//Get Number of Models
 	numModels = fileLoader.Read_Variable_Int("numModels");
 	for(int index = 0; index < numModels; index++){
 		int modelNum = index + 1;
-
+		//load models to array
 		modelFiles.push_back(fileLoader.Read_Variable_String((modelFileString + to_string(modelNum)).c_str()));
 	}
-
+	//get number of textures
 	numTextures = fileLoader.Read_Variable_Int("numTextures");
 	for(int index = 0; index < numTextures; index++){
 		int texNum = index + 1;
-
+		//load textures to array
 		texFiles.push_back(fileLoader.Read_Variable_String((texFileString + to_string(texNum)).c_str()));
 	}
 
+	//load heightfield and set terrain scale
 	gameTerrain.loadHeightfield(terrainFile);
 	gameTerrain.setScale(10.0f, 0.5f, 10.0f);
 
@@ -50,6 +52,7 @@ void MainGame::initSystems(string initFile){
 	graphicsEng.getHeightfieldData(gameTerrain.getTerrainData());
 	graphicsEng.setScales(gameTerrain.getYScale(), gameTerrain.getXScale());
 	
+	//get player's dimensions (is a cube for now)
 	playerMin.x = player.getViewMatrix().columns[3].x -10;
 	playerMin.y = player.getViewMatrix().columns[3].y -10;
 	playerMin.z = player.getViewMatrix().columns[3].z -10;
@@ -71,7 +74,7 @@ void MainGame::initSystems(string initFile){
 float MainGame::HeightMapTracking(){
 	float height;
 	types::Matrix4x4 temp = player.getViewMatrix();
-	height = gameTerrain.getHeight((int)temp.columns[3].x, (int)temp.columns[3].z)-140.0f;
+	height = gameTerrain.getHeight((int)temp.columns[3].x, (int)temp.columns[3].z) - 145.0f;
 	return height;
 }
 
@@ -82,8 +85,8 @@ void MainGame::processInput(){
 	float move =0;
 
 	player.setMoveSpeed(1.0);
-	//min and max, xyz
 
+	//get inputs
 	if(newEvent.hasEvents){
 		// Change camera view (mouse move)
 		//pressing a key sets mouseX and Y to 0
@@ -120,6 +123,9 @@ void MainGame::processInput(){
 				case 'd':
 					move =1;
 					break;
+				case 'k':
+					graphicsEng.toggleWireframe();
+					break;
 				case 27:
 					exit(0);
 					break;
@@ -131,19 +137,18 @@ void MainGame::processInput(){
 		}
 
 
-		
+		// move player according to input(s)
 		player.transformView(xChange, yChange, zChange, mouse1, mouse2, move);
-		
-		// Test code
+
+		/*// Test code
 		types::Matrix4x4 temp = player.getViewMatrix();
-		
+		// output current view/location data
 		std::cout << "Look-at point: " << temp.columns[2].x << ", " << temp.columns[2].y << ", " << temp.columns[2].z << std::endl
 				  << "Right: " << temp.columns[0].x << ", " << temp.columns[0].y << ", " << temp.columns[0].z << std::endl
 				  << "Position: " << temp.columns[3].x << ", " << temp.columns[3].y << ", " << temp.columns[3].z << std::endl
 				  << "mouse X" << gameEvnt.mouseX<<std::endl
-				  << "mouse Y" << gameEvnt.mouseY<<std::endl;
-				  
-				  
+				  << "mouse Y" << gameEvnt.mouseY<<std::endl;	  
+		*/
 		if(newEvent.hasQuit)
 			currentState = GameState::EXIT;
 
