@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
@@ -20,13 +20,13 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v110</PlatformToolset>
+    <PlatformToolset>v120</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v110</PlatformToolset>
+    <PlatformToolset>v120</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -59,7 +59,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>../dependencies/lib;</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>../dependencies/lib;../dependencies/lib/react3d</AdditionalLibraryDirectories>
       <AdditionalDependencies>gl/opengl32.lib;gl/freeglut.lib;lua/lua5.3.lib;SDL/SDL2.lib;SDL/SDL2main.lib;Assimp/assimp-vc110-mt.lib;gl/glew32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
@@ -91,7 +91,11 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AABB.cpp" />
     <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="gameCollision.cpp" />
+    <ClCompile Include="gameMath.cpp" />
+    <ClCompile Include="gameVector.cpp" />
     <ClCompile Include="graphics.cpp" />
     <ClCompile Include="lua_Script.cpp" />
     <ClCompile Include="main.cpp" />
@@ -101,8 +105,13 @@
     <ClCompile Include="Types.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AABB.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="events.h" />
+    <ClInclude Include="gameCollision.h" />
+    <ClInclude Include="gameMath.h" />
+    <ClInclude Include="gameVector.h" />
+    <ClInclude Include="gameVector2D.h" />
     <ClInclude Include="graphics.h" />
     <ClInclude Include="lua_Script.h" />
     <ClInclude Include="MainGame.h" />
