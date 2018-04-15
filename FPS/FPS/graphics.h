@@ -120,10 +120,8 @@ namespace graphics{
 		std::vector<std::string> texturePaths;
 		/// The texture IDs used for texturing the heightfield.
 		GLuint terrainTexID[3];
-		/*/// The second texture ID used for texturing the heightfield.
-		GLuint terratinTextID[1];
-		/// The third texture ID used for texturing the heightfield.
-		GLuint terrainTexID[2];*/
+		/// loaded Texture Bitmaps for multitexturing
+		SDL_Surface *colorSurface[3];
 		/// Scale data for heightfield
 		float scale, xzscale;
 		/// Boolean for whether a texture is being applied
@@ -178,7 +176,7 @@ namespace graphics{
 		* setColor is called during the drawing of the terrain to set
 		* the appropriate color, based on height
 		*/
-		void setColor(int xpos, int zpos, float height);
+		void setColor(float xpos, float zpos, float height);
 	};
 
 	/**

@@ -57,6 +57,13 @@ void GraphicsEngine::init(vector<string> modelFiles, vector<string> textureFiles
 		cout << terrainTexID[i] << endl;
 	}
 
+	colorSurface[0] = SDL_LoadBMP(texturePaths[0].c_str());
+	cout << "surface loaded: " << texturePaths[0] << endl;
+	colorSurface[1] = SDL_LoadBMP(texturePaths[1].c_str());
+	cout << "surface loaded: " << texturePaths[1] << endl;
+	colorSurface[2] = SDL_LoadBMP(texturePaths[2].c_str());
+	cout << "surface loaded: " << texturePaths[2] << endl;
+
 	SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
 	glClearColor(0.0f, 0.0f, 1.0f, 1.0f);
 
@@ -173,7 +180,6 @@ void GraphicsEngine::drawTerrain(){
 			heightColour = heightfieldData.at((zVal * terrainSize) + xVal);
 			//glColor3ub(heightColour, heightColour, heightColour);
 			glTexCoord2f(texLeft, texBottom);
-			cout << "bot" << endl;
 			height = (float)(heightColour * scale) - 150.0f;
 			setColor(texLeft, texBottom, height);
 			glVertex3f((float)xVal * xzscale, height, (float)zVal * xzscale);
@@ -182,7 +188,6 @@ void GraphicsEngine::drawTerrain(){
 				heightColour = heightfieldData.at(((zVal + 1) * terrainSize) + xVal);
 				//glColor3ub(heightColour, heightColour, heightColour);
 				glTexCoord2f(texLeft, texTop);
-				cout << "top" << endl;
 				height = (float)(heightColour * scale) - 150.0f;
 				setColor(texLeft, texBottom, height);
 				glVertex3f((float)xVal * xzscale, height, (float)(zVal + 1) * xzscale);
@@ -248,41 +253,32 @@ SDL_Color GraphicsEngine::getpixel(SDL_Surface *surface, int x, int y)
 	return theKey;
 }
 
-void GraphicsEngine::setColor(int xpos, int zpos, float height){
+void GraphicsEngine::setColor(float xpos, float zpos, float height){
 	GLuint red, green, blue;
-	SDL_Surface *surface = (SDL_Surface*)malloc(sizeof(SDL_Surface) + 10);
 	SDL_Color rgbAtPoint;
-	int x, z;
-
+	int terrainSize = (int)sqrt((double)heightfieldData.size());
+	float x= (xpos/xzscale)/terrainSize, z = (zpos/xzscale)/terrainSize;
+	
 	//adjust coords to texture's sizing
 
-	if(height < -80.0f){// lowest elevation, soil texture
-		surface = SDL_LoadBMP(texturePaths[0].c_str());
-		x = (xpos/xzscale) * surface->w;
-		z = (zpos/xzscale) * surface->h;
-		rgbAtPoint = getpixel(surface, x, z);
+	if(height < -83.0f){// lowest elevation, soil texture
+		float xA = x*colorSurface[0]->w, zA = z*colorSurface[0]->h;
+		rgbAtPoint = getpixel(colorSurface[0], xA, zA);
 		red = rgbAtPoint.r;
 		green = rgbAtPoint.g;
 		blue = rgbAtPoint.b;
-		cout << "layer 1" << endl;
-	} else if(height < -70.0f){// middle elevation, grass texture
-		surface = SDL_LoadBMP(texturePaths[1].c_str());
-		x = (xpos/xzscale) * surface->w;
-		z = (zpos/xzscale) * surface->h;
-		rgbAtPoint = getpixel(surface, x, z);
+	} else if(height < -73.0f){// middle elevation, grass texture
+		float xA = x*colorSurface[1]->w, zA = z*colorSurface[1]->h;
+		rgbAtPoint = getpixel(colorSurface[1], xA, zA);
 		red = rgbAtPoint.r;
 		green = rgbAtPoint.g;
 		blue = rgbAtPoint.b;
-		cout << "layer 2" << endl;
 	} else {//highest elevation, stone texture
-		surface = SDL_LoadBMP(texturePaths[2].c_str());
-		x = (xpos/xzscale) * surface->w;
-		z = (zpos/xzscale) * surface->h;
-		rgbAtPoint = getpixel(surface, x, z);
+		float xA = x*colorSurface[2]->w, zA = z*colorSurface[2]->h;
+		rgbAtPoint = getpixel(colorSurface[2], xA, zA);
 		red = rgbAtPoint.r;
 		green = rgbAtPoint.g;
 		blue = rgbAtPoint.b;
-		cout << "layer 3" << endl;
 	}
 
 	glColor3ub(red, green, blue);
