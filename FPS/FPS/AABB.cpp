@@ -75,6 +75,13 @@ bool AABB::checkCollisionWithPoint(gameVector &point, AABB &aabb)
 	return((point.getX() >= aabb.min.getX()) && (point.getX() <= aabb.max.getX()) && (point.getY() >= aabb.min.getY()) && (point.getY() <= aabb.max.getY()) && (point.getZ() >= aabb.min.getZ()) && (point.getZ() <= aabb.max.getZ()));
 }
 
+bool AABB::checkCollisionWithPoint(gameVector &point, gameVector world)
+{
+	AABB worldAABB = initWorld(*this, world);
+
+	return((point.getX() >= worldAABB.min.getX()) && (point.getX() <= worldAABB.max.getX()) && (point.getY() >= worldAABB.min.getY()) && (point.getY() <= worldAABB.max.getY()) && (point.getZ() >= worldAABB.min.getZ()) && (point.getZ() <= worldAABB.max.getZ()));
+}
+
 bool AABB::checkCollision(gameVector world, AABB &aabb_2, gameVector world_2)
 {
 	AABB gameObj1 = initWorld(*this, world);
