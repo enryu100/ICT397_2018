@@ -7,9 +7,9 @@ void GameObject::procCollision(GameObject &obj){
 }
 
 GameObject::GameObject(){
-	pos.x=0.0;
-	pos.y=0.0;
-	pos.z=0.0;
+	pos.setX(0.0);
+	pos.setY(0.0);
+	pos.setZ(0.0);
 	sphSize=0.0;
 	scale=1.0;
 }
@@ -24,9 +24,9 @@ GameObject::GameObject(gameVector position, float sphereSize, float objScale){
 }
 
 GameObject::GameObject(float x, float y, float z, float sphereSize, float objScale){
-	pos.x=x;
-	pos.y=y;
-	pos.z=z;
+	pos.setX(x);
+	pos.setY(y);
+	pos.setZ(z);
 	sphSize=sphereSize;
 	if(objScale>0.0)
 		scale=objScale;
@@ -39,9 +39,9 @@ void GameObject::setPos(gameVector position){
 }
 
 void GameObject::setPos(float x, float y, float z){
-	pos.x=x;
-	pos.y=y;
-	pos.z=z;
+	pos.setX(x);
+	pos.setY(y);
+	pos.setZ(z);
 }
 
 void GameObject::setSphSize(unsigned short sphereSize){
@@ -61,13 +61,13 @@ void GameObject::setPosInc(gameVector position){
 }
 
 void GameObject::setPosX(float x){
-	pos.x=x;
+	pos.setX(x);
 }
 
 void GameObject::setPosY(float y){
-	pos.y=y;
+	pos.setY(y);
 }
 
 void GameObject::setPosZ(float z){
-	pos.z=z;
+	pos.setZ(z);
 }
