@@ -25,9 +25,9 @@ class GameObject{
 		void setPosZ(float z);
 
 		gameVector getPos(){return pos;}
-		float getPosX(){return pos.x;}
-		float getPosY(){return pos.y;}
-		float getPosZ(){return pos.z;}
+		float getPosX(){return pos.getX();}
+		float getPosY(){return pos.getY();}
+		float getPosZ(){return pos.getZ();}
 		unsigned short getSphSize(){return sphSize;}
 		float getScale(){return scale;}
 	
