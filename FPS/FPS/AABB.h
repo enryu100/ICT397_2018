@@ -65,6 +65,14 @@ public:
 	* collide with gameObj2
 	*/
 	bool checkCollision(gameVector world, AABB &aabb, gameVector world_2);
+
+	/**
+	*@brief Equals operator overload
+	*@param const AABB aabb_2
+	*@return *this pointer
+	*
+	* 
+	*/
 	const AABB &operator=(const AABB &aabb_2);
 private:
 	gameVector min; /// Minimum gameVector value
@@ -76,13 +84,13 @@ private:
 	*		gameVector world - Local game world
 	*@return AABB worldAABB - The converted AABB
 	*
-	* 
+	* Initialises the worldAAB and sets all the min/man XYZ vertices
 	*/
 	AABB initWorld(AABB aabb, gameVector world);
 
 	/**
 	*@brief Checks collision with a point
-	*@param gameVector point -
+	*@param gameVector point - A point in the gameVector
 	*		AABB aabb - Axis Aligned Boundary Box object
 	*@return Boolean
 	*

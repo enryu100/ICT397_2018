@@ -1,3 +1,5 @@
+#ifndef __GAMEVECTOR_H
+#define __GAMEVECTOR_H
 #include <math.h>
 #include "gameMath.h"
 
@@ -22,3 +24,5 @@ private:
 	float y;
 	float z;
 };
+
+#endif
