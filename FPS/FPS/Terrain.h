@@ -8,6 +8,7 @@
 
 #include <memory>
 #include <vector>
+#include "gameObject.h"
 
 namespace terrain{
 	/**
@@ -19,7 +20,7 @@ namespace terrain{
 	*
 	* @author Brandon Lim
 	*/
-	class Terrain{
+	class Terrain : public GameObject{
 	public:
 		/**
 		* The constructor for a Terrain object.
