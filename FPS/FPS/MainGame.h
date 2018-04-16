@@ -11,6 +11,7 @@
 #include "Terrain.h"
 #include "Camera.h"
 #include "lua_Script.h"
+#include "GameAsset.h"
 #include <iostream>
 #include <vector>
 /// An enumeration to make the game state transitions easier.
@@ -25,7 +26,6 @@ enum class GameState {PLAY, EXIT};
 * is the theory.
 *
 * @author Brandon Lim
-* @todo Collision Detection, preferably through a facade of a physics engine
 */
 class MainGame
 {
@@ -67,6 +67,8 @@ private:
 	GameState currentState;
 	/// The loader and reader of the initialising file.
 	lua_Script fileLoader;
+	/// The factory object for creating game objects
+	GameAsset Factory;
 	/**
 	* @brief Finds the height of the player in the heightmap
 	* @param void

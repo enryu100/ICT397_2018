@@ -28,7 +28,7 @@ class GameObject{
 		float getPosX(){return pos.getX();}
 		float getPosY(){return pos.getY();}
 		float getPosZ(){return pos.getZ();}
-		unsigned short getSphSize(){return sphSize;}
+		unsigned short getSphSize(){return (unsigned short)sphSize;}
 		float getScale(){return scale;}
 	
 	protected:

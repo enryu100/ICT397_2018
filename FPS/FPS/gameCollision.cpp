@@ -51,7 +51,7 @@ void getObjectCentre(gameVector2D vertices[], int numVertices, gameVector2D &obj
 		float xsize = largestX - smallestX;
 		float ysize = largestY - smallestY;
 
-		objCentre.setVector(smallestX + (xsize / 2), smallestY + (ysize / 2));
+		objCentre.setVector((int)(smallestX + (xsize / 2)), (int)(smallestY + (ysize / 2)));
 	}
 }
 

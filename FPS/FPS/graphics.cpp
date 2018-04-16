@@ -263,19 +263,19 @@ void GraphicsEngine::setColor(float xpos, float zpos, float height){
 
 	if(height < -83.0f){// lowest elevation, soil texture
 		float xA = x*colorSurface[0]->w, zA = z*colorSurface[0]->h;
-		rgbAtPoint = getpixel(colorSurface[0], xA, zA);
+		rgbAtPoint = getpixel(colorSurface[0], (int)xA, (int)zA);
 		red = rgbAtPoint.r;
 		green = rgbAtPoint.g;
 		blue = rgbAtPoint.b;
 	} else if(height < -73.0f){// middle elevation, grass texture
 		float xA = x*colorSurface[1]->w, zA = z*colorSurface[1]->h;
-		rgbAtPoint = getpixel(colorSurface[1], xA, zA);
+		rgbAtPoint = getpixel(colorSurface[1], (int)xA, (int)zA);
 		red = rgbAtPoint.r;
 		green = rgbAtPoint.g;
 		blue = rgbAtPoint.b;
 	} else {//highest elevation, stone texture
 		float xA = x*colorSurface[2]->w, zA = z*colorSurface[2]->h;
-		rgbAtPoint = getpixel(colorSurface[2], xA, zA);
+		rgbAtPoint = getpixel(colorSurface[2], (int)xA, (int)zA);
 		red = rgbAtPoint.r;
 		green = rgbAtPoint.g;
 		blue = rgbAtPoint.b;

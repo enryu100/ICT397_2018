@@ -55,15 +55,15 @@ AABB AABB::initWorld(AABB aabb, gameVector world)
 	AABB worldAABB;
 	float t; //Temporary value
 
-	t = (float)(aabb.max.getX() - aabb.min.getX()) / 2.0;
+	t = (float)(aabb.max.getX() - aabb.min.getX()) / 2.0f;
 	worldAABB.min.setX(world.getX() - t);
 	worldAABB.max.setX(world.getX() + t);
 
-	t = (float)(aabb.max.getY() - aabb.min.getY()) / 2.0;
+	t = (float)(aabb.max.getY() - aabb.min.getY()) / 2.0f;
 	worldAABB.min.setY(world.getY() - t);
 	worldAABB.max.setY(world.getY() + t);
 
-	t = (float)(aabb.max.getZ() - aabb.min.getZ()) / 2.0;
+	t = (float)(aabb.max.getZ() - aabb.min.getZ()) / 2.0f;
 	worldAABB.min.setZ(world.getZ() - t);
 	worldAABB.max.setZ(world.getZ() + t);
 

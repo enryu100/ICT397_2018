@@ -26,7 +26,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v110</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -93,6 +93,7 @@
   <ItemGroup>
     <ClCompile Include="AABB.cpp" />
     <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="GameAsset.cpp" />
     <ClCompile Include="gameCollision.cpp" />
     <ClCompile Include="gameMath.cpp" />
     <ClCompile Include="gameObject.cpp" />
@@ -109,6 +110,7 @@
     <ClInclude Include="AABB.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="events.h" />
+    <ClInclude Include="GameAsset.h" />
     <ClInclude Include="gameCollision.h" />
     <ClInclude Include="gameMath.h" />
     <ClInclude Include="gameObject.h" />

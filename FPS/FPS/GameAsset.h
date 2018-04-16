@@ -1,34 +1,21 @@
-#ifndef _GAMEASSETFACTORY_H
-#define _GAMEASSETFACTORY_H
+#ifndef _GAMEASSET_H
+#define _GAMEASSET_H
 
 #include <iostream>
+#include "gameObject.h"
 #include "Terrain.h"
 #include "Camera.h"
-#include "Obstacle.h"
+/*#include "Obstacle.h"
 #include "NPC.h"
-#include "Enemy.h"
+#include "Enemy.h"*/
 
 using namespace std;
 
-class Asset{};
 
-class GameAsset{
+class GameAsset{ 
 	public:
-		Asset* Create(string type);
+		GameObject* CreateObject(string type);
 		
 };
-
-Asset* Create(string type){
-	if(type=="TERRAIN")
-		return new Terrain;
-	if(type=="PLAYER")
-		return new Camera;
-	if(type=="OBSTACLE")
-		return new Obstacle;
-	if(type=="NPC")
-		return new NPC;
-	if(type=="ENEMY");
-		return new Enemy;
-}
 
 #endif

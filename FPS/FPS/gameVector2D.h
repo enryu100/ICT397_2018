@@ -73,8 +73,8 @@ public:
 	*/
 	void setVector(int xpos, int ypos)
 	{
-		x = xpos;
-		y = ypos;
+		x = (float)xpos;
+		y = (float)ypos;
 	}
 
 	/**
