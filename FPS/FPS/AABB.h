@@ -59,8 +59,16 @@ private:
 	gameVector min; /// Minimum gameVector value
 	gameVector max; /// Maximum gameVector value
 
-
+	/**
+	*@brief Converts the AABB to the world
+	*@param AABB aabb - Axis Aligned Bounding Box object
+	*		gameVector world - Local game world
+	*@return AABB worldAABB - The converted AABB
+	*
+	* 
+	*/
 	AABB initWorld(AABB aabb, gameVector world);
+
 	/**
 	*@brief Checks collision with a point
 	*@param gameVector point -

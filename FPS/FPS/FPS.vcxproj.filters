@@ -51,6 +51,9 @@
     <ClCompile Include="gameCollision.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="gameObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MainGame.h">
@@ -90,6 +93,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="gameCollision.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="gameObject.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
