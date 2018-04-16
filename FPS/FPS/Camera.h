@@ -11,8 +11,9 @@
 #define PI 3.1415962654
 
 #include "Types.h"
+#include "gameObject.h"
 
-class Camera{
+class Camera : public GameObject{
 	public:
 		/**
 		* \fn Camera()
