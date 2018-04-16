@@ -46,21 +46,40 @@ public:
 
 	/**
 	*@brief Checks collision with a point
-	*@param gameVector point - 
-	*		gameVector world - 
+	*@param gameVector point - A point in the gameVector
+	*		gameVector world - The local gameVector world
 	*@return Boolean 
 	*
 	* Checks for collision between an AABB and a point within the local co-ordinate system
 	*/
 	bool checkCollisionWithPoint(gameVector &point, gameVector world);
+
+	/**
+	*@brief Checks collision between two AABBs 
+	*@param gameVector world - The local gameVector world
+			AABB aabb - Axis Aligned Bounding Box object
+			gameVector world_2 - A second local gameVector world
+	*@return Boolean
+	*
+	* Checks for collision between an AABB and another AABB and returns true or false depending on if the XYZ co-ordinates 
+	* collide with gameObj2
+	*/
 	bool checkCollision(gameVector world, AABB &aabb, gameVector world_2);
 	const AABB &operator=(const AABB &aabb_2);
 private:
 	gameVector min; /// Minimum gameVector value
 	gameVector max; /// Maximum gameVector value
 
-
+	/**
+	*@brief Converts the AABB to the world
+	*@param AABB aabb - Axis Aligned Bounding Box object
+	*		gameVector world - Local game world
+	*@return AABB worldAABB - The converted AABB
+	*
+	* 
+	*/
 	AABB initWorld(AABB aabb, gameVector world);
+
 	/**
 	*@brief Checks collision with a point
 	*@param gameVector point -
