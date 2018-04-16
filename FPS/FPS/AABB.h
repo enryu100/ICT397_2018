@@ -7,6 +7,7 @@
 * This class provides functions to test for collisions on Axis Aligned Bounding Boxes.
 * Two gameVectors are kept called min and max and are used to calculate collisions.
 * 
+* Reference: ICT397 Collision Examples and ICT397 Topic06 Lecture Notes
 *
 * @author Kenneth Donohoe
 *
@@ -71,7 +72,7 @@ public:
 	*@param const AABB aabb_2
 	*@return *this pointer
 	*
-	* 
+	* Overloads the equals operator and sets the min/max values to the min/max values of aabb_2
 	*/
 	const AABB &operator=(const AABB &aabb_2);
 private:
