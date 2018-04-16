@@ -85,7 +85,7 @@ bool AABB::checkCollisionWithPoint(gameVector &point, gameVector world)
 bool AABB::checkCollision(gameVector world, AABB &aabb_2, gameVector world_2)
 {
 	AABB gameObj1 = initWorld(*this, world);
-	AABB gameObj2 = initWorld(aabb_2, world);
+	AABB gameObj2 = initWorld(aabb_2, world_2);
 	gameVector v[8];
 
 	v[0].set(gameObj1.min.getX(), gameObj1.min.getY(), gameObj1.min.getZ());
