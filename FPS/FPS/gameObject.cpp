@@ -45,7 +45,7 @@ void GameObject::setPos(float x, float y, float z){
 }
 
 void GameObject::setSphSize(unsigned short sphereSize){
-	if(size>0)
+	if(sphereSize>0)
 		sphSize=sphereSize;
 }
 
