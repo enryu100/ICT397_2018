@@ -12,6 +12,9 @@
 #include <GL/freeglut.h>
 #include <SDL/SDL.h>
 #include <vector>
+#include <array>
+#include <stdlib.h>     /* srand, rand */
+#include <time.h>
 #include "Events.h"
 #include "Types.h"
 
@@ -106,6 +109,14 @@ namespace graphics{
 		* where each polygon is placed.
 		*/
 		void toggleWireframe();
+		/**
+		* @brief closes window on death
+		*
+		* Toggle Wireframe is called when the 'toggle wireframe' key (default 'K') is pressed.
+		* Toggling wireframe mode sets all polygons to line-based, allowing the user to see
+		* where each polygon is placed.
+		*/
+		void closeWindow();
 
 	private:
 		/// The window context.
@@ -142,6 +153,7 @@ namespace graphics{
 		* @brief Draws the game's models to the screen.
 		*
 		* drawModels uses the model data to draw all of the game's objects to the screen.
+		* currently draws models in randomized locations.
 		*/
 		void drawModels();
 

@@ -7,7 +7,7 @@ using namespace types;
 Camera::Camera(){
 	m_rotateSpeed = 0.0f;
 	m_moveSpeed = 0.0f;
-	position = Vector3D(250.0f, 0.0f, 250.0f);
+	position = Vector3D(1000.0f, 0.0f, 1000.0f);
 	right = Vector3D(1.0f, 0.0f, 0.0f);
 	up = Vector3D(0.0f, 1.0f, 0.0f);
 	forward = Vector3D(0.0f, 0.0f, 1.0f);

@@ -63,7 +63,9 @@
       <AdditionalDependencies>gl/opengl32.lib;gl/freeglut.lib;lua/lua5.3.lib;SDL/SDL2.lib;SDL/SDL2main.lib;Assimp/assimp-vc110-mt.lib;gl/glew32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>copy "$(SolutionDir)dependencies\DLLs\*" "$(OutDir)"</Command>
+      <Command>copy "$(SolutionDir)dependencies\DLLs\*" "$(OutDir)"
+if not exist $(OutDir)resources mkdir $(OutDir)resources
+xcopy /Y /E "$(ProjectDir)resources" "$(OutDir)resources"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">

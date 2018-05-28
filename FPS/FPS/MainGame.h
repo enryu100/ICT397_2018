@@ -55,6 +55,10 @@ private:
 	float mouse1;
 	float mouse2;
 	float mouseSpeed;
+	///player's current HP
+	int playerHP;
+	// previous height
+	float prevHeight;
 	/// The graphics engine.
 	graphics::GraphicsEngine graphicsEng;
 	/// The game terrain or map.

@@ -11,7 +11,7 @@
 int main(int argc, char** argv){
 	MainGame mainGame; // In the future, make this a singleton. Maybe make a singleton class.
 
-	mainGame.run("../resources/init/init.lua");
+	mainGame.run("./resources/init/init.lua");
 
 	return 0;
 }

@@ -20,11 +20,17 @@ GraphicsEngine::~GraphicsEngine(){
 void GraphicsEngine::init(vector<string> modelFiles, vector<string> textureFiles){
 	SDL_GLContext context;
 
+	//seed the random
+	srand(time(NULL));
+
 	for(unsigned int index = 0; index < modelFiles.size(); index++){
 		Model newModel;
 		if(newModel.loadData(modelFiles[index])){
 			models.push_back(newModel);
 			cout << modelFiles[index] << " has been loaded!" << endl;
+			float temp1 = rand() % 3000, temp2 = rand() % 100 + 100, temp3 = rand() % 3000;
+			types::Vector3D modPos = types::Vector3D(temp1, temp2, temp3);
+			models[index].setModelPos(modPos);
 		}
 	}
 
@@ -138,6 +144,11 @@ void GraphicsEngine::toggleWireframe(){
 	wireframe = !wireframe;
 }
 
+void GraphicsEngine::closeWindow(){
+
+	SDL_DestroyWindow(window);
+}
+
 GLuint GraphicsEngine::getTexture(const char* fileName){
 	GLuint texID;
 	SDL_Surface* surface = SDL_LoadBMP(fileName);
@@ -180,7 +191,7 @@ void GraphicsEngine::drawTerrain(){
 			heightColour = heightfieldData.at((zVal * terrainSize) + xVal);
 			//glColor3ub(heightColour, heightColour, heightColour);
 			glTexCoord2f(texLeft, texBottom);
-			height = (float)(heightColour * scale) - 150.0f;
+			height = (float)(heightColour * scale) - 350.0f;
 			setColor(texLeft, texBottom, height);
 			glVertex3f((float)xVal * xzscale, height, (float)zVal * xzscale);
 
@@ -188,7 +199,7 @@ void GraphicsEngine::drawTerrain(){
 				heightColour = heightfieldData.at(((zVal + 1) * terrainSize) + xVal);
 				//glColor3ub(heightColour, heightColour, heightColour);
 				glTexCoord2f(texLeft, texTop);
-				height = (float)(heightColour * scale) - 150.0f;
+				height = (float)(heightColour * scale) - 350.0f;
 				setColor(texLeft, texBottom, height);
 				glVertex3f((float)xVal * xzscale, height, (float)(zVal + 1) * xzscale);
 			}
@@ -206,6 +217,8 @@ void GraphicsEngine::drawModels(){
 	for(unsigned index = 0; index < models.size(); index++){
 		modelInfo = models[index].getData();
 		modelPos = models[index].getModelPos();
+
+
 
 		glBegin(GL_TRIANGLE_STRIP);
 		for(unsigned vertIndex = 0; vertIndex < modelInfo.vertices.size(); vertIndex++){

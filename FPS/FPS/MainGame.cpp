@@ -5,6 +5,8 @@ using namespace terrain;
 MainGame::MainGame(void){
 	currentState = GameState::PLAY;
 	mouseSpeed = 0.004f;
+	playerHP = 100;
+	prevHeight = -3000.0f;
 }
 
 MainGame::~MainGame(void){
@@ -46,7 +48,7 @@ void MainGame::initSystems(string initFile){
 
 	//load heightfield and set terrain scale
 	gameTerrain.loadHeightfield(terrainFile);
-	gameTerrain.setScale(10.0f, 0.5f, 10.0f);
+	gameTerrain.setScale(30.0f, 1.5f, 30.0f);
 
 	graphicsEng.init(modelFiles, texFiles);
 	graphicsEng.getHeightfieldData(gameTerrain.getTerrainData());
@@ -84,7 +86,7 @@ void MainGame::processInput(){
 	float yChange = HeightMapTracking();
 	float move =0;
 
-	player.setMoveSpeed(1.0);
+	player.setMoveSpeed(5.0);
 
 	//get inputs
 	if(newEvent.hasEvents){
@@ -140,17 +142,24 @@ void MainGame::processInput(){
 		// move player according to input(s)
 		player.transformView(xChange, yChange, zChange, mouse1, mouse2, move);
 
-		/*// Test code
+		// Test code
 		types::Matrix4x4 temp = player.getViewMatrix();
 		// output current view/location data
-		std::cout << "Look-at point: " << temp.columns[2].x << ", " << temp.columns[2].y << ", " << temp.columns[2].z << std::endl
+		/*std::cout << "Look-at point: " << temp.columns[2].x << ", " << temp.columns[2].y << ", " << temp.columns[2].z << std::endl
 				  << "Right: " << temp.columns[0].x << ", " << temp.columns[0].y << ", " << temp.columns[0].z << std::endl
 				  << "Position: " << temp.columns[3].x << ", " << temp.columns[3].y << ", " << temp.columns[3].z << std::endl
 				  << "mouse X" << gameEvnt.mouseX<<std::endl
 				  << "mouse Y" << gameEvnt.mouseY<<std::endl;	  
-		*/
+		 */
+		if(temp.columns[3].y < prevHeight-100){
+			playerHP = 0;
+		}
+		prevHeight = temp.columns[3].y;
+
 		if(newEvent.hasQuit)
 			currentState = GameState::EXIT;
+
+		
 
 		gameEvnt = newEvent;
 	}
@@ -163,11 +172,19 @@ void MainGame::processInput(){
 void MainGame::gameLoop(){
 	types::Matrix4x4 view;
 
-	while(currentState != GameState::EXIT){
+	while(currentState != GameState::EXIT && playerHP != 0){
 		view = player.getViewMatrix();
 		processInput();
 		graphicsEng.display(view.columns[3].x, view.columns[3].y, view.columns[3].z,
 						    (view.columns[2].x + view.columns[3].x), (view.columns[2].y + view.columns[3].y), (view.columns[2].z + view.columns[3].z),
 							view.columns[1].x, view.columns[1].y, view.columns[1].z);
+		if(playerHP == 0){
+			graphicsEng.closeWindow();
+			cout << "Ugh! You have Died. Press Enter to exit." << endl;
+			getchar();
+			exit(0);
+		}
 	}
+
+	
 }
