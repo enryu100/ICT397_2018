@@ -12,6 +12,7 @@
 #include "Camera.h"
 #include "lua_Script.h"
 #include "GameAsset.h"
+#include <Windows.h>
 #include <iostream>
 #include <vector>
 /// An enumeration to make the game state transitions easier.

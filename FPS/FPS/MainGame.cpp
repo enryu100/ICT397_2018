@@ -2,6 +2,8 @@
 using namespace graphics;
 using namespace terrain;
 
+
+
 MainGame::MainGame(void){
 	currentState = GameState::PLAY;
 	mouseSpeed = 0.004f;
