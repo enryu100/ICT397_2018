@@ -8,6 +8,8 @@
 #include "MainGame.h"
 #include <iostream>
 
+#define SIZE 300 //Defines window size
+
 void display()
 {
 	glClearColor(0.0, 0.0, 0.0, 0.0);
@@ -19,6 +21,7 @@ void display()
 	// Exit Option
 	const unsigned char* exit_text = reinterpret_cast<const unsigned char *>("Exit"); //Converts text to unsigned char
 	glutBitmapString(GLUT_BITMAP_HELVETICA_18, exit_text);
+
 	glFlush();
 }
 
@@ -56,13 +59,14 @@ int main(int argc, char** argv){
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
 	glutInitWindowPosition(250, 250);
-	glutInitWindowSize(250, 250);
+	glutInitWindowSize(SIZE, SIZE);
 	glutCreateWindow("Menu");
 
 	int submen1 = glutCreateMenu(main_men);
 
 	glutAddMenuEntry("Play", 1);
 	glutAddMenuEntry("Exit", 2);
+	glutAttachMenu(GLUT_LEFT_BUTTON);
 
 	glutDisplayFunc(display);
 	glutMainLoop();
