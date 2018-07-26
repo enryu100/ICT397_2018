@@ -13,14 +13,18 @@
 void display()
 {
 	glClearColor(0.0, 0.0, 0.0, 0.0);
+	glLineWidth(2.0);
+	
 
-	// Play Option
-	const unsigned char* play_text = reinterpret_cast<const unsigned char *>("Play"); //Converts text to unsigned char
-	glutBitmapString(GLUT_BITMAP_HELVETICA_18, play_text);
+	// Game Title
+	const unsigned char* bite_text = reinterpret_cast<const unsigned char *>("Bite Club: A Game by BMK Software"); //Converts text to unsigned char
+	glutBitmapString(GLUT_BITMAP_HELVETICA_18, bite_text);
+	gluOrtho2D(0.0, 0.0, 1.0, 0.0);
 
-	// Exit Option
-	const unsigned char* exit_text = reinterpret_cast<const unsigned char *>("Exit"); //Converts text to unsigned char
-	glutBitmapString(GLUT_BITMAP_HELVETICA_18, exit_text);
+	// Instruction
+	const unsigned char* ins_text = reinterpret_cast<const unsigned char *>("Click Left Mouse Button to select option."); //Converts text to unsigned char
+	glutBitmapString(GLUT_BITMAP_HELVETICA_18, ins_text);
+	gluOrtho2D(0.0, 0.0, 2.0, 0.0);
 
 	glFlush();
 }
@@ -55,7 +59,9 @@ void main_men(int val)
 }
 
 
-int main(int argc, char** argv){
+int main(int argc, char** argv)
+{
+	/*
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
 	glutInitWindowPosition(250, 250);
@@ -70,9 +76,9 @@ int main(int argc, char** argv){
 
 	glutDisplayFunc(display);
 	glutMainLoop();
+	*/
 
-
-
+	Play();
 	return 0;
 }
 

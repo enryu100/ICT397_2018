@@ -13,8 +13,18 @@ MainGame::~MainGame(void){
 
 }
 
-void MainGame::run(string initFile){
+void MainGame::initMenu()
+{
+	
+	graphicsEng.initMenu();
+
+}
+
+void MainGame::run(string initFile)
+{
+	
 	initSystems(initFile);
+	initMenu();
 	gameLoop();
 }
 

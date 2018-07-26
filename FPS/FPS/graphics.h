@@ -107,6 +107,16 @@ namespace graphics{
 		*/
 		void toggleWireframe();
 
+		/**
+		* @brief Initialises Main Menu
+		*
+		* Called at the start of the game and whenever the "ESCAPE" key is pressed.
+		* Calls menuOptions and display
+		*/
+		void initMenu();
+
+
+
 	private:
 		/// The window context.
 		SDL_Window* window;
@@ -119,9 +129,9 @@ namespace graphics{
 		///File Paths for the BMPs being loaded into the engine for terrain
 		std::vector<std::string> texturePaths;
 		/// The texture IDs used for texturing the heightfield.
-		GLuint terrainTexID[3];
+		GLuint terrainTexID[4];
 		/// loaded Texture Bitmaps for multitexturing
-		SDL_Surface *colorSurface[3];
+		SDL_Surface *colorSurface[4];
 		/// Scale data for heightfield
 		float scale, xzscale;
 		/// Boolean for whether a texture is being applied
@@ -177,6 +187,20 @@ namespace graphics{
 		* the appropriate color, based on height
 		*/
 		void setColor(float xpos, float zpos, float height);
+
+		/**
+		* @brief Draws the main menu
+		*
+		* Called at the start of initMenu and displays the options
+		*/
+		//void display();
+
+		/**
+		* @brief Determines what each option does
+		*
+		* Simple switch case
+		*/
+		//void menuOptions(int val);
 	};
 
 	/**

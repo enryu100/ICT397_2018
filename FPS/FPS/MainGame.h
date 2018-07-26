@@ -50,6 +50,8 @@ public:
 	*/
 	void run(std::string initFile);
 
+	void initMenu();
+
 private:
 	float old1;
 	float old2;

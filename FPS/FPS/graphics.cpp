@@ -63,6 +63,10 @@ void GraphicsEngine::init(vector<string> modelFiles, vector<string> textureFiles
 	cout << "surface loaded: " << texturePaths[1] << endl;
 	colorSurface[2] = SDL_LoadBMP(texturePaths[2].c_str());
 	cout << "surface loaded: " << texturePaths[2] << endl;
+	colorSurface[3] = SDL_LoadBMP(texturePaths[3].c_str());
+	cout << "surface loaded: " << texturePaths[3] << endl;
+	colorSurface[4] = SDL_LoadBMP(texturePaths[4].c_str());
+	cout << "surface loaded: " << texturePaths[4] << endl;
 
 	SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
 	glClearColor(0.0f, 0.0f, 1.0f, 1.0f);
@@ -72,6 +76,8 @@ void GraphicsEngine::init(vector<string> modelFiles, vector<string> textureFiles
 	glViewport(0, 0, screenWidth, screenHeight);
 	gluPerspective(45.0, 1.0, 0.0, 100.0);
 	glMatrixMode(GL_MODELVIEW);
+
+
 }
 
 void GraphicsEngine::display(double camX, double camY, double camZ, double lookX, double lookY, double lookZ, double upX, double upY, double upZ){
@@ -116,6 +122,40 @@ gameEvent GraphicsEngine::pollEvents(){
 	SDL_EventState(SDL_MOUSEMOTION, SDL_ENABLE);
 
 	return eventGame;
+}
+
+void GraphicsEngine::initMenu()
+{
+	glPushMatrix();
+	glMatrixMode(GL_PROJECTION);
+	glPushMatrix();
+	glLoadIdentity();
+	gluOrtho2D(0, screenWidth, 0, screenHeight);
+	glScalef(1, -1, 1);
+
+	// move to centre of screen
+	glTranslatef(screenWidth / 2 - 256.0, -screenHeight / 2 - 256.0, 0);
+	glMatrixMode(GL_MODELVIEW);
+	glLoadIdentity();
+
+	glBindTexture(GL_TEXTURE_2D, terrainTexID[3]);
+	glBegin(GL_QUADS);
+	glTexCoord2f(0.0f, 1.0f);
+	glVertex3f(0.0f, -500.0f, 0.0f);
+	glTexCoord2f(10.0f, 1.0f);
+	glVertex3f(0.0f, -500.0f, xzscale);
+	glTexCoord2f(10.0f, 0.0f);
+	glVertex3f(0.0f, 300.0f, scale);
+	glTexCoord2f(0.0f, 0.0f);
+	glVertex3f(0.0f, 300.0f, 0.0f);
+	glEnd();
+	glBindTexture(GL_TEXTURE_2D, 0);
+
+	// Reset Perspective Projection
+	glMatrixMode(GL_PROJECTION);
+	glPopMatrix();
+	glMatrixMode(GL_MODELVIEW);
+	glPopMatrix();
 }
 
 void GraphicsEngine::setScales(float scal, float xzscal){
