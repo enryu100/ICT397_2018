@@ -133,16 +133,20 @@ void GraphicsEngine::initMenu()
 
 	glBindTexture(GL_TEXTURE_2D, terrainTexID[3]);
 
+	glRotatef(90.0, 0.0f, 1.0f, 0.0f);
+
 	glBegin(GL_QUADS);
 	glTexCoord2f(0.0f, 1.0f);
-	glVertex3f(1000.0f, 0.0f, 1300.0f);
+	glVertex3f(-150.0f, -100.0f, 300.0f); //Top left
 	glTexCoord2f(1.0f, 1.0f);
-	glVertex3f(1200.0f, 0.0f, 1300.0f);
+	glVertex3f(-250.0f, -100.0f, 300.0f); //Top right
 	glTexCoord2f(1.0f, 0.0f);
-	glVertex3f(1200.0f, 200.0f, 1300.0f);
+	glVertex3f(-250.0f, 0.0f, 300.0f); //Bottom right
 	glTexCoord2f(0.0f, 0.0f);
-	glVertex3f(1000.0f, 200.0f, 1300.0f);
+	glVertex3f(-150.0f, 0.0f, 300.0f); //Bottom left
 	glEnd();
+
+	
 
 	glBindTexture(GL_TEXTURE_2D, 0);
 }
