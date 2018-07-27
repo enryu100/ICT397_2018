@@ -13,16 +13,9 @@ MainGame::~MainGame(void){
 
 }
 
-void MainGame::initMenu()
-{
-	graphicsEng.initMenu();
-}
-
 void MainGame::run(string initFile)
 {
-	
 	initSystems(initFile);
-	
 	gameLoop();
 }
 
@@ -78,7 +71,6 @@ void MainGame::initSystems(string initFile){
 	mouse1 = 0;
 	mouse2 = 0;
 	
-	//initMenu();
 }
 
 

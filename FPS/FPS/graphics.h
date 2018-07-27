@@ -110,8 +110,7 @@ namespace graphics{
 		/**
 		* @brief Initialises Main Menu
 		*
-		* Called at the start of the game and whenever the "ESCAPE" key is pressed.
-		* Calls menuOptions and display
+		* Called at the start of the game and is located to the left of the player.
 		*/
 		void initMenu();
 
@@ -188,19 +187,6 @@ namespace graphics{
 		*/
 		void setColor(float xpos, float zpos, float height);
 
-		/**
-		* @brief Draws the main menu
-		*
-		* Called at the start of initMenu and displays the options
-		*/
-		//void display();
-
-		/**
-		* @brief Determines what each option does
-		*
-		* Simple switch case
-		*/
-		//void menuOptions(int val);
 	};
 
 	/**

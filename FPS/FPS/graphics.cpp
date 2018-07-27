@@ -131,9 +131,9 @@ void GraphicsEngine::initMenu()
 	glEnable(GL_TEXTURE_2D);
 	glColor3f(1.0f, 1.0f, 1.0f);
 
-	glBindTexture(GL_TEXTURE_2D, terrainTexID[3]);
+	glBindTexture(GL_TEXTURE_2D, terrainTexID[3]); //load welcome screen
 
-	glRotatef(90.0, 0.0f, 1.0f, 0.0f);
+	glRotatef(90.0, 0.0f, 1.0f, 0.0f); //Rotate to face player
 
 	glBegin(GL_QUADS);
 	glTexCoord2f(0.0f, 1.0f);
