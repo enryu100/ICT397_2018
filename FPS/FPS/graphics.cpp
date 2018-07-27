@@ -90,6 +90,8 @@ void GraphicsEngine::display(double camX, double camY, double camZ, double lookX
 	drawTerrain();
 	drawModels();
 
+	initMenu();
+
 	SDL_GL_SwapWindow(window);
 }
 
@@ -126,36 +128,23 @@ gameEvent GraphicsEngine::pollEvents(){
 
 void GraphicsEngine::initMenu()
 {
-	glPushMatrix();
-	glMatrixMode(GL_PROJECTION);
-	glPushMatrix();
-	glLoadIdentity();
-	gluOrtho2D(0, screenWidth, 0, screenHeight);
-	glScalef(1, -1, 1);
-
-	// move to centre of screen
-	glTranslatef(screenWidth / 2 - 256.0, -screenHeight / 2 - 256.0, 0);
-	glMatrixMode(GL_MODELVIEW);
-	glLoadIdentity();
+	glEnable(GL_TEXTURE_2D);
+	glColor3f(1.0f, 1.0f, 1.0f);
 
 	glBindTexture(GL_TEXTURE_2D, terrainTexID[3]);
+
 	glBegin(GL_QUADS);
 	glTexCoord2f(0.0f, 1.0f);
-	glVertex3f(0.0f, -500.0f, 0.0f);
-	glTexCoord2f(10.0f, 1.0f);
-	glVertex3f(0.0f, -500.0f, xzscale);
-	glTexCoord2f(10.0f, 0.0f);
-	glVertex3f(0.0f, 300.0f, scale);
+	glVertex3f(1000.0f, 0.0f, 1300.0f);
+	glTexCoord2f(1.0f, 1.0f);
+	glVertex3f(1200.0f, 0.0f, 1300.0f);
+	glTexCoord2f(1.0f, 0.0f);
+	glVertex3f(1200.0f, 200.0f, 1300.0f);
 	glTexCoord2f(0.0f, 0.0f);
-	glVertex3f(0.0f, 300.0f, 0.0f);
+	glVertex3f(1000.0f, 200.0f, 1300.0f);
 	glEnd();
-	glBindTexture(GL_TEXTURE_2D, 0);
 
-	// Reset Perspective Projection
-	glMatrixMode(GL_PROJECTION);
-	glPopMatrix();
-	glMatrixMode(GL_MODELVIEW);
-	glPopMatrix();
+	glBindTexture(GL_TEXTURE_2D, 0);
 }
 
 void GraphicsEngine::setScales(float scal, float xzscal){

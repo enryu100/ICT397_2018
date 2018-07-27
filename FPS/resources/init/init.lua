@@ -12,6 +12,6 @@ texFile2 = "../resources/terrain/grass.bmp"
 --Stone Texture from http://emske.com/free-stone-texture-pack-vol-1/?epik=0_uZKE_IWn9F-
 texFile3 = "../resources/terrain/stone.bmp"
 --Welcome Screen
-texFile4 = "../resources/hud/welcome.bmp"
+texFile4 = "../resources/hud/welcomesmall.bmp"
 --Game Over
 texFile5 = "../resources/hud/gameover.bmp"
